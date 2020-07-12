@@ -1,0 +1,111 @@
+const Administrator = require('../models/Administrator');
+
+const mostrarAdminArea = (req,res) => {
+  console.log(req.session);
+  console.log(req.user);
+  res.render('admin/admin-area',{
+    title: 'Administrador'
+  })
+}
+
+const agregarAdministrador = async(req,res) => {
+  console.log(req.body)
+  const data = req.body;
+  const {dni,email} = req.body;
+  // validar que no exista alguien registrado con el mismo dni o correo
+  let admin = await Administrator.findOne({dni: dni});
+
+  if(admin){
+    return res.status(400).json({
+      ok: false,
+      msg: "El dni ya se encuentra registrado"
+    });
+  }
+  admin = await Administrator.findOne({email: email});
+
+  if(admin) {
+    return res.status(400).json({
+      ok: false,
+      msg: "El correo ya se encuentra registrado"
+    });
+  }
+  // se registra un nuevo adminsitrador
+  const administrator = new Administrator(data);
+  await administrator.save().catch((error) => {
+    return res.status(400).json({
+      ok: false,
+      error
+    });
+  });
+
+  res.json({
+    ok: true,
+    administrator,
+    msg: "Administrador registrado con exito"
+  });
+}
+
+const obtenerAdministratorID = async(req,res) => {
+  let id = req.params.id;
+  const administrator = await Administrator.findById(id).catch((err) => {
+    return res.status(401).status({
+      ok: false,
+      err
+    });
+  });
+
+  if(!administrator) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrador no existe"
+    }
+  });
+
+  res.json({
+    ok: true,
+    administrator
+  });
+}
+
+const obtenerAdministradorActual = async(req,res) => {
+  console.log(req.administrator);
+  const administrator = await Administrator.findById(req.administrator._id).catch((err) => {
+    return res.status(500).json({
+      ok: false,
+      err
+    });
+  });
+
+  if(!administrator) return res.status(400).json({
+    ok: false,
+    err: {
+      msg : "EL administrador no existe"
+    }
+  });
+
+  res.json({
+    ok: true,
+    administrator
+  });
+}
+
+const obtenerAdministradores = (req,res) => {
+  res.json({
+    admin : req.administrator
+  })
+}
+
+const mostrarRegistroEmpresa = (req,res) => {
+  res.render('admin/crear-empresa',{
+    title: 'Administrador'
+  })
+}
+
+module.exports = {
+  mostrarAdminArea,
+  agregarAdministrador,
+  obtenerAdministradores,
+  obtenerAdministratorID,
+  obtenerAdministradorActual,
+  mostrarRegistroEmpresa
+}
