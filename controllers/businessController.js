@@ -2,6 +2,12 @@ const Business = require('../models/Business');
 const axios = require('axios');
 require('dotenv').config({ path : "variables.env"});
 
+const mostrarRegistroEmpresa = (req,res) => {
+  res.render('admin/crear-empresa',{
+    title: 'Administrador'
+  })
+}
+
 const validarRUC = async(req,res) => {
   const {ruc} = req.body;
   const url = `${process.env.LINK_API_RUC}/${ruc}?token=${process.env.API_KEY}`;
@@ -62,5 +68,6 @@ const registrarEmpresa = async(req,res) => {
 
 module.exports = {
   validarRUC,
-  registrarEmpresa
+  registrarEmpresa,
+  mostrarRegistroEmpresa
 }

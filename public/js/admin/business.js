@@ -114,10 +114,24 @@ function registrarEmpresa (event){
 
   clienteAxios.post(url,business)
     .then((resp) => {
-      console.log(resp)
+      console.log(resp);
+      if(resp.data.ok){
+        Swal.fire({
+          title: 'Correcto',
+          text: 'Se registro la empresa con exito',
+          icon: 'success',
+          timer: 1500
+        });
+      }
     })
     .catch((error) => {
-      console.log(error)
+      console.log(error);
+      Swal.fire({
+        title: 'Hubo un error',
+        text: 'No se pudo registrar la empresa',
+        icon: 'error',
+        timer: 1500
+      });
     });
 
 }

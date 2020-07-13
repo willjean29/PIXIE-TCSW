@@ -26,7 +26,6 @@ router.get('/administrator/:id',administratorController.obtenerAdministratorID);
 
 router.get('/auth',verificarToken,administratorController.obtenerAdministradorActual);
 
-// crear empresa
-router.get('/business',administratorController.mostrarRegistroEmpresa);
+
 
 module.exports = router;

@@ -95,17 +95,11 @@ const obtenerAdministradores = (req,res) => {
   })
 }
 
-const mostrarRegistroEmpresa = (req,res) => {
-  res.render('admin/crear-empresa',{
-    title: 'Administrador'
-  })
-}
 
 module.exports = {
   mostrarAdminArea,
   agregarAdministrador,
   obtenerAdministradores,
   obtenerAdministratorID,
-  obtenerAdministradorActual,
-  mostrarRegistroEmpresa
+  obtenerAdministradorActual
 }
