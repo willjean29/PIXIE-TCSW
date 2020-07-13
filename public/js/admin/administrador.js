@@ -3,7 +3,6 @@ import {obtenerToken} from '../config/config';
 import tokenAuth from '../config/token';
 
 console.log("admin js");
-
 const infoAdmin = document.getElementById('admin-info-nav');
 
 

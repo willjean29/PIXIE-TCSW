@@ -30,80 +30,98 @@
               <div class="card-header">
                 <h3 class="card-title">Quick Example</h3>
               </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form role="form"> 
-                    <div class="card-body">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Razon Social</label>
-                                <input type="email" class="form-control" id="inputEmail4">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputPassword4">Nombre Comercial</label>
-                                <input type="password" class="form-control" id="inputPassword4">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Dirección</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputCity">Estado</label>
-                                <input type="text" class="form-control" id="inputCity">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputState">Tipo</label>
-                                <input type="text" class="form-control" id="inputState">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="inputCity">Departamento</label>
-                                <input type="text" class="form-control" id="inputCity">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="inputCity">Provincia</label>
-                                <input type="text" class="form-control" id="inputCity">
-                            </div>
-                             <div class="form-group col-md-4">
-                                <label for="inputCity">Distrito</label>
-                                <input type="text" class="form-control" id="inputCity">
-                            </div>
-                        </div>
-                        <label for="inputState" class="w-100">Redes</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                            </div>
-                            <input type="email" class="form-control" placeholder="Website"/>
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                            </div>
-                            <input type="email" class="form-control" placeholder="Facebbok"/>
-                        </div>
+              <!-- /.card-header -->
 
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                            </div>
-                            <input type="email" class="form-control" placeholder="Otra red"/>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
-                    
-                </form>
+            <form class="" id="form-business-ruc" method="POST">
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="form-group mb-2 col-md-2">
+                    <label for="ruc">Ingresar RUC</label>
+                  </div>
+                  <div class="form-group mb-2 col-md-6">
+                    <label for="ruc" class="sr-only">RUC</label>
+                    <input type="text" class="form-control" id="ruc" placeholder="RUC" name="ruc">
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-2 col-md-4">Validar</button>
+                </div>
+              </div>
+            </form>
+              
+              <!-- form start -->
+              <form role="form" id="form-business-create" method="POST"> 
+                  <div class="card-body">
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label for="razon-social">Razon Social</label>
+                              <input type="email" class="form-control" id="razon-social" name="razonSocial" disabled>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="nombre-comercial">Nombre Comercial</label>
+                              <input type="password" class="form-control" id="nombre-comercial" name="nombreComercial" disabled>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="direccion">Dirección</label>
+                          <input type="text" class="form-control" id="direccion" placeholder="1234 Main St" name="direccion" disabled>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label for="estado">Estado</label>
+                              <input type="text" class="form-control" id="estado" name="estado" disabled>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="tipo">Tipo</label>
+                              <input type="text" class="form-control" id="tipo" name="tipo" disabled>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-4">
+                              <label for="departamento">Departamento</label>
+                              <input type="text" class="form-control" id="departamento" name="departamento" disabled>
+                          </div>
+                          <div class="form-group col-md-4">
+                              <label for="provincia">Provincia</label>
+                              <input type="text" class="form-control" id="provincia" name="provincia" disabled>
+                          </div>
+                            <div class="form-group col-md-4">
+                              <label for="distrito">Distrito</label>
+                              <input type="text" class="form-control" id="distrito" name="distrito" disabled>
+                          </div>
+                      </div>
+                      <label for="inputState" class="w-100">Redes</label>
+
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <i class="fas fa-envelope"></i>
+                              </span>
+                          </div>
+                          <input type="email" class="form-control" placeholder="Facebbok" name="facebook"/>
+                      </div>
+
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <i class="fas fa-envelope"></i>
+                              </span>
+                          </div>
+                          <input type="email" class="form-control" placeholder="Website" name="web"/>
+                      </div>
+
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <i class="fas fa-envelope"></i>
+                              </span>
+                          </div>
+                          <input type="email" class="form-control" placeholder="Otra red" name="red"/>
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">Sign in</button>
+                  </div>
+                  
+              </form>
             </div>
             <!-- /.card -->
           </div>

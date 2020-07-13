@@ -30,7 +30,7 @@ const businessSchema = mongoose.Schema({
     trim : true,
     required: true
   },
-  departamente: {
+  departamento: {
     type: String,
     trim : true,
     required: true
@@ -60,7 +60,7 @@ const businessSchema = mongoose.Schema({
       ref: 'Client'
     }
   }],
-  redes: [{
+  redes: {
     facebook: {
       type: String,
       trim: true
@@ -69,15 +69,11 @@ const businessSchema = mongoose.Schema({
       type: String,
       trim: true
     },
-    instagram: {
+    red: {
       type: String,
       trim: true
-    },
-    twitter: {
-      type: String,
-      trim: true
-    },
-  }]
+    }
+  }
 
 });
 

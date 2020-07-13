@@ -11,5 +11,8 @@ app.use('/admin', require('./admin'));
 // endpoints for webmaster
 app.use('/webMaster',require('./webMaster'));
 
+// endpoints for businness
+app.use('/business',require('./business'));
+
 
 module.exports = app;
