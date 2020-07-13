@@ -20,15 +20,19 @@ const competitionSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Business'
   },
-  reglas: [{
+  tipo: {
+    type: String,
+    trim : true,
+    required: true
+  },
+  reglas: {
     parametro: {
-      type: String,
-      trim: true
+      type: Number
     },
     puntos: {
       type: Number
     }
-  }]
+  }
 });
 
 module.exports = mongoose.model('Competition',competitionSchema);

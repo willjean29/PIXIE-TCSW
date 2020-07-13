@@ -68,7 +68,7 @@ const obtenerAdministratorID = async(req,res) => {
 }
 
 const obtenerAdministradorActual = async(req,res) => {
-  console.log(req.administrator);
+  // console.log(req.administrator);
   const administrator = await Administrator.findById(req.administrator._id).catch((err) => {
     return res.status(500).json({
       ok: false,

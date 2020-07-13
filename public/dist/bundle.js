@@ -443,6 +443,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swee
 
 /***/ }),
 
+/***/ "./public/js/admin/competition.js":
+/*!****************************************!*\
+  !*** ./public/js/admin/competition.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config_clienteAxios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/clienteAxios */ \"./public/js/config/clienteAxios.js\");\n/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config/config */ \"./public/js/config/config.js\");\n/* harmony import */ var _config_token__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config/token */ \"./public/js/config/token.js\");\n\n\n\nvar formCompetitionAgregar = document.getElementById('form-competition-agregar');\n\nif (formCompetitionAgregar) {\n  formCompetitionAgregar.addEventListener('submit', agregarConcurso);\n}\n\nfunction agregarConcurso(event) {\n  event.preventDefault();\n  console.log(\"crear concurso\");\n  var url = '/competition/registrar';\n  var data = new FormData(formCompetitionAgregar);\n  var inputTipo = document.getElementById('tipo');\n  var dataCompetition = {\n    name: data.get('nombre'),\n    fechaInicio: data.get('fechaInicio'),\n    fechaFin: data.get('fechaFin'),\n    soles: data.get('soles'),\n    puntos: data.get('puntos'),\n    tipo: inputTipo.value\n  };\n  var token = Object(_config_config__WEBPACK_IMPORTED_MODULE_1__[\"obtenerToken\"])();\n\n  if (token) {\n    Object(_config_token__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(token);\n  }\n\n  _config_clienteAxios__WEBPACK_IMPORTED_MODULE_0__[\"default\"].post(url, dataCompetition).then(function (resp) {\n    console.log(resp);\n  })[\"catch\"](function (error) {\n    console.log(error.response.data);\n  });\n}\n\n//# sourceURL=webpack:///./public/js/admin/competition.js?");
+
+/***/ }),
+
 /***/ "./public/js/app.js":
 /*!**************************!*\
   !*** ./public/js/app.js ***!
@@ -451,7 +463,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swee
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _auth_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth/auth */ \"./public/js/auth/auth.js\");\n/* harmony import */ var _admin_administrador__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/administrador */ \"./public/js/admin/administrador.js\");\n/* harmony import */ var _admin_business__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/business */ \"./public/js/admin/business.js\");\n\n\n\nconsole.log(\"hola mundo\");\nvar token = localStorage.getItem('TOKEN');\n\nif (!token) {\n  console.log(\"no hay token\"); // window.location.href = \"/admin/login\";\n} else {\n  console.log(\"token existe\");\n}\n\n//# sourceURL=webpack:///./public/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _auth_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth/auth */ \"./public/js/auth/auth.js\");\n/* harmony import */ var _admin_administrador__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/administrador */ \"./public/js/admin/administrador.js\");\n/* harmony import */ var _admin_business__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/business */ \"./public/js/admin/business.js\");\n/* harmony import */ var _admin_competition__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/competition */ \"./public/js/admin/competition.js\");\n\n\n\n\nconsole.log(\"hola mundo\");\nvar token = localStorage.getItem('TOKEN');\n\nif (!token) {\n  console.log(\"no hay token\"); // window.location.href = \"/admin/login\";\n} else {\n  console.log(\"token existe\");\n}\n\n//# sourceURL=webpack:///./public/js/app.js?");
 
 /***/ }),
 

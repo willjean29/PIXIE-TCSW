@@ -1,0 +1,105 @@
+{{#extend 'styles'}}
+
+{{/extend}}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Crear Concurso Simple</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">General Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-10 mx-auto">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Quick Example</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form"  method="POST" id="form-competition-agregar"> 
+                  <div class="card-body">
+                      <div class="form-group">
+                          <label for="direccion">Nombre de Concurso</label>
+                          <input type="text" class="form-control" id="nombre" name="nombre">
+                      </div>
+                      <label for="inputState" class="w-100">Reglas de Concurso</label>
+                      <hr>
+                      <div class="row">
+                        <div class="input-group mb-3 col-md-6">
+                            <label for="" class="w-100">Nuevos Soles</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="1.00" name="soles"/>
+                        </div>
+                        <div class="input-group mb-3 col-md-6">
+                            <label for="" class="w-100">Puntos</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="1" name="puntos" min="1"/>
+                        </div>
+                      </div>
+
+                      <label for="inputState" class="w-100">Fechas</label>
+                      <hr>
+                      <div class="row">
+                        <div class="input-group mb-3 col-md-6">
+                            <label for="" class="w-100">Fecha Inicio</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                            <input type="date" class="form-control" placeholder="" name="fechaInicio"/>
+                        </div>
+                        <div class="input-group mb-3 col-md-6">
+                            <label for="" class="w-100">Fecha Final</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                            <input type="date" class="form-control" placeholder="" name="fechaFin"/>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <input type="hidden" value="simple" name="tipo" id="tipo">
+                      <button type="submit" class="btn btn-primary">Sign in</button>
+                  </div>
+                  
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (left) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+{{#extend 'scripts'}}
+
+{{/extend}}
