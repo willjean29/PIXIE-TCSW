@@ -43,6 +43,37 @@ const administratorSchema = mongoose.Schema({
     type: Boolean,
     default: false
   },
+  direccion: {
+    type: String,
+    trim : true
+  },
+  departamento: {
+    type: String,
+    trim : true
+  },
+  provincia: {
+    type: String,
+    trim : true
+  },
+  distrito: {
+    type: String,
+    trim : true
+  },
+  telefono: {
+    type: String,
+    trim : true
+  },
+  celular: {
+    type: String,
+    trim : true
+  },
+  genero: {
+    type: String,
+    trim : true
+  },
+  fechaNacimiento: {
+    type: Date
+  },
   expire: Date
 });
 
