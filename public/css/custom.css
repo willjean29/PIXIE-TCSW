@@ -1,0 +1,16 @@
+.container-preview-img {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-preview {
+    max-height: 100%;
+    max-width: 100%;
+    display: none;
+}
+
+.img-not-icon{
+    font-size: 5em;
+}

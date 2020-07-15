@@ -8,6 +8,12 @@ const mostrarAdminArea = (req,res) => {
   })
 }
 
+const mostrarInformacionAdministrador = (req,res) => {
+  res.render('admin/listar-admin',{
+    title: 'Administrador'
+  })
+}
+
 const agregarAdministrador = async(req,res) => {
   console.log(req.body)
   const data = req.body;
@@ -101,5 +107,6 @@ module.exports = {
   agregarAdministrador,
   obtenerAdministradores,
   obtenerAdministratorID,
-  obtenerAdministradorActual
+  obtenerAdministradorActual,
+  mostrarInformacionAdministrador
 }

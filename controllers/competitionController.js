@@ -6,6 +6,19 @@ const mostrarCrearConmcursoSimple = (req,res) => {
   });
 }
 
+const mostrarConcursoSimple = (req,res) => {
+  res.render('admin/listar-concurso-simple',{
+    title: 'Administrador'
+  });
+}
+
+const mostrarModificarConcursoSimple = (req,res) => {
+  console.log("hola modifcar")
+  res.render('admin/modificar-concurso-simple',{
+    title: 'Administrador'
+  });
+}
+
 const registrarConcurso = async(req,res) => {
   console.log(req.body)
   console.log(req.administrator);
@@ -54,5 +67,7 @@ const registrarConcurso = async(req,res) => {
 
 module.exports = {
   mostrarCrearConmcursoSimple,
-  registrarConcurso
+  registrarConcurso,
+  mostrarConcursoSimple,
+  mostrarModificarConcursoSimple
 }

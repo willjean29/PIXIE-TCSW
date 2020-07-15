@@ -26,6 +26,6 @@ router.get('/administrator/:id',administratorController.obtenerAdministratorID);
 
 router.get('/auth',verificarToken,administratorController.obtenerAdministradorActual);
 
-
+router.get('/profile',administratorController.mostrarInformacionAdministrador);
 
 module.exports = router;

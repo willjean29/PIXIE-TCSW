@@ -10,7 +10,7 @@ if(formCompetitionAgregar){
 function agregarConcurso (event){
   event.preventDefault();
   console.log("crear concurso");
-  const url = '/competition/registrar';
+  const url = '/competition/simple/registrar';
   const data = new FormData(formCompetitionAgregar);
   const inputTipo = document.getElementById('tipo');
   const dataCompetition = {

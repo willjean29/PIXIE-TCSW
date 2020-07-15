@@ -1,0 +1,227 @@
+{{#extend 'styles'}}
+
+{{/extend}}
+   
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Información de Mi Empresa</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">User Profile</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="/admin/admin-lte/img/user4-128x128.jpg"
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center">Nina Mcintire</h3>
+
+                <p class="text-muted text-center">Empresa Registrada</p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b>RUC</b> <a class="float-right">1,322</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Tipo</b> <a class="float-right">543</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Estado</b> <a class="float-right">13,287</a>
+                  </li>
+                </ul>
+
+                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- About Me Box -->
+            {{!-- <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">About Me</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+                <p class="text-muted">
+                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                </p>
+
+                <hr>
+
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+
+                <p class="text-muted">Malibu, California</p>
+
+                <hr>
+
+                <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+
+                <p class="text-muted">
+                  <span class="tag tag-danger">UI Design</span>
+                  <span class="tag tag-success">Coding</span>
+                  <span class="tag tag-info">Javascript</span>
+                  <span class="tag tag-warning">PHP</span>
+                  <span class="tag tag-primary">Node.js</span>
+                </p>
+
+                <hr>
+
+                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+              </div>
+              <!-- /.card-body -->
+            </div> --}}
+            <!-- /.card -->
+
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab" ><i class="fas fa-info-circle mx-1"></i>Información</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><i class="fas fa-map-marked-alt mx-1"></i>Maps</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab"><i class="fas fa-id-badge mx-1"></i>Logo</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="active tab-pane" id="activity">
+                    <table class="table table-bordered">
+                      <thead>                  
+                        <tr>
+                          <th style=""><i class="fas fa-caret-square-down"></i></th>
+                          <th>Dato</th>
+                          <th>Caracteristicas</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><i class="fas fa-building"></i></td>
+                          <th>Nombre Comercial</th>
+                          <td>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est consequatur reiciendis error et voluptatum voluptates rem unde mollitia illo obcaecati? Ducimus illo corporis amet cupiditate iusto. Quam error reiciendis quis!</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-file-contract"></i></td>
+                          <th>Razon Social</th>
+                          <td>
+                            <div class="progress progress-xs">
+                              <div class="progress-bar bg-warning" style="width: 70%"></div>
+                            </div>
+                          </td>
+
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-map-marker"></i></td>
+                          <th>Provincia</th>
+                          <td>
+                            <div class="progress progress-xs progress-striped active">
+                              <div class="progress-bar bg-primary" style="width: 30%"></div>
+                            </div>
+                          </td>
+
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-map-marker"></i></td>
+                          <th>Departamento</th>
+                          <td>
+                            <div class="progress progress-xs progress-striped active">
+                              <div class="progress-bar bg-success" style="width: 90%"></div>
+                            </div>
+                          </td>
+
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-map-marker"></i></td>
+                          <th>Dsitrito</th>
+                          <td>
+                            <div class="progress progress-xs progress-striped active">
+                              <div class="progress-bar bg-success" style="width: 90%"></div>
+                            </div>
+                          </td>
+
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-map-marker-alt"></i></td>
+                          <th>Dirección</th>
+                          <td>
+                            <div class="progress progress-xs progress-striped active">
+                              <div class="progress-bar bg-success" style="width: 90%"></div>
+                            </div>
+                          </td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="timeline">
+                    <div class="card">
+                      <div class="card-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15607.438856446874!2d-77.08815623494871!3d-12.053171806684615!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc6def8804064a4e9!2sUniversidad%20Nacional%20Mayor%20de%20San%20Marcos!5e0!3m2!1ses-419!2spe!4v1594780993698!5m2!1ses-419!2spe" width="600" height="450" frameborder="0" style="border:0; width: 100%" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="settings">
+                    <form class="form-horizontal">
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="file-img" aria-describedby="inputGroupFileAddon04">
+                          <label class="custom-file-label" for="file-img" id="label-img">Ingresar Archivo</label>
+                        </div>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Enviar</button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="card my-2 container-preview-img" id="container-preview-img">
+                      <img src="" class="img-preview" alt="avatar" id="preview-img">
+                      <i class="far fa-image img-not-icon" id="default-img"></i>
+                    </div>
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+
+{{#extend 'scripts'}}
+
+{{/extend}}

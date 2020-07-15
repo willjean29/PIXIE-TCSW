@@ -10,4 +10,8 @@ router.post('/verificar-ruc',businessController.validarRUC);
 
 router.post('/registrar',verificarToken,businessController.registrarEmpresa);
 
+router.get('/profile',businessController.mostrarInformacionEmpresa);
+
+router.get('/modificar',businessController.mostrarModificarEmpresa);
+
 module.exports = router;

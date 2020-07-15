@@ -1,0 +1,251 @@
+{{#extend 'styles'}}
+
+{{/extend}}
+   
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Información Personal</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">User Profile</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="/admin/admin-lte/img/user4-128x128.jpg"
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center">Nina Mcintire</h3>
+
+                <p class="text-muted text-center">Administrador Registrado</p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b>DNI</b> <a class="float-right">1,322</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Edad</b> <a class="float-right">543</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Género</b> <a class="float-right">13,287</a>
+                  </li>
+                </ul>
+
+                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- About Me Box -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Sobre Mi</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong><i class="fas fa-book mr-1"></i>Educación</strong>
+
+                <p class="text-muted">
+                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                </p>
+
+                <hr>
+
+                <strong><i class="fas fa-map-marker-alt mr-1"></i>Ubicación</strong>
+
+                <p class="text-muted">Malibu, California</p>
+
+                <hr>
+
+                <strong><i class="far fa-file-alt mr-1"></i>Descripción</strong>
+
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab"><i class="fas fa-info-circle mx-1"></i>Información</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><i class="fas fa-user-edit mx-1"></i>Editar Perfil</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab"><i class="fas fa-user-circle mx-1"></i>Avatar</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="active tab-pane" id="activity">
+                    <table class="table">
+
+                      {{!-- <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">First</th>
+                          <th scope="col">Last</th>
+                          <th scope="col">Handle</th>
+                        </tr>
+                      </thead> --}}
+                      <tbody>
+                        <tr>
+                          <th scope="row"><i class="fa fa-credit-card"></i></th>
+                          <th>DNI</th>
+                          <td>Otto</td>
+
+                        </tr>
+                        <tr>
+                          <th scope="row"><i class="fas fa-user"></i></th>
+                          <th>Nombres</th>
+                          <td>Otto</td>
+
+                        </tr>
+                        <tr>
+                          <th scope="row"><i class="fas fa-user"></i></th>
+                          <th>Apellido Materno</th>
+                          <td>Thornton</td>
+    
+                        </tr>
+                        <tr>
+                          <th scope="row"><i class="fas fa-user"></i></th>
+                          <th>Apellido Paterno</th>
+                          <td>the Bird</td>
+           
+                        </tr>
+                        <tr>
+                          <th scope="row"><i class="fa fa-calendar"></i></th>
+                          <th>Fecha de Nacimiento</th>
+                          <td>the Bird</td>
+           
+                        </tr>
+                        <tr>
+                          <th scope="row"><i class="fas fa-mobile-alt"></i></th>
+                          <th>Telefono</th>
+                          <td>the Bird</td>
+           
+                        </tr>
+                        <tr>
+                          <th scope="row"><i class="fa fa-envelope"></i></th>
+                          <th>Correo</th>
+                          <td>the Bird</td>
+           
+                        </tr>
+                        <tr>
+                          <th scope="row"><i class="fa fa-map-marker"></i></th>
+                          <th>Dirección</th>
+                          <td>the Bird</td>
+           
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="timeline">
+
+                    <!-- form start -->
+                    <form role="form" id="form-business-modificar" method="POST"> 
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="razon-social">Fecha de Nacimiento</label>
+                                    <input type="email" class="form-control" id="razon-social" name="razonSocial" disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="nombre-comercial">Género</label>
+                                    <input type="password" class="form-control" id="nombre-comercial" name="nombreComercial" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" class="form-control" id="direccion" placeholder="1234 Main St" name="direccion" disabled>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="estado">Telefono</label>
+                                    <input type="text" class="form-control" id="estado" name="estado" disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="tipo">Celular</label>
+                                    <input type="text" class="form-control" id="tipo" name="tipo" disabled>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="departamento">Departamento</label>
+                                    <input type="text" class="form-control" id="departamento" name="departamento" disabled>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="provincia">Provincia</label>
+                                    <input type="text" class="form-control" id="provincia" name="provincia" disabled>
+                                </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="distrito">Distrito</label>
+                                    <input type="text" class="form-control" id="distrito" name="distrito" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end">
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                        </div>
+                        
+                    </form>
+
+                  </div>
+                  <!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="settings">
+                    <form class="form-horizontal">
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="file-img" aria-describedby="inputGroupFileAddon04">
+                          <label class="custom-file-label" for="file-img" id="label-img">Ingresar Archivo</label>
+                        </div>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Enviar</button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="card my-2 container-preview-img" id="container-preview-img">
+                      <img src="" class="img-preview" alt="avatar" id="preview-img">
+                      <i class="far fa-image img-not-icon" id="default-img"></i>
+                    </div>
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+
+{{#extend 'scripts'}}
+
+{{/extend}}

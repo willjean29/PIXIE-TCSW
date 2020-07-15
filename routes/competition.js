@@ -3,8 +3,11 @@ const router = express.Router();
 const competitionController = require('../controllers/competitionController');
 const {verificarToken} = require('../middlewares/authentication');
 
-router.get('/registrar',competitionController.mostrarCrearConmcursoSimple);
+router.get('/simple/registrar',competitionController.mostrarCrearConmcursoSimple);
+router.post('simple/registrar',verificarToken,competitionController.registrarConcurso);
 
-router.post('/registrar',verificarToken,competitionController.registrarConcurso);
+router.get('/simple/profile',competitionController.mostrarConcursoSimple);
+
+router.get('/simple/modifcar',competitionController.mostrarModificarConcursoSimple);
 
 module.exports = router;
