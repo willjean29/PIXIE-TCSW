@@ -29,9 +29,16 @@
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
+                  {{#if empresa.imagen}}
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="/uploads/perfiles/business/{{empresa.imagen}}"
+                       alt="User profile picture">
+                  {{else}}
                   <img class="profile-user-img img-fluid img-circle"
                        src="/admin/admin-lte/img/user4-128x128.jpg"
                        alt="User profile picture">
+                  {{/if}}
+
                 </div>
 
                 {{#if empresa.nombreComercial}}
@@ -179,6 +186,14 @@
                         </tr>
                       </tbody>
                     </table>
+                     <div class="card-body">
+                        <h5 class="card-title font-weight-bold">Acciones de Empresa</h5>
+                        <p class="card-text">Puede realizar estas acciones en caso desea actualizar la informacion adicional de su empresa</p>
+                        <div class="row justify-content-between">
+                          <a href="/business/modificar" class="btn btn-warning">Editar Empresa</a>
+                          <a href="#" class="btn btn-danger">Eliminar Empresa</a>
+                        </div>
+                      </div>
                   </div>
                   <!-- /.tab-pane -->
                   <div class="tab-pane" id="timeline">
@@ -191,14 +206,16 @@
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="POST" id="form-avatar" enctype="multipart/form-data">
                       <div class="input-group">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="file-img" aria-describedby="inputGroupFileAddon04">
+                          <input required type="file" class="custom-file-input" id="file-img" aria-describedby="inputGroupFileAddon04" name="image">
                           <label class="custom-file-label" for="file-img" id="label-img">Ingresar Archivo</label>
                         </div>
                         <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Enviar</button>
+                          <input type="hidden" name="dir" value="business">
+                          <input type="hidden" name="url" value="/business/avatar">
+                          <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Enviar</button>
                         </div>
                       </div>
                     </form>

@@ -61,30 +61,43 @@ if(inputFileIMG){
 if(formAvatar){
   console.log("formulario de avatar");
   formAvatar.addEventListener('submit',function(event){
-    // event.preventDefault();
+    event.preventDefault();
     const data = new FormData(formAvatar);
-    console.log(data.get('dir'));
-    console.log("formulario avatar enviando");
-    const file = inputFileIMG.files[0];
-    data.append('image',file);
-    console.log(file);
-    const dataAdmin = {
-      dir: data.get('dir'),
-      image: file
-    }
-    console.log(dataAdmin)
-    const url = '/admin/avatar';
+
+    // const file = inputFileIMG.files[0];
+
+    const url = data.get('url');
     const config = {
       headers: {
-          'content-type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data',
+        'dir': data.get('dir')
       }
     };
     axios.post(url,data,config)
       .then((resp) => {
         console.log(resp)
+        if(resp.data.ok){
+          Swal.fire({
+            title: 'Correcto',
+            text: "Se actualizo el avatar con exito",
+            icon: 'success',
+            timer: 1500
+          })
+
+          setTimeout(() => {
+            location.reload();
+          }, 1500);
+        }
       })
       .catch((error) => {
-        console.log(error.response)
+        console.log(error.response.data);
+        const msg = error.response.data.err.msg;
+        Swal.fire({
+          title: 'Hubo un error',
+          text: msg,
+          icon: 'error',
+          timer: 1500
+        })
       })
   });
 }

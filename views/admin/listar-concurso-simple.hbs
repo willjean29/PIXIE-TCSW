@@ -29,9 +29,16 @@
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
+                  {{#if concurso.image}}
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="/uploads/perfiles/competition/{{concurso.image}}"
+                       alt="User profile picture">
+                  {{else}}
                   <img class="profile-user-img img-fluid img-circle"
                        src="/admin/admin-lte/img/user4-128x128.jpg"
                        alt="User profile picture">
+                  {{/if}}
+
                 </div>
 
                 <h3 class="profile-username text-center">Nina Mcintire</h3>
@@ -41,20 +48,20 @@
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
                     {{#if concurso.fechaInicio}}
-                      <b>Fecha Innicio</b> <a class="float-right">{{concurso.fechaInicio}}</a>
+                      <b>Fecha Innicio</b> <a class="float-right">{{fechaInicio}}</a>
                     {{/if}}
       
                   </li>
                   <li class="list-group-item">
                     {{#if concurso.fechaFin}}
-                      <b>Fecha Fin</b> <a class="float-right">{{concurso.fechaFin}}</a>
+                      <b>Fecha Fin</b> <a class="float-right">{{fechaFin}}</a>
                     {{/if}}
                   </li>
                   <li class="list-group-item">
                     {{#if concurso.estado}}
                       <b>Estado</b> <a class="float-right">Activo</a>
                     {{else}}
-                      <b>Estado</b> <a class="float-right">Desactivo</a>
+                      <b>Estado</b> <a class="float-right">Inactivo</a>
                     {{/if}}
                     
                   </li>
@@ -133,14 +140,14 @@
                           <td><i class="fas fa-calendar-alt"></i></td>
                           <th>Fecha Inicio</th>
                           {{#if concurso.fechaInicio}}
-                            <td>{{concurso.fechaInicio}}</td>
+                            <td>{{fechaInicio}}</td>
                           {{/if}}
                         </tr>
                         <tr>
                           <td><i class="fas fa-calendar-alt"></i></td>
                           <th>Fecha Fin</th>
                           {{#if concurso.fechaFin}}
-                            <td>{{concurso.fechaFin}}</td>
+                            <td>{{fechaFin}}</td>
                           {{/if}}
 
                         </tr>
@@ -193,14 +200,16 @@
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="POST" id="form-avatar" enctype="multipart/form-data">
                       <div class="input-group">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="file-img" aria-describedby="inputGroupFileAddon04">
+                          <input required type="file" class="custom-file-input" id="file-img" aria-describedby="inputGroupFileAddon04" name="image">
                           <label class="custom-file-label" for="file-img" id="label-img">Ingresar Archivo</label>
                         </div>
                         <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Enviar</button>
+                          <input type="hidden" name="dir" value="competition">
+                          <input type="hidden" name="url" value="/competition/simple/avatar">
+                          <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Enviar</button>
                         </div>
                       </div>
                     </form>

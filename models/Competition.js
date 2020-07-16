@@ -25,6 +25,10 @@ const competitionSchema = mongoose.Schema({
     trim : true,
     required: true
   },
+  image: {
+    type: String,
+    trim: true
+  },
   reglas: {
     parametro: {
       type: Number

@@ -13,9 +13,9 @@ const mostrarRegistroEmpresa = async(req,res) => {
 
 const mostrarInformacionEmpresa = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
-  console.log(administrator);
+  // console.log(administrator);
   const business = await Business.findOne({administrador: administrator._id}).lean();
-  console.log(business)
+  // console.log(business)
   res.render('admin/listar-empresa',{
     title: 'Administrador',
     admin: administrator,
@@ -25,9 +25,9 @@ const mostrarInformacionEmpresa = async(req,res) => {
 
 const mostrarModificarEmpresa = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
-  console.log(administrator);
+  // console.log(administrator);
   const business = await Business.findOne({administrador: administrator._id}).lean();
-  console.log(business)
+  // console.log(business)
   res.render('admin/modificar-empresa',{
     title: 'Administrador',
     admin: administrator,
@@ -93,10 +93,64 @@ const registrarEmpresa = async(req,res) => {
   });
 }
 
+const agregarAvatarEmpresa = async(req,res) => {
+  const id = req.user._id;
+  const administrator = await Administrator.findById(id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!administrator) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrator no existe o no tiene permisos"
+    }
+  });
+
+  const business = await Business.findOne({administrador: administrator._id}).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  });
+
+  if(!business) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrator no tiene relación con la empresa"
+    }
+  });
+
+  if(req.file){
+    business.imagen = req.file.filename;
+  }
+
+  try {
+    await business.save();
+  } catch (err) {
+    return res.status(400).json({
+      ok: false,
+      err: {
+        msg: "No se pudo guardar la imagen"
+      }
+    }); 
+  }
+
+  res.json({
+    ok: true,
+    business
+  });
+
+
+}
+
 module.exports = {
   validarRUC,
   registrarEmpresa,
   mostrarRegistroEmpresa,
   mostrarInformacionEmpresa,
-  mostrarModificarEmpresa
+  mostrarModificarEmpresa,
+  agregarAvatarEmpresa
 }

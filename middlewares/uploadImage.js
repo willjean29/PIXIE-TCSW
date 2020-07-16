@@ -1,9 +1,10 @@
 const multer = require('multer');
 const path = require('path');
 const shortid = require('shortid');
-
+let dir = "";
 const uploadImage = (req,res,next) => {
-  console.log(req.body)
+  dir = req.headers.dir;
+  console.log(dir)
   upload(req,res,function(err) {
     if(err){
       if(err instanceof multer.MulterError){
@@ -11,14 +12,14 @@ const uploadImage = (req,res,next) => {
           return res.status(500).json({
             ok: false,
             err:{
-              message: "El archivo es muy pesado : Peso max 500Kb"
+              msg: "El archivo es muy pesado : Peso max 500Kb"
             }
           });
         }else{
           return res.status(500).json({
             ok: false,
             err:{
-              message: err.message
+              msg: err.message
             }
           });
         }
@@ -26,7 +27,7 @@ const uploadImage = (req,res,next) => {
         return res.status(500).json({
           ok: false,
           err:{
-            message: err
+            msg: err
           }
         });
       }
@@ -42,8 +43,7 @@ const upload = multer({
   storage: fileStorage = multer.diskStorage({
     destination: (req,file,cb) => {
       console.log("procesando img");
-      console.log(req.body)
-      cb(null,path.join(__dirname,`../public/uploads/perfiles`))
+      cb(null,path.join(__dirname,`../public/uploads/perfiles/${dir}`))
     },
     filename: (req,file,cb) => {
       cb(null,shortid.generate()+path.extname(file.originalname));

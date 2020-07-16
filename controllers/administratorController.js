@@ -166,11 +166,11 @@ const agregarAvatarAdministrador = async(req,res) => {
     }); 
   }
 
-  // res.json({
-  //   ok: true,
-  //   administrator
-  // });
-  res.redirect('/admin/profile');
+  res.json({
+    ok: true,
+    administrator
+  });
+  // res.redirect('/admin/profile');
 }
 
 const obtenerAdministradores = (req,res) => {

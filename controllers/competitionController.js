@@ -14,13 +14,16 @@ const mostrarConcursoSimple = async(req,res) => {
   const business = await Business.findOne({administrador: administrator._id}).lean();
   console.log(business)
   const competition = await Competition.findOne({business: business.administrador}).lean();
-
+  let fechaInicio = moment(competition.fechaInicio).add(1, 'day').format('L'); 
+  let fechaFin = moment(competition.fechaFin).add(1, 'day').format('L'); 
   console.log(competition.reglas.parametro)
   res.render('admin/listar-concurso-simple',{
     title: 'Administrador',
     admin: administrator,
     empresa: business,
     concurso: competition,
+    fechaFin,
+    fechaInicio
   });
 }
 
@@ -87,9 +90,75 @@ const registrarConcurso = async(req,res) => {
   });
 }
 
+const agregarAvatarCompetition = async (req,res) => {
+  const id = req.user._id;
+  const administrator = await Administrator.findById(id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!administrator) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrator no existe o no tiene permisos"
+    }
+  });
+
+  const business = await Business.findOne({administrador: administrator._id}).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  });
+
+  if(!business) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrator no tiene relación con la empresa"
+    }
+  });
+
+  const competition = await Competition.findOne({business: business.administrador}).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!competition) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "No se ha encontrado ningún concurso"
+    }
+  });
+
+  if(req.file){
+    competition.image = req.file.filename;
+  }
+
+  try {
+    await competition.save();
+  } catch (err) {
+    return res.status(400).json({
+      ok: false,
+      err: {
+        msg: "No se pudo guardar la imagen"
+      }
+    }); 
+  }
+
+  res.json({
+    ok: true,
+    competition
+  });
+}
+
 module.exports = {
   mostrarCrearConmcursoSimple,
   registrarConcurso,
   mostrarConcursoSimple,
-  mostrarModificarConcursoSimple
+  mostrarModificarConcursoSimple,
+  agregarAvatarCompetition
 }
