@@ -2,6 +2,7 @@ import auth from './auth/auth';
 import admninistrador from './admin/administrador';
 import business from './admin/business';
 import competition from './admin/competition';
+import moment  from 'moment';
 console.log("hola mundo");
 
 const token = localStorage.getItem('TOKEN');
@@ -39,3 +40,14 @@ if(inputFileIMG){
     }
   })
 }
+
+
+
+const data = new Date();
+console.log(data)
+const hoy = moment(data);
+const fecha = hoy.format("L");
+console.log(fecha );
+
+
+

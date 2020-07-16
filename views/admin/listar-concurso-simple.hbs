@@ -40,13 +40,23 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Fecha Innicio</b> <a class="float-right">1,322</a>
+                    {{#if concurso.fechaInicio}}
+                      <b>Fecha Innicio</b> <a class="float-right">{{concurso.fechaInicio}}</a>
+                    {{/if}}
+      
                   </li>
                   <li class="list-group-item">
-                    <b>Fecha Fin</b> <a class="float-right">543</a>
+                    {{#if concurso.fechaFin}}
+                      <b>Fecha Fin</b> <a class="float-right">{{concurso.fechaFin}}</a>
+                    {{/if}}
                   </li>
                   <li class="list-group-item">
-                    <b>Estado</b> <a class="float-right">13,287</a>
+                    {{#if concurso.estado}}
+                      <b>Estado</b> <a class="float-right">Activo</a>
+                    {{else}}
+                      <b>Estado</b> <a class="float-right">Desactivo</a>
+                    {{/if}}
+                    
                   </li>
                 </ul>
 
@@ -122,58 +132,45 @@
                         <tr>
                           <td><i class="fas fa-calendar-alt"></i></td>
                           <th>Fecha Inicio</th>
-                          <td>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est consequatur reiciendis error et voluptatum voluptates rem unde mollitia illo obcaecati? Ducimus illo corporis amet cupiditate iusto. Quam error reiciendis quis!</p>
-                          </td>
+                          {{#if concurso.fechaInicio}}
+                            <td>{{concurso.fechaInicio}}</td>
+                          {{/if}}
                         </tr>
                         <tr>
                           <td><i class="fas fa-calendar-alt"></i></td>
                           <th>Fecha Fin</th>
-                          <td>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-warning" style="width: 70%"></div>
-                            </div>
-                          </td>
+                          {{#if concurso.fechaFin}}
+                            <td>{{concurso.fechaFin}}</td>
+                          {{/if}}
 
                         </tr>
                         <tr>
                           <td><i class="fas fa-building"></i></td>
                           <th>Empresa</th>
-                          <td>
-                            <div class="progress progress-xs progress-striped active">
-                              <div class="progress-bar bg-primary" style="width: 30%"></div>
-                            </div>
-                          </td>
+                          {{#if empresa.razonSocial}}
+                            <td>{{empresa.razonSocial}}</td>
+                          {{/if}}
 
                         </tr>
                         <tr>
                           <td><i class="fas fa-users"></i></td>
                           <th>Participantes</th>
-                          <td>
-                            <div class="progress progress-xs progress-striped active">
-                              <div class="progress-bar bg-success" style="width: 90%"></div>
-                            </div>
-                          </td>
-
+                            <td>{{empresa.clientes.length}}</td>
                         </tr>
                         <tr>
                           <td><i class="fas fa-tasks"></i></td>
                           <th>Parametro</th>
-                          <td>
-                            <div class="progress progress-xs progress-striped active">
-                              <div class="progress-bar bg-success" style="width: 90%"></div>
-                            </div>
-                          </td>
+                          {{#if concurso.reglas.parametro}}
+                            <td> S/ {{concurso.reglas.parametro}}</td>
+                          {{/if}}
 
                         </tr>
                         <tr>
                           <td><i class="fas fa-circle"></i></i></td>
                           <th>Puntos</th>
-                          <td>
-                            <div class="progress progress-xs progress-striped active">
-                              <div class="progress-bar bg-success" style="width: 90%"></div>
-                            </div>
-                          </td>
+                          {{#if concurso.reglas.puntos}}
+                            <td>{{concurso.reglas.puntos}}</td>
+                          {{/if}}
 
                         </tr>
                       </tbody>
@@ -184,9 +181,9 @@
                     <div class="card">
                       <div class="card-body">
                         <h5 class="card-title font-weight-bold">Acciones de Concurso</h5>
-                        <p class="card-text">Puede realizar estas acciones y cuando el concurso no este activo o haya caducado</p>
+                        <p class="card-text">Puede realizar estas acciones solo cuando el concurso no este activo o haya caducado</p>
                         <div class="row justify-content-between">
-                          <a href="#" class="btn btn-warning">Editar Concurso</a>
+                          <a href="/competition/simple/modifcar" class="btn btn-warning">Editar Concurso</a>
                           <a href="#" class="btn btn-danger">Eliminar Concurso</a>
                         </div>
                       </div>

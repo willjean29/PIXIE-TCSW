@@ -1,22 +1,37 @@
 const Business = require('../models/Business');
+const Administrator = require('../models/Administrator');
 const axios = require('axios');
 require('dotenv').config({ path : "variables.env"});
 
-const mostrarRegistroEmpresa = (req,res) => {
+const mostrarRegistroEmpresa = async(req,res) => {
+  const administrator = await Administrator.findById(req.user._id).lean();
   res.render('admin/crear-empresa',{
-    title: 'Administrador'
+    title: 'Administrador',
+    admin: administrator
   })
 }
 
-const mostrarInformacionEmpresa = (req,res) => {
+const mostrarInformacionEmpresa = async(req,res) => {
+  const administrator = await Administrator.findById(req.user._id).lean();
+  console.log(administrator);
+  const business = await Business.findOne({administrador: administrator._id}).lean();
+  console.log(business)
   res.render('admin/listar-empresa',{
-    title: 'Administrador'
+    title: 'Administrador',
+    admin: administrator,
+    empresa: business
   })
 }
 
-const mostrarModificarEmpresa = (req,res) => {
+const mostrarModificarEmpresa = async(req,res) => {
+  const administrator = await Administrator.findById(req.user._id).lean();
+  console.log(administrator);
+  const business = await Business.findOne({administrador: administrator._id}).lean();
+  console.log(business)
   res.render('admin/modificar-empresa',{
-    title: 'Administrador'
+    title: 'Administrador',
+    admin: administrator,
+    empresa: business
   })
 }
 
@@ -45,14 +60,14 @@ const validarRUC = async(req,res) => {
 
 const registrarEmpresa = async(req,res) => {
 
-
+  console.log(req.user);
   const {ruc,nombreComercial,razonSocial,tipo,estado,direccion,
     departamento,provincia,distrito,web,facebook,red} = req.body;
   const redes = {web,facebook,red};
 
 
   const business = new Business({
-    administrador: req.administrator._id,
+    administrador: req.user._id,
     ruc,
     nombreComercial,
     razonSocial,

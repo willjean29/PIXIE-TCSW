@@ -1,16 +1,22 @@
 const Administrator = require('../models/Administrator');
 
-const mostrarAdminArea = (req,res) => {
-  console.log(req.session);
-  console.log(req.user);
+const mostrarAdminArea = async(req,res) => {
+  // console.log(req.session);
+  // console.log(req.user);
+  // console.log("cargar datos");
+  const administrator = await Administrator.findById(req.user._id).lean();
+  console.log(administrator);
   res.render('admin/admin-area',{
-    title: 'Administrador'
+    title: 'Administrador',
+    admin: administrator
   })
 }
 
-const mostrarInformacionAdministrador = (req,res) => {
+const mostrarInformacionAdministrador = async(req,res) => {
+  const administrator = await Administrator.findById(req.user._id).lean();
   res.render('admin/listar-admin',{
-    title: 'Administrador'
+    title: 'Administrador',
+    admin: administrator
   })
 }
 

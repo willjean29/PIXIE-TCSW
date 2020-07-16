@@ -15,7 +15,11 @@
           <img src="/admin/admin-lte/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" id="admin-img">
         </div>
         <div class="info">
-          <a href="#" class="d-block" id="admin-name">Alexander Pierce</a>
+          {{#if admin}}
+            <a href="#" class="d-block" id="admin-name">{{admin.names}}</a>
+          {{else}}
+            <a href="#" class="d-block" id="admin-name">Administrador</a>
+          {{/if}}
         </div>
       </div>
 

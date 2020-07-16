@@ -4,7 +4,7 @@ const competitionController = require('../controllers/competitionController');
 const {verificarToken} = require('../middlewares/authentication');
 
 router.get('/simple/registrar',competitionController.mostrarCrearConmcursoSimple);
-router.post('simple/registrar',verificarToken,competitionController.registrarConcurso);
+router.post('/simple/registrar',competitionController.registrarConcurso);
 
 router.get('/simple/profile',competitionController.mostrarConcursoSimple);
 

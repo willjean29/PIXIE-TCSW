@@ -10,6 +10,8 @@ const cookieParser = require('cookie-parser');
 const passport = require('./config/passport');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path');
+const moment = require('moment');
+moment.locale('es');  
 require('dotenv').config({path: "variables.env"});
 // initializations
 const app = express();

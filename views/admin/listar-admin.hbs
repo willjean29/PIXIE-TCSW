@@ -33,24 +33,35 @@
                        src="/admin/admin-lte/img/user4-128x128.jpg"
                        alt="User profile picture">
                 </div>
-
-                <h3 class="profile-username text-center">Nina Mcintire</h3>
-
+                {{#if admin}}
+                  <h3 class="profile-username text-center">{{admin.names}}</h3>
+                {{/if}}
                 <p class="text-muted text-center">Administrador Registrado</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>DNI</b> <a class="float-right">1,322</a>
+                    {{#if admin}}
+                    <b>DNI</b> <a class="float-right">{{admin.dni}}</a>
+                    {{/if}}
                   </li>
                   <li class="list-group-item">
-                    <b>Edad</b> <a class="float-right">543</a>
+                    {{#if admin.edad}}
+                      <b>Edad</b> <a class="float-right">{{admin.edad}}</a>
+                    {{else}}
+                      <b>Edad</b> <a class="float-right">--</a>
+                    {{/if}}
                   </li>
                   <li class="list-group-item">
-                    <b>Género</b> <a class="float-right">13,287</a>
+                    {{#if admin.genero}}
+                      <b>Género</b> <a class="float-right">{{admin.genero}}</a>
+                    {{else}}
+                      <b>Género</b> <a class="float-right">NN</a>
+                    {{/if}}
+                    
                   </li>
                 </ul>
 
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                <a href="#" class="btn btn-primary btn-block"><b>Seguir</b></a>
               </div>
               <!-- /.card-body -->
             </div>
@@ -112,49 +123,73 @@
                         <tr>
                           <th scope="row"><i class="fa fa-credit-card"></i></th>
                           <th>DNI</th>
-                          <td>Otto</td>
-
+                          {{#if admin.dni}}
+                            <td>{{admin.dni}}</td>
+                          {{/if}}
                         </tr>
                         <tr>
                           <th scope="row"><i class="fas fa-user"></i></th>
                           <th>Nombres</th>
-                          <td>Otto</td>
+                          {{#if admin}}
+                            <td>{{admin.names}}</td>
+                          {{/if}}
 
                         </tr>
                         <tr>
                           <th scope="row"><i class="fas fa-user"></i></th>
-                          <th>Apellido Materno</th>
-                          <td>Thornton</td>
-    
+                          <th>Apellido Paterno</th>
+                           {{#if admin.lastNameP}}
+                            <td>{{admin.lastNameP}}</td>
+                          {{/if}}
+           
                         </tr>
                         <tr>
                           <th scope="row"><i class="fas fa-user"></i></th>
-                          <th>Apellido Paterno</th>
-                          <td>the Bird</td>
-           
+                          <th>Apellido Materno</th>
+                           {{#if admin.lastNameA}}
+                            <td>{{admin.lastNameA}}</td>
+                            
+                          {{/if}}
+    
                         </tr>
                         <tr>
                           <th scope="row"><i class="fa fa-calendar"></i></th>
                           <th>Fecha de Nacimiento</th>
-                          <td>the Bird</td>
+                          {{#if admin.fechaNacimiento}}
+                            <td>{{admin.fechaNacimiento}}</td>
+                          {{else}}
+                            <td>-----</td>                            
+                          {{/if}}
            
                         </tr>
                         <tr>
                           <th scope="row"><i class="fas fa-mobile-alt"></i></th>
                           <th>Telefono</th>
-                          <td>the Bird</td>
+                          {{#if admin.telefono}}
+                            <td>{{admin.telefono}}</td>
+                          {{else}}
+                            <td>-----</td>                            
+                          {{/if}}
            
                         </tr>
                         <tr>
                           <th scope="row"><i class="fa fa-envelope"></i></th>
                           <th>Correo</th>
-                          <td>the Bird</td>
+                          {{#if admin.email}}
+                            <td>{{admin.email}}</td>
+                          {{else}}
+                            <td>-----</td>
+                          {{/if}}
            
                         </tr>
                         <tr>
                           <th scope="row"><i class="fa fa-map-marker"></i></th>
                           <th>Dirección</th>
-                          <td>the Bird</td>
+                          {{#if admin.direccion}}
+                            <td>{{admin.direccion}}</td>
+                          {{else}}
+                            <td>-----</td>
+                          {{/if}}
            
                         </tr>
                       </tbody>
@@ -167,41 +202,80 @@
                     <form role="form" id="form-business-modificar" method="POST"> 
                         <div class="card-body">
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="razon-social">Fecha de Nacimiento</label>
-                                    <input type="email" class="form-control" id="razon-social" name="razonSocial" disabled>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="nombre-comercial">Género</label>
-                                    <input type="password" class="form-control" id="nombre-comercial" name="nombreComercial" disabled>
-                                </div>
+                              <div class="form-group col-md-6">
+                                  <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                                  {{#if admin.fechaNacimiento}}
+                                    <input type="date" class="form-control" id="fecha-nacimiento" name="fechaNacimiento" value="{{admin.fechaNacimiento}}">
+                                  {{else}}
+                                    <input type="date" class="form-control" id="fecha-nacimiento" name="fechaNacimiento">                       
+                                  {{/if}}                                    
+
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <label for="admin-genero">Género</label>
+                                  {{#if admin.genero}}
+                                    <input type="text" class="form-control" id="admin-genero" name="adminGenero" value="{{admin.genero}}">
+                                  {{else}}
+                                    <input type="text" class="form-control" id="admin-genero" name="adminGenero" value="{{admin.genero}}">
+                                  {{/if}}                                    
+                              </div>
                             </div>
                             <div class="form-group">
                                 <label for="direccion">Dirección</label>
-                                <input type="text" class="form-control" id="direccion" placeholder="1234 Main St" name="direccion" disabled>
+                                {{#if admin.direccion}}
+                                  <input type="text" class="form-control" id="direccion" placeholder="1234 Main St" name="direccion" value="{{admin.direccion}}">
+                                {{else}}
+                                  <input type="text" class="form-control" id="direccion" placeholder="1234 Main St" name="direccion">
+                                {{/if}}                                
+
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="estado">Telefono</label>
-                                    <input type="text" class="form-control" id="estado" name="estado" disabled>
+                                  <label for="telefono">Telefono</label>
+                                  {{#if admin.telefono}}
+                                    <input type="text" class="form-control" id="telefono" name="telefono" value="{{admin.telefono}}">
+                                  {{else}}
+                                    <input type="text" class="form-control" id="telefono" name="telefono">
+                                  {{/if}}
+
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="tipo">Celular</label>
-                                    <input type="text" class="form-control" id="tipo" name="tipo" disabled>
+                                  <label for="celular">Celular</label>
+                                  {{#if admin.celular}}
+                                    <input type="text" class="form-control" id="celular" name="celular" value="{{admin.celular}}">
+                                  {{else}}
+                                    <input type="text" class="form-control" id="celular" name="celular">
+                                  {{/if}}                                
+
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="departamento">Departamento</label>
-                                    <input type="text" class="form-control" id="departamento" name="departamento" disabled>
+                                  <label for="departamento">Departamento</label>
+                                  {{#if admin.departamento}}
+                                    <input type="text" class="form-control" id="departamento" name="departamento" value="{{admin.departamento}}">
+                                  {{else}}
+                                    <input type="text" class="form-control" id="departamento" name="departamento">
+                                  {{/if}}                                
+
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="provincia">Provincia</label>
-                                    <input type="text" class="form-control" id="provincia" name="provincia" disabled>
+                                  <label for="provincia">Provincia</label>
+                                  {{#if admin.provincia}}
+                                    <input type="text" class="form-control" id="provincia" name="provincia" value="{{admin.provincia}}">
+                                  {{else}}
+                                    <input type="text" class="form-control" id="provincia" name="provincia">
+                                  {{/if}}                                  
+
                                 </div>
                                   <div class="form-group col-md-4">
-                                    <label for="distrito">Distrito</label>
-                                    <input type="text" class="form-control" id="distrito" name="distrito" disabled>
+                                  <label for="distrito">Distrito</label>
+                                  {{#if admin.distrito}}
+                                    <input type="text" class="form-control" id="distrito" name="distrito" value="{{admin.distrito}}">
+                                  {{else}}
+                                    <input type="text" class="form-control" id="distrito" name="distrito">
+                                  {{/if}}                                  
+
                                 </div>
                             </div>
                         </div>

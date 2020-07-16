@@ -1,8 +1,8 @@
 import axios from 'axios';
 import clienteAxios from '../config/clienteAxios';
-import {tokenAuth} from '../config/token'
+import tokenAuth from '../config/token'
 import Swal from 'sweetalert2';
-import {API_KEY,LINK_API_DNI,guardarToken,eliminarToken} from '../config/config';
+import {API_KEY,LINK_API_DNI,guardarToken,eliminarToken,obtenerToken} from '../config/config';
 
 let dni = '';
 const formAdmin = document.getElementById('form-admin');
@@ -159,7 +159,8 @@ if(formAdmin){
 }
 
 if(formAdminLogin){
-  console.log(formAdminLogin)
+  console.log(formAdminLogin);
+  console.log("jsw")
   formAdminLogin.addEventListener('submit',(event) => {
     event.preventDefault();
     const data = new FormData(formAdminLogin);
@@ -185,7 +186,8 @@ if(formAdminLogin){
           // almcenamos el token de usuario en localstorage
           guardarToken(token);
           setTimeout(() => {
-            window.location.href = '/admin';
+            // window.location.href = '/admin';
+            mostrarHomeAdmin()
           }, 1500)
         }
       })
@@ -216,28 +218,27 @@ if(buttonCerrarSesion){
       cancelButtonText: 'No, cancelar'
     }).then((result) => {
       if (result.value) {
-      //  axios.get('/admin/cerrar-sesion')
-      //   .then((resp) => {
-      //     if(resp.data.ok){
-      //       console.log("cerrando sesion ....");
-      //       window.location.href = '/admin/login';
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     Swal.fire({
-      //       title: 'Hubo un error',
-      //       text: "No se pudo cerrar sesión",
-      //       icon: 'error',
-      //       timer: 1500
-      //     })
-      //   })
+       axios.get('/admin/cerrar-sesion')
+        .then((resp) => {
+          if(resp.data.ok){
+            console.log("cerrando sesion ....");
+            window.location.href = '/admin/login';
+          }
+        })
+        .catch((error) => {
+          Swal.fire({
+            title: 'Hubo un error',
+            text: "No se pudo cerrar sesión",
+            icon: 'error',
+            timer: 1500
+          })
+        })
         console.log('cerrando sesion ...');
-        eliminarToken();
-        window.location.href = '/admin/login';
       }
     })
   })
 }
+
 
 
 export default formToken;

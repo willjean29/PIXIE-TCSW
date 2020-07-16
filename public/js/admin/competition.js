@@ -21,10 +21,7 @@ function agregarConcurso (event){
     puntos: data.get('puntos'),
     tipo: inputTipo.value
   }
-  let token = obtenerToken();
-  if(token){
-    tokenAuth(token);
-  }
+
   clienteAxios.post(url,dataCompetition)
     .then((resp) => {
       console.log(resp)

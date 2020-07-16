@@ -8,7 +8,7 @@ router.get('/registrar',businessController.mostrarRegistroEmpresa);
 
 router.post('/verificar-ruc',businessController.validarRUC);
 
-router.post('/registrar',verificarToken,businessController.registrarEmpresa);
+router.post('/registrar',businessController.registrarEmpresa);
 
 router.get('/profile',businessController.mostrarInformacionEmpresa);
 
