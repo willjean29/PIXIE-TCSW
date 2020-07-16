@@ -2,7 +2,10 @@ import auth from './auth/auth';
 import admninistrador from './admin/administrador';
 import business from './admin/business';
 import competition from './admin/competition';
+import Swal from 'sweetalert2';
 import moment  from 'moment';
+import axios from 'axios';
+import clienteAxios from './config/clienteAxios';
 console.log("hola mundo");
 
 const token = localStorage.getItem('TOKEN');
@@ -13,32 +16,77 @@ if(!token) {
   console.log("token existe")
 }
 
+// formulario de avatar
+const formAvatar = document.getElementById('form-avatar');
 // cargar vista previa de iamgenes
 const inputFileIMG = document.getElementById('file-img');
 const labelIMG = document.getElementById('label-img');
 const previewContainer = document.getElementById('container-preview-img');
 const previewIMG = document.getElementById('preview-img');
 const defaultIMG = document.getElementById('default-img');
+
 if(inputFileIMG){
   inputFileIMG.addEventListener('change',function(){
     const file = this.files[0];
-    labelIMG.innerHTML = file.name;
     console.log(file);
+    const type = file.type.split('/')[0];
     if(file){
-      const reader = new FileReader();
-      defaultIMG.style.display = 'none';
-      previewIMG.style.display = 'block';
+      if(type === 'image'){
+        labelIMG.innerHTML = file.name;
+        const reader = new FileReader();
+        defaultIMG.style.display = 'none';
+        previewIMG.style.display = 'block';
+  
+        reader.addEventListener('load',function(){
+          previewIMG.setAttribute("src",this.result);
+        })
+  
+        reader.readAsDataURL(file);
+      }else{
+        Swal.fire({
+          title: 'Hubo un error',
+          text: "Solo es permitido subir imagenes",
+          icon: 'error',
+          timer: 1500
+        })
+      }
 
-      reader.addEventListener('load',function(){
-        previewIMG.setAttribute("src",this.result);
-      })
-
-      reader.readAsDataURL(file);
     }else{
       previewIMG.style.display = null;
       previewIMG.setAttribute("src","");
     }
   })
+}
+
+if(formAvatar){
+  console.log("formulario de avatar");
+  formAvatar.addEventListener('submit',function(event){
+    // event.preventDefault();
+    const data = new FormData(formAvatar);
+    console.log(data.get('dir'));
+    console.log("formulario avatar enviando");
+    const file = inputFileIMG.files[0];
+    data.append('image',file);
+    console.log(file);
+    const dataAdmin = {
+      dir: data.get('dir'),
+      image: file
+    }
+    console.log(dataAdmin)
+    const url = '/admin/avatar';
+    const config = {
+      headers: {
+          'content-type': 'multipart/form-data'
+      }
+    };
+    axios.post(url,data,config)
+      .then((resp) => {
+        console.log(resp)
+      })
+      .catch((error) => {
+        console.log(error.response)
+      })
+  });
 }
 
 

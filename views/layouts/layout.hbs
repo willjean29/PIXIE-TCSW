@@ -15,6 +15,8 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
     />
+    {{!-- datapicker css --}}
+    <link rel="stylesheet" href="/admin/plugins/datapicker/bootstrap-datepicker.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -50,6 +52,15 @@
     <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="/admin/admin-lte/js/adminlte.js"></script>
+    {{!-- datapicker --}}
+    <script src="/admin/plugins/datapicker/bootstrap-datepicker.min.js"></script>
+    <script>
+        $('.fecha').datepicker({
+            format: 'dd/mm/yyyy',
+            orientation: 'bottom',
+            autoclose: true
+        });
+    </script>
     <!-- AdminLTE for demo purposes -->
     <script src="/admin/admin-lte/js/demo.js"></script>
     <script src="/dist/bundle.js"></script>

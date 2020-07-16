@@ -71,6 +71,10 @@ const administratorSchema = mongoose.Schema({
     type: String,
     trim : true
   },
+  cargo:{
+    type: String,
+    trim : true
+  },
   fechaNacimiento: {
     type: Date
   },

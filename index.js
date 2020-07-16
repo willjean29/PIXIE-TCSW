@@ -48,6 +48,9 @@ app.engine('hbs',exphbs({
       }
 
       block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
+    },
+    selectGenero: function(seleccionado, opciones){
+      return opciones.fn().replace(`value="${seleccionado}"`,`value="${seleccionado}" selected`);
     }
   },
   extname: '.hbs'

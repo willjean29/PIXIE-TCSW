@@ -3,6 +3,8 @@ const router = express.Router();
 const administratorController = require('../controllers/administratorController');
 const authController = require('../controllers/authController');
 const {verificarToken} = require('../middlewares/authentication');
+const {uploadImage} = require('../middlewares/uploadImage');
+
  
 router.get('/',administratorController.mostrarAdminArea);
 
@@ -28,5 +30,9 @@ router.get('/administrator/:id',administratorController.obtenerAdministratorID);
 router.get('/auth',administratorController.obtenerAdministradorActual);
 
 router.get('/profile',administratorController.mostrarInformacionAdministrador);
+
+router.put('/modificar',administratorController.modificarAdministrador);
+
+router.post('/avatar',uploadImage,administratorController.agregarAvatarAdministrador);
 
 module.exports = router;

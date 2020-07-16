@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 const Administrator = require('../models/Administrator');
 
 const mostrarAdminArea = async(req,res) => {
@@ -14,9 +16,12 @@ const mostrarAdminArea = async(req,res) => {
 
 const mostrarInformacionAdministrador = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
+  let fechaNacimiento = moment(administrator.fechaNacimiento).add(1, 'day').format('L'); 
+  console.log(fechaNacimiento)
   res.render('admin/listar-admin',{
     title: 'Administrador',
-    admin: administrator
+    admin: administrator,
+    fechaNacimiento
   })
 }
 
@@ -101,6 +106,73 @@ const obtenerAdministradorActual = async(req,res) => {
   });
 }
 
+const modificarAdministrador = async(req,res) => {
+  // console.log(req.user);
+  console.log(req.body)
+  const id = req.user._id;
+  
+  console.log("modificar admin nodejs")
+  const data = req.body;
+  const administrator = await Administrator.findByIdAndUpdate(id,data,{new: true, runValidators: true})
+    .catch((err) => {
+      return res.status(500).json({
+        ok: false,
+        err
+      });
+    })
+  if(!administrator) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrador no existe"
+    }
+  });
+
+  res.json({
+    ok: true,
+    administrator
+  });
+}
+
+const agregarAvatarAdministrador = async(req,res) => {
+  const id = req.user._id;
+  console.log(id);
+  console.log(req.file)
+  const administrator = await Administrator.findById(id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!administrator) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrator no existe o no tiene permisos"
+    }
+  });
+
+  if(req.file){
+    administrator.image = req.file.filename;
+  }
+
+  try {
+    await administrator.save();
+  } catch (err) {
+    return res.status(400).json({
+      ok: false,
+      err: {
+        msg: "No se pudo guardar la imagen"
+      }
+    }); 
+  }
+
+  // res.json({
+  //   ok: true,
+  //   administrator
+  // });
+  res.redirect('/admin/profile');
+}
+
 const obtenerAdministradores = (req,res) => {
   res.json({
     admin : req.administrator
@@ -114,5 +186,7 @@ module.exports = {
   obtenerAdministradores,
   obtenerAdministratorID,
   obtenerAdministradorActual,
-  mostrarInformacionAdministrador
+  mostrarInformacionAdministrador,
+  modificarAdministrador,
+  agregarAvatarAdministrador
 }

@@ -29,9 +29,16 @@
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle"
+                  {{#if admin.image}}
+                    <img class="profile-user-img img-fluid img-circle"
+                       src="/uploads/perfiles/{{admin.image}}"
+                       alt="User profile picture">
+                  {{else}}
+                    <img class="profile-user-img img-fluid img-circle"
                        src="/admin/admin-lte/img/user4-128x128.jpg"
                        alt="User profile picture">
+                  {{/if}}
+
                 </div>
                 {{#if admin}}
                   <h3 class="profile-username text-center">{{admin.names}}</h3>
@@ -55,7 +62,7 @@
                     {{#if admin.genero}}
                       <b>Género</b> <a class="float-right">{{admin.genero}}</a>
                     {{else}}
-                      <b>Género</b> <a class="float-right">NN</a>
+                      <b>Género</b> <a class="float-right">Masculino</a>
                     {{/if}}
                     
                   </li>
@@ -74,23 +81,23 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i>Educación</strong>
+                <strong><i class="fas fa-book mr-1"></i>Cargo Empresarial</strong>
 
                 <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                  {{admin.cargo}}
                 </p>
 
                 <hr>
 
                 <strong><i class="fas fa-map-marker-alt mr-1"></i>Ubicación</strong>
 
-                <p class="text-muted">Malibu, California</p>
+                <p class="text-muted">{{admin.distrito}}, {{admin.departamento}}</p>
 
                 <hr>
 
-                <strong><i class="far fa-file-alt mr-1"></i>Descripción</strong>
+                {{!-- <strong><i class="far fa-file-alt mr-1"></i>Descripción</strong>
 
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p> --}}
               </div>
               <!-- /.card-body -->
             </div>
@@ -156,7 +163,7 @@
                           <th scope="row"><i class="fa fa-calendar"></i></th>
                           <th>Fecha de Nacimiento</th>
                           {{#if admin.fechaNacimiento}}
-                            <td>{{admin.fechaNacimiento}}</td>
+                            <td>{{fechaNacimiento}}</td>
                           {{else}}
                             <td>-----</td>                            
                           {{/if}}
@@ -192,6 +199,36 @@
                           {{/if}}
            
                         </tr>
+                        <tr>
+                          <th scope="row"><i class="fa fa-map-marker"></i></th>
+                          <th>Departamento</th>
+                          {{#if admin.departamento}}
+                            <td>{{admin.departamento}}</td>
+                          {{else}}
+                            <td>-----</td>
+                          {{/if}}
+           
+                        </tr>    
+                        <tr>
+                          <th scope="row"><i class="fa fa-map-marker"></i></th>
+                          <th>Provincia</th>
+                          {{#if admin.provincia}}
+                            <td>{{admin.provincia}}</td>
+                          {{else}}
+                            <td>-----</td>
+                          {{/if}}
+           
+                        </tr>  
+                        <tr>
+                          <th scope="row"><i class="fa fa-map-marker"></i></th>
+                          <th>Distrito</th>
+                          {{#if admin.distrito}}
+                            <td>{{admin.distrito}}</td>
+                          {{else}}
+                            <td>-----</td>
+                          {{/if}}
+           
+                        </tr>                                                                  
                       </tbody>
                     </table>
                   </div>
@@ -199,27 +236,38 @@
                   <div class="tab-pane" id="timeline">
 
                     <!-- form start -->
-                    <form role="form" id="form-business-modificar" method="POST"> 
+                    <form role="form" id="form-admin-modificar" method="POST"> 
                         <div class="card-body">
                             <div class="form-row">
                               <div class="form-group col-md-6">
                                   <label for="fecha-nacimiento">Fecha de Nacimiento</label>
-                                  {{#if admin.fechaNacimiento}}
-                                    <input type="date" class="form-control" id="fecha-nacimiento" name="fechaNacimiento" value="{{admin.fechaNacimiento}}">
-                                  {{else}}
-                                    <input type="date" class="form-control" id="fecha-nacimiento" name="fechaNacimiento">                       
-                                  {{/if}}                                    
+                                    {{#if fechaNacimiento}}
+                                      <input type="text" class="form-control fecha" id="fecha-nacimiento" name="fechaNacimiento" value="{{fechaNacimiento}}">
+                                    {{else}}
+                                      <input type="text" class="form-control fecha" id="fecha-nacimiento" name="fechaNacimiento">
+                                    {{/if}}
 
                               </div>
                               <div class="form-group col-md-6">
                                   <label for="admin-genero">Género</label>
-                                  {{#if admin.genero}}
-                                    <input type="text" class="form-control" id="admin-genero" name="adminGenero" value="{{admin.genero}}">
-                                  {{else}}
-                                    <input type="text" class="form-control" id="admin-genero" name="adminGenero" value="{{admin.genero}}">
-                                  {{/if}}                                    
+                                  <select name="genero" id="admin-genero" class="form-control">
+                                    {{#selectGenero admin.genero}}
+                                      <option value="" disabled selected>-- Seleccionar --</option>
+                                      <option value="Masculino">Masculino</option>
+                                      <option value="Femenino">Femenino</option>
+                                    {{/selectGenero}}
+                                  </select>
                               </div>
                             </div>
+                            <div class="form-group">
+                                <label for="cargo">Cargo de Ocupación</label>
+                                {{#if admin.cargo}}
+                                  <input type="text" class="form-control" id="cargo" placeholder="" name="cargo" value="{{admin.cargo}}">
+                                {{else}}
+                                  <input type="text" class="form-control" id="cargo" placeholder="" name="cargo">
+                                {{/if}}                                
+
+                            </div>                            
                             <div class="form-group">
                                 <label for="direccion">Dirección</label>
                                 {{#if admin.direccion}}
@@ -289,14 +337,15 @@
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="/admin/avatar" method="POST" id="form-avatar" enctype="multipart/form-data">
                       <div class="input-group">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="file-img" aria-describedby="inputGroupFileAddon04">
+                          <input required type="file" class="custom-file-input" id="file-img" aria-describedby="inputGroupFileAddon04" name="image">
                           <label class="custom-file-label" for="file-img" id="label-img">Ingresar Archivo</label>
                         </div>
                         <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Enviar</button>
+                          <input type="hidden" name="dir" value="business">
+                          <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Enviar</button>
                         </div>
                       </div>
                     </form>
