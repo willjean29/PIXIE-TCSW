@@ -20,6 +20,11 @@ router.post('/login',authController.autenticarAdministrador);
 
 router.post('/login2',authController.autenticarAdministrador2);
 
+// mostrar template a Descargar
+router.get('/template',
+  administratorController.mostrarTemplateAdministrador
+);
+
 // agregar nuevo administrador 
 router.get('/registrer',authController.mostrarRegistro);
 router.post('/registrer',administratorController.agregarAdministrador);

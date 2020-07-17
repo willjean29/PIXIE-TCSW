@@ -14,3 +14,7 @@
 .img-not-icon{
     font-size: 5em;
 }
+
+.custom::after{
+    display: none;
+}

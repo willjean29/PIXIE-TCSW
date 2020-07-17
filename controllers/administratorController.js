@@ -2,6 +2,17 @@ const moment = require('moment');
 const Administrator = require('../models/Administrator');
 const {existsCompetitionSimple} = require('../middlewares/exists');
 
+const mostrarTemplateAdministrador = async(req,res) => {
+  const administrator = await Administrator.findById(req.user._id).lean();
+  console.log(req.user._id)
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  console.log(existeConcursoSimple);
+  res.render('admin/descargar-template',{
+    title: 'Administrador',
+    admin: administrator,
+    existeConcursoSimple
+  })
+}
 const mostrarAdminArea = async(req,res) => {
   // console.log(req.session);
   // console.log(req.user);
@@ -186,6 +197,7 @@ const obtenerAdministradores = (req,res) => {
 
 
 module.exports = {
+  mostrarTemplateAdministrador,
   mostrarAdminArea,
   agregarAdministrador,
   obtenerAdministradores,

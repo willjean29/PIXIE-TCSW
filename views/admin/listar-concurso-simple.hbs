@@ -11,8 +11,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">User Profile</li>
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              <li class="breadcrumb-item active">Concurso Perfil</li>
             </ol>
           </div>
         </div>
@@ -40,8 +40,10 @@
                   {{/if}}
 
                 </div>
-
-                <h3 class="profile-username text-center">Nina Mcintire</h3>
+                {{#if concurso.name}}
+                  <h3 class="profile-username text-center">{{concurso.name}}</h3>
+                {{/if}}
+                
 
                 <p class="text-muted text-center">Concurso Simple</p>
 
@@ -119,9 +121,9 @@
             <div class="card">
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Información</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Acciones</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Logo</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab"><i class="fas fa-info-circle mx-1"></i>Información</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><i class="fas fa-clipboard-check mx-1"></i>Acciones</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab"><i class="fas fa-id-badge mx-1"></i>Logo</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -190,8 +192,8 @@
                         <h5 class="card-title font-weight-bold">Acciones de Concurso</h5>
                         <p class="card-text">Puede realizar estas acciones solo cuando el concurso no este activo o haya caducado</p>
                         <div class="row justify-content-between">
-                          <a href="/competition/simple/modificar" class="btn btn-warning">Editar Concurso</a>
-                          <a href="#" class="btn btn-danger">Eliminar Concurso</a>
+                          <a href="/competition/simple/modificar" class="btn btn-warning"><i class="fas fa-edit mx-1"></i>Editar Concurso</a>
+                          <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt mx-1"></i>Eliminar Concurso</a>
                         </div>
                       </div>
                       <img src="https://blog.hotmart.com/blog/2018/02/BLOG_J%C3%B3venes-emprendedores-670x419.png" class="card-img-top" alt="...">
