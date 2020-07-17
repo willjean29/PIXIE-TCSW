@@ -11,6 +11,9 @@ router.get('/',
   administratorController.mostrarAdminArea
 );
 
+// validar el dni del adminsitradorAutenticado
+router.post('/verificar-dni',authController.verificarDNI);
+
 // iniciar sesión
 router.get('/login',authController.mostrarLogin);
 router.post('/login',authController.autenticarAdministrador);

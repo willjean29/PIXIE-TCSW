@@ -68,6 +68,7 @@ const validarRUC = async(req,res) => {
 const registrarEmpresa = async(req,res) => {
 
   console.log(req.user);
+  const rucBusiness = req.body.ruc;
   const administrator = await Administrator.findById(req.user._id).catch((err) => {
     return res.status(400).json({
       ok: false,
@@ -82,12 +83,28 @@ const registrarEmpresa = async(req,res) => {
     }
   });
 
+  // validamos que sea unica
+  let business = await Business.findOne({ruc: rucBusiness}).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  });
+  console.log("hay empresa");
+  if(business) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "La empresa ya se encuentra registrada"
+    }
+  });
+
+  // se valido y se crea una nueva
   const {ruc,nombreComercial,razonSocial,tipo,estado,direccion,
     departamento,provincia,distrito,web,facebook,red} = req.body;
   const redes = {web,facebook,red};
 
 
-  const business = new Business({
+  business = new Business({
     administrador: req.user._id,
     ruc,
     nombreComercial,

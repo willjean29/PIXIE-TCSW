@@ -2,6 +2,7 @@ const WebMaster = require('../models/WebMaster');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const Administrator = require('../models/Administrator');
+const axios = require('axios');
 require('dotenv').config({ path: "variables.env"});
 const mostrarLogin = (req,res) => {
   res.render('admin/auth/login',{
@@ -119,6 +120,28 @@ const autenticarAdministrador2 = async(req,res) => {
 
 }
 
+const verificarDNI = async(req,res) => {
+  const {dni} = req.body;
+  const url = `${process.env.LINK_API_DNI}/${dni}?token=${process.env.API_KEY}`;
+  console.log(url);
+
+  try {
+    const response = await axios.get(url);
+    return res.json({
+      ok: true,
+      user : response.data
+    });
+  } catch (error) {
+    console.log("error 404");
+    return res.status(404).json({
+      ok: false,
+      err: {
+        msg: "El DNI ingresado no existe"
+      }
+    });
+  }
+}
+
 module.exports = {
   mostrarLogin,
   mostrarRegistro,
@@ -127,5 +150,6 @@ module.exports = {
   autenticarAdministrador,
   adminsitradorAutenticado,
   autenticarAdministrador2,
+  verificarDNI,
   cerrarSesion
 }

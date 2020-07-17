@@ -168,7 +168,12 @@ const agregarAvatarCompetition = async (req,res) => {
 
 const modificarCompetition = async(req,res) => {
   const id = req.user._id;
-  const data = req.body;
+  const {soles,puntos} = req.body;
+  const reglas = {parametro : soles,puntos};
+  const data = {
+    ...req.body,
+    reglas
+  };
   const administrator = await Administrator.findById(id).catch((err) => {
     return res.status(400).json({
       ok: false,

@@ -1,8 +1,7 @@
 import axios from 'axios';
 import clienteAxios from '../config/clienteAxios';
-import tokenAuth from '../config/token'
 import Swal from 'sweetalert2';
-import {API_KEY,LINK_API_DNI,guardarToken,eliminarToken,obtenerToken} from '../config/config';
+import {guardarToken} from '../config/config';
 
 let dni = '';
 const formAdmin = document.getElementById('form-admin');
@@ -64,16 +63,19 @@ if(formDNI){
     event.preventDefault();
     const data = new FormData(formDNI);
     dni = data.get('dni');
-    let url = `${LINK_API_DNI}/${dni}?token=${API_KEY}`;
+    const dataAdmin = {
+      dni
+    }
+    let url = '/admin/verificar-dni'
     // capturamos los inputs a llenar (nombres y apellidos)
     const inputNombres = document.getElementById('nombres');
     const inputPaterno = document.getElementById('paterno');
     const inputMaterno = document.getElementById('materno');
 
-    axios.get(url)
+    axios.post(url,dataAdmin)
       .then((resp) => {
-        if(resp.status === 200){
-          const {nombres, apellidoPaterno, apellidoMaterno} = resp.data;
+        if(resp.data.ok){
+          const {nombres, apellidoPaterno, apellidoMaterno} = resp.data.user;
           Swal.fire({
             title: 'DNI Valido',
             text: 'Se valido el DNI a registrar',
@@ -92,6 +94,12 @@ if(formDNI){
       })
       .catch((error) => {
         console.log(error);
+        Swal.fire({
+          title: 'DNI Invalido',
+          text: 'No se pudo verificar el DNI',
+          icon: 'error',
+          timer: 1500
+        });
       })
   })
 }

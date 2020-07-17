@@ -126,16 +126,33 @@ function registrarEmpresa (event){
           icon: 'success',
           timer: 1500
         });
+        setTimeout(() => {
+          window.location.href = "/business/profile";
+        }, 1500);
       }
     })
     .catch((error) => {
-      console.log(error);
-      Swal.fire({
-        title: 'Hubo un error',
-        text: 'No se pudo registrar la empresa',
-        icon: 'error',
-        timer: 1500
-      });
+      console.log(error.response);
+      const errorData = error.response.data;
+      if(errorData.err.msg){
+        Swal.fire({
+          title: 'Hubo un error',
+          text: errorData.err.msg,
+          icon: 'error',
+          timer: 1500
+        });
+      }else{
+        Swal.fire({
+          title: 'Hubo un error',
+          text: 'No se pudo registrar',
+          icon: 'error',
+          timer: 1500
+        });
+      }
+      setTimeout(() => {
+        location.reload();
+      },1500)
+
     });
 
 }
