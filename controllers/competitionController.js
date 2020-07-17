@@ -1,19 +1,26 @@
 const Competition = require('../models/Competition');
 const Business = require('../models/Business');
 const Administrator = require('../models/Administrator');
+const {existsCompetitionSimple} = require('../middlewares/exists');
 const moment = require('moment');
 
-const mostrarCrearConmcursoSimple = (req,res) => {
+const mostrarCrearConmcursoSimple = async(req,res) => {
+  const administrator = await Administrator.findById(req.user._id).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   res.render('admin/crear-concurso-simple',{
-    title: 'Administrador'
+    title: 'Administrador',
+    admin: administrator,
+    existeConcursoSimple
   });
 }
 
 const mostrarConcursoSimple = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const business = await Business.findOne({administrador: administrator._id}).lean();
   console.log(business)
-  const competition = await Competition.findOne({business: business.administrador}).lean();
+  const competition = await Competition.findOne({business: business._id}).lean();
+  console.log(competition);
   let fechaInicio = moment(competition.fechaInicio).add(1, 'day').format('L'); 
   let fechaFin = moment(competition.fechaFin).add(1, 'day').format('L'); 
   console.log(competition.reglas.parametro)
@@ -23,7 +30,8 @@ const mostrarConcursoSimple = async(req,res) => {
     empresa: business,
     concurso: competition,
     fechaFin,
-    fechaInicio
+    fechaInicio,
+    existeConcursoSimple
   });
 }
 
@@ -31,8 +39,8 @@ const mostrarModificarConcursoSimple = async(req,res) => {
   console.log("hola modifcar");
   const administrator = await Administrator.findById(req.user._id).lean();
   const business = await Business.findOne({administrador: administrator._id}).lean();
-  const competition = await Competition.findOne({business: business.administrador}).lean();
-
+  const competition = await Competition.findOne({business: business._id}).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   let fechaInicio = moment(competition.fechaInicio).add(1, 'day').format('L'); 
   let fechaFin = moment(competition.fechaFin).add(1, 'day').format('L'); 
   console.log(fechaInicio);
@@ -42,7 +50,8 @@ const mostrarModificarConcursoSimple = async(req,res) => {
     empresa: business,
     concurso: competition,
     fechaInicio,
-    fechaFin
+    fechaFin,
+    existeConcursoSimple
   });
 }
 
@@ -71,7 +80,7 @@ const registrarConcurso = async(req,res) => {
   const competition = new Competition({
     name,
     fechaInicio,
-    business: req.user._id,
+    business: business._id,
     fechaFin,
     tipo,
     reglas
@@ -122,7 +131,7 @@ const agregarAvatarCompetition = async (req,res) => {
     }
   });
 
-  const competition = await Competition.findOne({business: business.administrador}).catch((err) => {
+  const competition = await Competition.findOne({business: business._id}).catch((err) => {
     return res.status(400).json({
       ok: false,
       err
@@ -188,7 +197,7 @@ const modificarCompetition = async(req,res) => {
     }
   });
 
-  const competition = await Competition.findOneAndUpdate({business: business.administrador},data,{new: true, runValidators: true}).catch((err) => {
+  const competition = await Competition.findOneAndUpdate({business: business._id},data,{new: true, runValidators: true}).catch((err) => {
     return res.status(400).json({
       ok: false,
       err

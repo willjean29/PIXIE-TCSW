@@ -103,12 +103,22 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              {{#if admin.estado}}
+              {{!-- <li class="nav-item" disabled>
+                <a href="/business/registrar" class="nav-link" disabled>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar</p>
+                </a>
+              </li> --}}
+              {{!-- existe empresa no se puede crear otra --}}
+              {{else}}
               <li class="nav-item">
                 <a href="/business/registrar" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar Empresa</p>
                 </a>
               </li>
+              {{/if}}
               <li class="nav-item">
                 <a href="/business/profile" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -171,30 +181,35 @@
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
+                  {{#if existeConcursoSimple}}
+                  {{!-- solo un concurso por empresa --}}
+                  {{else}}
                   <li class="nav-item">
                     <a href="/competition/simple/registrar" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Crear Concurso</p>
                     </a>
                   </li>
+                  {{/if}}
+
                   <li class="nav-item">
                     <a href="/competition/simple/profile" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Ver Concurso</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  {{!-- <li class="nav-item">
                     <a href="/competition/simple/modificar" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Modificar Concurso</p>
                     </a>
-                  </li>
-                  <li class="nav-item">
+                  </li> --}}
+                  {{!-- <li class="nav-item">
                     <a href="#" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Eliminar Concurso</p>
                     </a>
-                  </li>
+                  </li> --}}
                 </ul>
               </li>
 

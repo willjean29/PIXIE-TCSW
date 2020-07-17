@@ -1,27 +1,32 @@
 const moment = require('moment');
-
 const Administrator = require('../models/Administrator');
+const {existsCompetitionSimple} = require('../middlewares/exists');
 
 const mostrarAdminArea = async(req,res) => {
   // console.log(req.session);
   // console.log(req.user);
   // console.log("cargar datos");
   const administrator = await Administrator.findById(req.user._id).lean();
-  console.log(administrator);
+  console.log(req.user._id)
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  console.log(existeConcursoSimple);
   res.render('admin/admin-area',{
     title: 'Administrador',
-    admin: administrator
+    admin: administrator,
+    existeConcursoSimple
   })
 }
 
 const mostrarInformacionAdministrador = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   let fechaNacimiento = moment(administrator.fechaNacimiento).add(1, 'day').format('L'); 
   console.log(fechaNacimiento)
   res.render('admin/listar-admin',{
     title: 'Administrador',
     admin: administrator,
-    fechaNacimiento
+    fechaNacimiento,
+    existeConcursoSimple
   })
 }
 

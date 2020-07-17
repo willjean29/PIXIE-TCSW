@@ -1,13 +1,16 @@
 const Business = require('../models/Business');
 const Administrator = require('../models/Administrator');
+const {existsCompetitionSimple} = require('../middlewares/exists');
 const axios = require('axios');
 require('dotenv').config({ path : "variables.env"});
 
 const mostrarRegistroEmpresa = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   res.render('admin/crear-empresa',{
     title: 'Administrador',
-    admin: administrator
+    admin: administrator,
+    existeConcursoSimple
   })
 }
 
@@ -15,11 +18,13 @@ const mostrarInformacionEmpresa = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
   // console.log(administrator);
   const business = await Business.findOne({administrador: administrator._id}).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   // console.log(business)
   res.render('admin/listar-empresa',{
     title: 'Administrador',
     admin: administrator,
-    empresa: business
+    empresa: business,
+    existeConcursoSimple
   })
 }
 
@@ -27,11 +32,13 @@ const mostrarModificarEmpresa = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
   // console.log(administrator);
   const business = await Business.findOne({administrador: administrator._id}).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   // console.log(business)
   res.render('admin/modificar-empresa',{
     title: 'Administrador',
     admin: administrator,
-    empresa: business
+    empresa: business,
+    existeConcursoSimple
   })
 }
 
@@ -61,6 +68,20 @@ const validarRUC = async(req,res) => {
 const registrarEmpresa = async(req,res) => {
 
   console.log(req.user);
+  const administrator = await Administrator.findById(req.user._id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!administrator) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrator no existe o no tiene permisos"
+    }
+  });
+
   const {ruc,nombreComercial,razonSocial,tipo,estado,direccion,
     departamento,provincia,distrito,web,facebook,red} = req.body;
   const redes = {web,facebook,red};
@@ -86,6 +107,17 @@ const registrarEmpresa = async(req,res) => {
       err
     });
   });
+
+  // actualizar el estado del administrador
+  administrator.estado = true;
+  try {
+    await administrator.save();
+  } catch (error) {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  }
 
   res.json({
     ok: true,
