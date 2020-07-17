@@ -33,14 +33,16 @@ const mostrarModificarConcursoSimple = async(req,res) => {
   const business = await Business.findOne({administrador: administrator._id}).lean();
   const competition = await Competition.findOne({business: business.administrador}).lean();
 
-  let fechaInicio = moment(competition.fechaInicio).format('L');
+  let fechaInicio = moment(competition.fechaInicio).add(1, 'day').format('L'); 
+  let fechaFin = moment(competition.fechaFin).add(1, 'day').format('L'); 
   console.log(fechaInicio);
   res.render('admin/modificar-concurso-simple',{
     title: 'Administrador',
     admin: administrator,
     empresa: business,
     concurso: competition,
-    fechaInicio
+    fechaInicio,
+    fechaFin
   });
 }
 
@@ -155,10 +157,62 @@ const agregarAvatarCompetition = async (req,res) => {
   });
 }
 
+const modificarCompetition = async(req,res) => {
+  const id = req.user._id;
+  const data = req.body;
+  const administrator = await Administrator.findById(id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!administrator) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrator no existe o no tiene permisos"
+    }
+  });
+
+  const business = await Business.findOne({administrador: administrator._id}).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  });
+
+  if(!business) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El administrator no tiene relación con la empresa"
+    }
+  });
+
+  const competition = await Competition.findOneAndUpdate({business: business.administrador},data,{new: true, runValidators: true}).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!competition) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El concurso no se encuntra registrado"
+    }
+  });
+
+  res.json({
+    ok: true,
+    competition
+  });
+}
+
 module.exports = {
   mostrarCrearConmcursoSimple,
   registrarConcurso,
   mostrarConcursoSimple,
   mostrarModificarConcursoSimple,
-  agregarAvatarCompetition
+  agregarAvatarCompetition,
+  modificarCompetition
 }

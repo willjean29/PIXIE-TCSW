@@ -146,11 +146,44 @@ const agregarAvatarEmpresa = async(req,res) => {
 
 }
 
+const modificarEmpresa = async(req,res) => {
+  const id = req.user._id;
+  const {web,facebook,red} = req.body;
+  const redes = {web,facebook,red};
+  const data = {
+    redes: redes
+  }
+  console.log(req.body)
+  console.log(data)
+  const business = await Business.findOneAndUpdate({administrador: id},data,{new: true, runValidators: true}).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!business) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "La empresa no se encuentra registrada"
+    }
+  });
+
+
+  res.json({
+    ok: true,
+    business
+  });
+
+
+}
+
 module.exports = {
   validarRUC,
   registrarEmpresa,
   mostrarRegistroEmpresa,
   mostrarInformacionEmpresa,
   mostrarModificarEmpresa,
-  agregarAvatarEmpresa
+  agregarAvatarEmpresa,
+  modificarEmpresa
 }

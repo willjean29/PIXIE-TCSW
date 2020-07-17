@@ -6,7 +6,7 @@ import tokenAuth from '../config/token';
 let rucBusiness = '';
 const formBusinessCreate = document.getElementById('form-business-create');
 const formBusinnessRUC = document.getElementById('form-business-ruc');
-
+const formBusinnessModificar = document.getElementById('form-business-modificar');
 document.addEventListener('DOMContentLoaded',() => {
   console.log('business')
   if(formBusinessCreate){
@@ -21,6 +21,10 @@ if(formBusinnessRUC){
 
 if(formBusinessCreate){
   formBusinessCreate.addEventListener('submit',registrarEmpresa);
+}
+
+if(formBusinnessModificar){
+  formBusinnessModificar.addEventListener('submit',modificarEmpresa);
 }
 
 // funciones
@@ -136,3 +140,38 @@ function registrarEmpresa (event){
 
 }
 
+function modificarEmpresa (event) {
+  event.preventDefault();
+  const dataBusiness = new FormData(formBusinnessModificar);
+  const url = "/business/modificar"
+  const business = {
+    web: dataBusiness.get('web'),
+    facebook: dataBusiness.get('facebook'),
+    red: dataBusiness.get('red')
+  }
+  clienteAxios.put(url,business)
+    .then((resp) => {
+      console.log(resp)
+      if(resp.data.ok){
+        Swal.fire({
+          title: 'Correcto',
+          text: "Se actualizo con exito",
+          icon: 'success',
+          timer: 1500
+        })
+        setTimeout(() => {
+          window.location.href = "/business/profile";
+        },1500)
+      }
+    })
+    .catch((error) => {
+      console.log(error.response.data)
+      const msg = error.response.data.err.msg;
+      Swal.fire({
+        title: 'Hubo un error',
+        text: msg,
+        icon: 'error',
+        timer: 1500
+      })
+    })
+}

@@ -17,5 +17,6 @@ router.post('/avatar',uploadImage,businessController.agregarAvatarEmpresa);
 router.get('/profile',businessController.mostrarInformacionEmpresa);
 
 router.get('/modificar',businessController.mostrarModificarEmpresa);
+router.put('/modificar',businessController.modificarEmpresa);
 
 module.exports = router;

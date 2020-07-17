@@ -32,7 +32,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form"  method="POST" id="form-competition-agregar"> 
+              <form role="form"  method="POST" id="form-competition-modificar"> 
                   <div class="card-body">
                       <div class="form-group">
                           <label for="direccion">Nombre de Concurso</label>
@@ -92,14 +92,14 @@
                                 </span>
                             </div>
                           {{#if concurso.fechaFin}}
-                            <input type="date" class="form-control" placeholder="" name="fechaFin" value="{{concurso.fechaFin}}"/>
+                            <input type="text" class="form-control" placeholder="" name="fechaFin" value="{{fechaFin}}"/>
                           {{/if}}
                         </div>
                       </div>
                   </div>
                   <div class="card-footer">
                       <input type="hidden" value="simple" name="tipo" id="tipo">
-                      <button type="submit" class="btn btn-primary">Sign in</button>
+                      <button type="submit" class="btn btn-primary">Actualizar</button>
                   </div>
                   
               </form>
