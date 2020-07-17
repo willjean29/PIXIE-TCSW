@@ -17,7 +17,8 @@ const mostrarRegistro = (req,res) => {
 }
 
 const mostrarWebMaster = (req,res) => {
-  res.render('admin/auth/webmaster',{
+  console.log("entro a mostrar token")
+  res.render('admin/auth/token-master',{
     layout: 'auth'
   });
 }
