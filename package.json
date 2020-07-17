@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./index",
-    "start": "concurrently \"npm run dev\" \"npm run watch\" ",
+    "start": "node ./index.js",
+    "local": "concurrently \"npm run dev\" \"npm run watch\" ",
     "watch": "webpack --w --mode development"
   },
   "author": "Grupo 6 - TCSW",
