@@ -16,6 +16,22 @@ if(!token) {
   console.log("token existe")
 }
 
+const alertaError = document.getElementById('alerta-error');
+if(alertaError){
+  console.log("alerta de errpres")
+  const msg = alertaError.innerHTML.trim();
+  // toastr.error(msg, "Error");
+  toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-center",
+    "preventDuplicates": false,
+  }
+  toastr.error(msg, "Error");
+}
+
 // formulario de avatar
 const formAvatar = document.getElementById('form-avatar');
 // cargar vista previa de iamgenes

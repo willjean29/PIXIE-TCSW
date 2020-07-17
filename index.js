@@ -51,6 +51,19 @@ app.engine('hbs',exphbs({
     },
     selectGenero: function(seleccionado, opciones){
       return opciones.fn().replace(`value="${seleccionado}"`,`value="${seleccionado}" selected`);
+    },
+    mostrarAlertas: function (errores = {}, opciones){
+      const categoria = Object.keys(errores);
+      let html = '';
+      if(categoria.length){
+        errores[categoria].forEach(error => {
+          html += `<div class="${categoria} alerta" id="alerta-error" style="display: none;">
+            ${error}
+          </div>`
+        })
+      }
+      
+      return opciones.fn().html = html;
     }
   },
   extname: '.hbs'

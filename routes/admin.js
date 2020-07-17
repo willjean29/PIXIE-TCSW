@@ -5,34 +5,53 @@ const authController = require('../controllers/authController');
 const {verificarToken} = require('../middlewares/authentication');
 const {uploadImage} = require('../middlewares/uploadImage');
 
- 
-router.get('/',administratorController.mostrarAdminArea);
+// panel principal de administrador
+router.get('/',
+  authController.adminsitradorAutenticado,
+  administratorController.mostrarAdminArea
+);
 
+// iniciar sesión
 router.get('/login',authController.mostrarLogin);
 router.post('/login',authController.autenticarAdministrador);
 
 router.post('/login2',authController.autenticarAdministrador2);
+
 // agregar nuevo administrador 
 router.get('/registrer',authController.mostrarRegistro);
 router.post('/registrer',administratorController.agregarAdministrador);
 
 // cerrando sesion
-router.get('/cerrar-sesion',authController.cerrarSesion);
+router.get('/cerrar-sesion',
+  authController.adminsitradorAutenticado,
+  authController.cerrarSesion
+);
 
+// validar token de web master
 router.get('/token',authController.mostrarWebMaster);
-
 router.post('/validarToken',authController.validarTokenAdmin);
 
 router.get('/all',administratorController.obtenerAdministradores);
-
 router.get('/administrator/:id',administratorController.obtenerAdministratorID);
-
 router.get('/auth',administratorController.obtenerAdministradorActual);
 
-router.get('/profile',administratorController.mostrarInformacionAdministrador);
+// mostrar informacion de administrador
+router.get('/profile',
+  authController.adminsitradorAutenticado,
+  administratorController.mostrarInformacionAdministrador
+);
 
-router.put('/modificar',administratorController.modificarAdministrador);
+// modifcar informacion de administrador
+router.put('/modificar',
+  authController.adminsitradorAutenticado,
+  administratorController.modificarAdministrador
+);
 
-router.post('/avatar',uploadImage,administratorController.agregarAvatarAdministrador);
+// agregar/actualizar avatar de administrador
+router.post('/avatar',
+  authController.adminsitradorAutenticado,
+  uploadImage,
+  administratorController.agregarAvatarAdministrador
+);
 
 module.exports = router;

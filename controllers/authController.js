@@ -21,13 +21,14 @@ const mostrarWebMaster = (req,res) => {
   });
 }
 
+
 // verificar si el administrador esta esta autenticado
 const adminsitradorAutenticado = (req,res,next) => {
+
   if(req.isAuthenticated()){
     return next();
   }
-
-  res.redirect('/admin/login');
+  return res.redirect('/admin/login');
 }
 
 const autenticarAdministrador = passport.authenticate('local',{

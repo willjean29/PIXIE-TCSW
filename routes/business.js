@@ -1,22 +1,50 @@
 const express = require('express');
 const router = express.Router();
 const businessController = require('../controllers/businessController');
+const authController = require('../controllers/authController');
 const {verificarToken} = require('../middlewares/authentication');
 const {uploadImage} = require('../middlewares/uploadImage');
 
 
 // crear empresa
-router.get('/registrar',businessController.mostrarRegistroEmpresa);
+router.get('/registrar',
+  authController.adminsitradorAutenticado,
+  businessController.mostrarRegistroEmpresa
+);
 
-router.post('/verificar-ruc',businessController.validarRUC);
+// VALIDAR RUC
+router.post('/verificar-ruc',
+  authController.adminsitradorAutenticado,
+  businessController.validarRUC
+);
 
-router.post('/registrar',businessController.registrarEmpresa);
+// registar la empresa
+router.post('/registrar',
+  authController.adminsitradorAutenticado,
+  businessController.registrarEmpresa
+);
 
-router.post('/avatar',uploadImage,businessController.agregarAvatarEmpresa);
+// agregar/actualizar avatar de la empresa
+router.post('/avatar',
+  authController.adminsitradorAutenticado,
+  uploadImage,
+  businessController.agregarAvatarEmpresa
+);
 
-router.get('/profile',businessController.mostrarInformacionEmpresa);
+// ver informacion de la empresa
+router.get('/profile',
+  authController.adminsitradorAutenticado,
+  businessController.mostrarInformacionEmpresa
+);
 
-router.get('/modificar',businessController.mostrarModificarEmpresa);
-router.put('/modificar',businessController.modificarEmpresa);
+// modifcar datos adicionbales de la empresa
+router.get('/modificar',
+  authController.adminsitradorAutenticado,
+  businessController.mostrarModificarEmpresa
+);
+router.put('/modificar',
+  authController.adminsitradorAutenticado,
+  businessController.modificarEmpresa
+);
 
 module.exports = router;

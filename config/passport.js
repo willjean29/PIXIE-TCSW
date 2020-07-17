@@ -11,14 +11,14 @@ passport.use(new LocalStrategy({
   // el usuario no se encuentra registrado
   if(!usuario){
     return done(null,false,{
-      mensajes: "Administrador no registrado"
+      message: "Administrador no registrado"
     });
   }
   // verificar el registro del usuario
   const verificarPassword = usuario.compararPassword(password);
 
   if(!verificarPassword) return done(null,false,{
-    mensajes : "Password Incorrecto"
+    message : "Password Incorrecto"
   })
 
   // usuario verificado
