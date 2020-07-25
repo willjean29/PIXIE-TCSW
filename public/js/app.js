@@ -2,11 +2,12 @@ import auth from './auth/auth';
 import admninistrador from './admin/administrador';
 import business from './admin/business';
 import competition from './admin/competition';
+import catalog from './admin/catalog';
 import Swal from 'sweetalert2';
 import moment  from 'moment';
 import axios from 'axios';
 import clienteAxios from './config/clienteAxios';
-console.log("hola mundo");
+console.log("hola mundo123");
 
 const token = localStorage.getItem('TOKEN');
 if(!token) {
@@ -54,6 +55,7 @@ if(inputFileIMG){
         previewIMG.style.display = 'block';
   
         reader.addEventListener('load',function(){
+          console.log(this.result)
           previewIMG.setAttribute("src",this.result);
         })
   
@@ -118,13 +120,6 @@ if(formAvatar){
   });
 }
 
-
-
-const data = new Date();
-console.log(data)
-const hoy = moment(data);
-const fecha = hoy.format("L");
-console.log(fecha );
 
 
 

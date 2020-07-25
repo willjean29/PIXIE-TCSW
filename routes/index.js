@@ -17,5 +17,8 @@ app.use('/business',require('./business'));
 // endpoints for competitionSchema
 app.use('/competition',require('./competition'));
 
+// endpoints for catalog
+app.use('/catalog',require('./catalog'));
+
 
 module.exports = app;
