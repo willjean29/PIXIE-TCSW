@@ -43,7 +43,7 @@ const upload = multer({
   storage: fileStorage = multer.diskStorage({
     destination: (req,file,cb) => {
       console.log("procesando img");
-      cb(null,path.join(__dirname,`../public/uploads/perfiles`))
+      cb(null,path.join(__dirname,`../public/uploads/perfiles/${dir}`))
     },
     filename: (req,file,cb) => {
       cb(null,shortid.generate()+path.extname(file.originalname));

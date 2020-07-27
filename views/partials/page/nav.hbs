@@ -272,30 +272,23 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/catalog/registrer" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Crear Catálogo</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Modificar Catálogo</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver Catalogo</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Eliminar Catalogo</p>
-                </a>
-              </li>
+              {{#if existeCatalogoBusiness}}
+                {{!-- no se registra se agrega desde la lista --}}
+                <li class="nav-item">
+                  <a href="/catalog/list" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver Catalogo</p>
+                  </a>
+                </li>
+              {{else}}
+                <li class="nav-item">
+                  <a href="/catalog/registrer" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Crear Catálogo</p>
+                  </a>
+                </li>
+              {{/if}}
+
             </ul>
           </li>
           <li class="nav-header">Diversos</li>

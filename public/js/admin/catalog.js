@@ -1,10 +1,12 @@
 import clienteAxios from '../config/clienteAxios';
-const inputFileMultiIMG = document.getElementById("file-img-multi");
+import Swal from 'sweetalert2';
+let inputFileMultiIMG = document.getElementById("file-img-multi");
 const containerItems = document.getElementById("contenier-items");
 
-const contenedorPremios = document.getElementById('contenier-items');
-
+let contenedorPremios = document.getElementById('contenier-items');
 const formCatalogo = document.getElementById('form-catalogo');
+
+const listaPremios = document.getElementById('lista-premios');
 
 if(inputFileMultiIMG){
   inputFileMultiIMG.addEventListener('change',function() {
@@ -19,11 +21,16 @@ if(inputFileMultiIMG){
 }
 
 if(contenedorPremios){
-  contenedorPremios.addEventListener('click',eliminarItem);
+  contenedorPremios.addEventListener('click',eliminarItem)
 }
 
 if(formCatalogo){
   formCatalogo.addEventListener('submit',registrarCatalogo);
+}
+
+if(listaPremios){
+  console.log(listaPremios);
+  listaPremios.addEventListener('click',mostrarEditarditarPremio)
 }
 
 function crearItemPremio(file,index){
@@ -60,26 +67,26 @@ function crearItemPremio(file,index){
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="estado">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre">
+            <input required type="text" class="form-control" id="nombre" name="nombre">
           </div>
           <div class="form-group col-md-6">
             <label for="tipo">Precio</label>
-            <input type="text" class="form-control" id="precio" name="precio" min="0">
+            <input required type="number" class="form-control" id="precio" name="precio" min="0">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="estado">Categoria</label>
-            <input type="text" class="form-control" id="categoria" name="categoria">
+            <input required type="text" class="form-control" id="categoria" name="categoria">
           </div>
           <div class="form-group col-md-6">
             <label for="tipo">Puntos</label>
-            <input type="number" class="form-control" id="puntos" name="puntos" min="0">
+            <input required type="number" class="form-control" id="puntos" name="puntos" min="0">
           </div>
         </div>
         <div class="form-group">
           <label for="direccion">Descripción</label>
-          <textarea name="descripcion"  class="form-control" id="descripcion" cols="30"></textarea>
+          <textarea name="descripcion" requerid  class="form-control" id="descripcion" cols="30"></textarea>
         </div>
       </div> 
     `;
@@ -109,24 +116,26 @@ function mostrarSpinner(Container,timer){
 function eliminarItem(event){
   
   if(event.target.classList.contains('close-item')){
-    const contenedorItem = event.target.parentElement.parentElement;
+    let contenedorItem = event.target.parentElement.parentElement;
     contenedorItem.remove();
   }
+
 }
 
 function registrarCatalogo(event){  
   event.preventDefault();
   const data = new FormData(formCatalogo);
-  
-  const files = document.getElementById("file-img-multi").files;
-  const dataCatalogo = {
-    image: Array.from(files).map((file) => Array.from(file)),  
-    name: data.getAll('nombre'),
-    points: data.getAll('puntos'),
-    prices: data.getAll('precio'),
-    description: data.getAll('descripcion'),
-    categoria: data.getAll('categoria')
-  };
+  // const files = document.getElementById("file-img-multi").files;
+  // const dataCatalogo = {
+  //   // image: Array.from(files).map((file) => Array.from(file)),  
+  //   name: data.getAll('nombre'),
+  //   points: data.getAll('puntos'),
+  //   prices: data.getAll('precio'),
+  //   description: data.getAll('descripcion'),
+  //   categoria: data.getAll('categoria')
+  // };
+  // console.log(dataCatalogo);
+  // return;
   const url = "/catalog/registrer";
   const config = {
     headers: {
@@ -137,11 +146,70 @@ function registrarCatalogo(event){
 
   clienteAxios.post(url,data,config)
     .then((resp) => {
-      console.log(resp)
+      if(resp.data.ok){
+        Swal.fire({
+          title: 'Correcto',
+          text: "Se registro con exito",
+          icon: 'success',
+          timer: 1500
+        })
+        setTimeout(() => {
+          window.location.href = "/catalog/list";
+        }, 1000);
+      }
     })
     .catch((error) => {
-      console.log(error.response)
+      Swal.fire({
+        title: 'Hubo un error',
+        text: "No se pudo registrar",
+        icon: 'error',
+        timer: 1500
+      })
     })
 
-  console.log(dataCatalogo);
+  // console.log(dataCatalogo);
+}
+
+function mostrarEditarditarPremio(event){
+  console.log("click")
+  if((event.target.classList.contains('editar'))){
+    console.log("editar")
+
+    let id = event.target.dataset.id;
+    if(!id){
+      id = event.target.parentElement.dataset.id; 
+    }
+    console.log(id);
+    const nombre = document.getElementById('nombre');
+    const precio = document.getElementById('precio');
+    const categoria = document.getElementById('categoria');
+    const puntos = document.getElementById('puntos');
+    const descripcion = document.getElementById('descripcion');
+    const img = document.getElementById('prize-edit-img');
+    // actualizar datos
+    nombre.value = "datos";
+    precio.value = 123;
+    categoria.value = "calzado";
+    puntos.value = 123;
+    descripcion.value = "calzado";
+
+    const url = `/prize/list/${id}`;
+    clienteAxios.get(url)
+      .then((resp) => {
+        console.log(resp.data);
+        if(resp.data.ok){
+          const prize = resp.data.prize;
+          nombre.value = prize.name;
+          precio.value = prize.price;
+          categoria.value = "";
+          puntos.value = prize.points;
+          descripcion.value = prize.description;
+          img.src = `/uploads/perfiles/prizes/${prize.image}`;
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+
+  }
 }

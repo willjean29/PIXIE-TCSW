@@ -1,0 +1,261 @@
+{{#extend 'styles'}}
+    <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+{{/extend}}   
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Lista de Premios</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/admin">Inicio</a></li>
+              <li class="breadcrumb-item active">Cátalogo</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+
+          <div class="card col-12">
+            <div class="card-header d-flex justify-content-between align-items-center custom">
+                <h3 class="card-title">Lista de premios registrados</h3>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus-square mx-1"></i>Agregar Premio</button>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="lista-premios" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>IMG</th>
+                  <th>Nombres</th>
+                  <th>Precio</th>
+                  <th>Puntos</th>
+                  <th>Categoria</th>
+                  <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                    {{#if premios.length}}
+                        {{#each premios}}
+                        <tr>
+                            <td>
+                                <div class="user-panel d-flex justify-content-center">
+                                    <div class="image">
+                                        <img src="/uploads/perfiles/prizes/{{image}}" alt="Prize Image" id="prize-img">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{{name}}</td>
+                            <td> S/. {{price}}</td>
+                            <td>{{points}}</td>
+                            <td>S/ 250</td>
+                            <td>
+                                <button type="button" id="button-edit" class="btn btn-warning editar" data-toggle="modal" data-target="#modalEdit" data-id="{{_id}}"><i class="fas fa-edit editar"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    {{/if}}
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>IMG</th>
+                  <th>Nombres</th>
+                  <th>Precio</th>
+                  <th>Puntos</th>
+                  <th>Categoria</th>
+                  <th>Acciones</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Main content -->
+              <section class="content">
+                <div class="container-fluid">
+                  <div class="row">
+                    <!-- left column -->
+                    <div class="col-12 mx-auto">
+                      <!-- general form elements -->
+                      <div class="card card-primary">
+                        <div class="card-header">
+                          <h3 class="card-title">Llenar Formulario</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        
+                        <!-- form start -->
+                        <form role="form" id="form-catalogo" method="POST" action="/catalog/registrer" enctype="multipart"> 
+                            <div class="card-body">
+                              <div class="input-group my-3">
+                                <div class="custom-file">
+                                  <input required type="file" class="custom-file-input" id="file-img-multi" aria-describedby="inputGroupFileAddon04" name="image" multiple>
+                                  <label class="custom-file-label" for="file-img-multi" id="">Ingresar Premios</label>
+                                </div>
+                              </div>
+                              <div class="items-premios" id="contenier-items">
+
+                                {{!-- Premios creados diinamicamente --}}
+
+                              </div>
+
+                            </div>
+                            <div class="card-footer text-right">
+                                <input type="hidden" name="dir" value="prizes">
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                            
+                        </form>
+                      </div>
+                      <!-- /.card -->
+                    </div>
+                    <!--/.col (left) -->
+                  </div>
+                  <!-- /.row -->
+                </div><!-- /.container-fluid -->
+              </section>
+            <!-- /.content -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Main content -->
+              <section class="content">
+                <div class="container-fluid">
+                  <div class="row">
+                    <!-- left column -->
+                    <div class="col-12 mx-auto">
+                      <!-- general form elements -->
+                      <div class="card card-primary">
+                        <div class="card-header">
+                          <h3 class="card-title">Llenar Formulario</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        
+                        <!-- form start -->
+                        <form role="form" id="form-catalogo-edit" method="POST" action="/catalog/registrer" enctype="multipart"> 
+                            <div class="card-body">
+                              <div class="items-premios" id="contenier-items">
+                                <div class="item-premio">
+                                  <label for="inputState" class="w-100">Premio</label>
+                                  <button type="button" class="close close-container" aria-label="Close" id="close-container">
+                                    <span aria-hidden="true" id="close-item" class="close-item">&times;</span>
+                                  </button>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-3 container-premio">
+                                      <img src="" alt="" class="img-fluid img-thumbnail" id="prize-edit-img">
+                                    </div>
+                                    <div class="form-group col-md-9">
+                                      <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                          <label for="estado">Nombre</label>
+                                          <input required type="text" class="form-control" id="nombre" name="nombre">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                          <label for="tipo">Precio</label>
+                                          <input required type="number" class="form-control" id="precio" name="precio" min="0">
+                                        </div>
+                                      </div>
+                                      <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                          <label for="estado">Categoria</label>
+                                          <input required type="text" class="form-control" id="categoria" name="categoria">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                          <label for="tipo">Puntos</label>
+                                          <input required type="number" class="form-control" id="puntos" name="puntos" min="0">
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="direccion">Descripción</label>
+                                        <textarea name="descripcion" required  class="form-control" id="descripcion" cols="30"></textarea>
+                                      </div>
+                                    </div> 
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            </div>
+                            <div class="card-footer text-right">
+                                <input type="hidden" name="dir" value="prizes">
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                            
+                        </form>
+                      </div>
+                      <!-- /.card -->
+                    </div>
+                    <!--/.col (left) -->
+                  </div>
+                  <!-- /.row -->
+                </div><!-- /.container-fluid -->
+              </section>
+            <!-- /.content -->
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+{{#extend 'scripts'}}
+    <!-- DataTables -->
+    <script src="/admin/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script>
+    $(function () {
+        $('#lista-premios').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true
+        });
+    });
+    </script>
+{{/extend}}

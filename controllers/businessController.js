@@ -1,16 +1,18 @@
 const Business = require('../models/Business');
 const Administrator = require('../models/Administrator');
-const {existsCompetitionSimple} = require('../middlewares/exists');
+const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 const axios = require('axios');
 require('dotenv').config({ path : "variables.env"});
 
 const mostrarRegistroEmpresa = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   res.render('admin/crear-empresa',{
     title: 'Administrador',
     admin: administrator,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   })
 }
 
@@ -19,12 +21,14 @@ const mostrarInformacionEmpresa = async(req,res) => {
   // console.log(administrator);
   const business = await Business.findOne({administrador: administrator._id}).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   // console.log(business)
   res.render('admin/listar-empresa',{
     title: 'Administrador',
     admin: administrator,
     empresa: business,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   })
 }
 
@@ -33,12 +37,14 @@ const mostrarModificarEmpresa = async(req,res) => {
   // console.log(administrator);
   const business = await Business.findOne({administrador: administrator._id}).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   // console.log(business)
   res.render('admin/modificar-empresa',{
     title: 'Administrador',
     admin: administrator,
     empresa: business,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   })
 }
 

@@ -35,20 +35,21 @@
               <!-- form start -->
               <form role="form" id="form-catalogo" method="POST" action="/catalog/registrer" enctype="multipart"> 
                   <div class="card-body">
-					<div class="input-group my-3">
-                        <div class="custom-file">
-                          <input required type="file" class="custom-file-input" id="file-img-multi" aria-describedby="inputGroupFileAddon04" name="image" multiple>
-                          <label class="custom-file-label" for="file-img-multi" id="">Ingresar Premios</label>
-                        </div>
-					</div>
-					<div class="items-premios" id="contenier-items">
+                    <div class="input-group my-3">
+                      <div class="custom-file">
+                        <input required type="file" class="custom-file-input" id="file-img-multi" aria-describedby="inputGroupFileAddon04" name="image" multiple>
+                        <label class="custom-file-label" for="file-img-multi" id="">Ingresar Premios</label>
+                      </div>
+                    </div>
+                    <div class="items-premios" id="contenier-items">
 
-						{{!-- Premios creados diinamicamente --}}
+                      {{!-- Premios creados diinamicamente --}}
 
-					</div>
+                    </div>
 
                   </div>
                   <div class="card-footer text-right">
+                      <input type="hidden" name="dir" value="prizes">
                       <button type="submit" class="btn btn-primary">Registrar</button>
                   </div>
                   

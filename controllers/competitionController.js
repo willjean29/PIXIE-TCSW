@@ -1,16 +1,18 @@
 const Competition = require('../models/Competition');
 const Business = require('../models/Business');
 const Administrator = require('../models/Administrator');
-const {existsCompetitionSimple} = require('../middlewares/exists');
+const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 const moment = require('moment');
 
 const mostrarCrearConmcursoSimple = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   res.render('admin/crear-concurso-simple',{
     title: 'Administrador',
     admin: administrator,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   });
 }
 
@@ -23,6 +25,7 @@ const mostrarConcursoSimple = async(req,res) => {
   console.log(competition);
   let fechaInicio = moment(competition.fechaInicio).add(1, 'day').format('L'); 
   let fechaFin = moment(competition.fechaFin).add(1, 'day').format('L'); 
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   console.log(competition.reglas.parametro)
   res.render('admin/listar-concurso-simple',{
     title: 'Administrador',
@@ -31,7 +34,8 @@ const mostrarConcursoSimple = async(req,res) => {
     concurso: competition,
     fechaFin,
     fechaInicio,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   });
 }
 
@@ -43,6 +47,7 @@ const mostrarModificarConcursoSimple = async(req,res) => {
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   let fechaInicio = moment(competition.fechaInicio).add(1, 'day').format('L'); 
   let fechaFin = moment(competition.fechaFin).add(1, 'day').format('L'); 
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   console.log(fechaInicio);
   res.render('admin/modificar-concurso-simple',{
     title: 'Administrador',
@@ -51,7 +56,8 @@ const mostrarModificarConcursoSimple = async(req,res) => {
     concurso: competition,
     fechaInicio,
     fechaFin,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   });
 }
 

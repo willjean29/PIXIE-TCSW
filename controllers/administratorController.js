@@ -1,16 +1,18 @@
 const moment = require('moment');
 const Administrator = require('../models/Administrator');
-const {existsCompetitionSimple} = require('../middlewares/exists');
+const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 
 const mostrarTemplateAdministrador = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
   console.log(req.user._id)
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   console.log(existeConcursoSimple);
   res.render('admin/descargar-template',{
     title: 'Administrador',
     admin: administrator,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   })
 }
 const mostrarAdminArea = async(req,res) => {
@@ -18,13 +20,15 @@ const mostrarAdminArea = async(req,res) => {
   // console.log(req.user);
   // console.log("cargar datos");
   const administrator = await Administrator.findById(req.user._id).lean();
-  console.log(req.user._id)
+  console.log(req.user._id);
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   console.log(existeConcursoSimple);
   res.render('admin/admin-area',{
     title: 'Administrador',
     admin: administrator,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   })
 }
 
@@ -32,12 +36,14 @@ const mostrarInformacionAdministrador = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   let fechaNacimiento = moment(administrator.fechaNacimiento).add(1, 'day').format('L'); 
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   console.log(fechaNacimiento)
   res.render('admin/listar-admin',{
     title: 'Administrador',
     admin: administrator,
     fechaNacimiento,
-    existeConcursoSimple
+    existeConcursoSimple,
+    existeCatalogoBusiness
   })
 }
 

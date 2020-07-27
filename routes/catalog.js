@@ -6,4 +6,6 @@ router.get('/registrer',catalogController.mostrarCrearCatalogo);
 
 router.post('/registrer',uploadImage,catalogController.registrarCatalogoPremios);
 
+router.get('/list',catalogController.mostrarListaCatalogo);
+
 module.exports = router;
