@@ -106,7 +106,7 @@ function eliminarPremioID(event) {
 
 function editarPremioID(event) {
   event.preventDefault();
-  console.log("enviando");
+  console.log("actualizando prermios");
   const id = document.getElementById('id-prize').value;
   const url = `/prize/list/${id}`;
 
