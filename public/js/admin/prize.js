@@ -33,7 +33,6 @@ function mostrarEditarditarPremio(event){
     // actualizar datos
     nombre.value = "datos";
     precio.value = 123;
-    categoria.value = "calzado";
     puntos.value = 123;
     descripcion.value = "calzado";
 
@@ -45,7 +44,6 @@ function mostrarEditarditarPremio(event){
           const prize = resp.data.prize;
           nombre.value = prize.name;
           precio.value = prize.price;
-          categoria.value = "";
           puntos.value = prize.points;
           descripcion.value = prize.description;
           img.src = `/uploads/perfiles/prizes/${prize.image}`;
@@ -116,6 +114,7 @@ function editarPremioID(event) {
     description: data.get('categoria'),
     points: data.get('puntos'),
     price: data.get('precio'),
+    category: data.get('categoria')
   }
   clienteAxios.put(url,dataPremio)
     .then((resp) => {

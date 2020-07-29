@@ -6,6 +6,7 @@ const containerItems = document.getElementById("contenier-items");
 let contenedorPremios = document.getElementById('contenier-items');
 const formCatalogo = document.getElementById('form-catalogo');
 
+let selectCategorias;
 
 if(inputFileMultiIMG){
   inputFileMultiIMG.addEventListener('change',function() {
@@ -72,7 +73,23 @@ function crearItemPremio(file,index){
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="estado">Categoria</label>
-            <input required type="text" class="form-control" id="categoria" name="categoria">
+            <select required name="categoria" id="categoria-premios" class="form-control">
+              <option value="" disabled selected>-- Seleccionar --</option>
+              <option value="Belleza y Cuidado Personal">Belleza y Cuidado Personal</option>
+              <option value="Cuidado Infantil">Cuidado Infantil</option>
+              <option value="Dormitorio">Dormitorio</option>
+              <option value="Electrohogar">Electrohogar</option>
+              <option value="Hogar">Hogar</option>
+              <option value="Iluminación">Iluminación</option>
+              <option value="Juguetería">Juguetería</option>
+              <option value="Licores">Licores</option>
+              <option value="Limpieza">Limpieza</option>
+              <option value="Organización y Decoración">Organización y Decoración</option>
+              <option value="Perfumería">Perfumería</option>
+              <option value="Supermercado">Supermercado</option>
+              <option value="Tecnología">Tecnología</option>
+              <option value="Vestimenta">Vestimenta</option>
+            </select>
           </div>
           <div class="form-group col-md-6">
             <label for="tipo">Puntos</label>
@@ -87,7 +104,8 @@ function crearItemPremio(file,index){
     `;
     divItem.appendChild(divForm);
     containerItems.appendChild(divItem);
-
+    // seleccionamos el contendro de mostrarCategorias
+    selectCategorias = document.getElementById('categoria-premios');
   })
   reader.readAsDataURL(file);
 }
@@ -164,4 +182,8 @@ function registrarCatalogo(event){
 
   // console.log(dataCatalogo);
 }
+
+
+
+
 

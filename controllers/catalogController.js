@@ -2,6 +2,8 @@ const Catalog = require('../models/Catalog');
 const Administrator = require('../models/Administrator');
 const Prize = require('../models/Prize');
 const Business = require('../models/Business');
+const Category = require('../models/Category');
+
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 
 const mostrarCrearCatalogo = async(req,res) => {
@@ -22,9 +24,12 @@ const mostrarListaCatalogo = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
   const business = await Business.findOne({administrador: administrator._id}).lean(); 
   const catalog = await Catalog.findOne({business: business._id}).lean();
-  const prizes = await Prize.find({catalog: catalog._id}).lean();
+  const prizes = await Prize.find({catalog: catalog._id}).populate('category','name').lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
+  const categories = await Category.find().sort('name').lean();
+  console.log(prizes);
+  // console.log(categories);
   // console.log(existeCatalogoBusiness);
   // console.log(prizes)
   res.render('admin/listar-catalogo',{
@@ -32,7 +37,8 @@ const mostrarListaCatalogo = async(req,res) => {
     admin: administrator,
     premios: prizes,
     existeConcursoSimple,
-    existeCatalogoBusiness
+    existeCatalogoBusiness,
+    categories
   })
 }
 
@@ -40,6 +46,7 @@ const registrarCatalogoPremios = async(req,res) => {
   console.log(req.body)
   console.log(req.files)
   const id = req.user._id;
+  // return;
   const business = await Business.findOne({administrador: id}).catch((err) => {
     return res.status(500).json({
       ok: false,
@@ -77,6 +84,7 @@ const registrarCatalogoPremios = async(req,res) => {
           description: req.body.descripcion[index],
           points: req.body.puntos[index],
           price: req.body.precio[index],
+          category: req.body.categoria[index],
           catalog: catalog._id
         }
         registrarPremio(dataPremio);
@@ -88,6 +96,7 @@ const registrarCatalogoPremios = async(req,res) => {
         description: req.body.descripcion,
         points: req.body.puntos,
         price: req.body.precio,
+        category: req.body.categoria,
         catalog: catalog._id
       }
       registrarPremio(dataPremio);
@@ -102,7 +111,10 @@ const registrarCatalogoPremios = async(req,res) => {
 }
 
 const registrarPremio = async(dataPremio) => {
-  console.log(dataPremio)
+  console.log(dataPremio);
+  const categoryName = dataPremio.category;
+  const category = await Category.findOne({name: categoryName});
+  dataPremio.category = category._id;
   const prize = new Prize(dataPremio);
   await prize.save();
 }
