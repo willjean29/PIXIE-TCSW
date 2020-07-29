@@ -6,7 +6,6 @@ const containerItems = document.getElementById("contenier-items");
 let contenedorPremios = document.getElementById('contenier-items');
 const formCatalogo = document.getElementById('form-catalogo');
 
-const listaPremios = document.getElementById('lista-premios');
 
 if(inputFileMultiIMG){
   inputFileMultiIMG.addEventListener('change',function() {
@@ -28,10 +27,6 @@ if(formCatalogo){
   formCatalogo.addEventListener('submit',registrarCatalogo);
 }
 
-if(listaPremios){
-  console.log(listaPremios);
-  listaPremios.addEventListener('click',mostrarEditarditarPremio)
-}
 
 function crearItemPremio(file,index){
   let num = index + 1;
@@ -170,46 +165,3 @@ function registrarCatalogo(event){
   // console.log(dataCatalogo);
 }
 
-function mostrarEditarditarPremio(event){
-  console.log("click")
-  if((event.target.classList.contains('editar'))){
-    console.log("editar")
-
-    let id = event.target.dataset.id;
-    if(!id){
-      id = event.target.parentElement.dataset.id; 
-    }
-    console.log(id);
-    const nombre = document.getElementById('nombre');
-    const precio = document.getElementById('precio');
-    const categoria = document.getElementById('categoria');
-    const puntos = document.getElementById('puntos');
-    const descripcion = document.getElementById('descripcion');
-    const img = document.getElementById('prize-edit-img');
-    // actualizar datos
-    nombre.value = "datos";
-    precio.value = 123;
-    categoria.value = "calzado";
-    puntos.value = 123;
-    descripcion.value = "calzado";
-
-    const url = `/prize/list/${id}`;
-    clienteAxios.get(url)
-      .then((resp) => {
-        console.log(resp.data);
-        if(resp.data.ok){
-          const prize = resp.data.prize;
-          nombre.value = prize.name;
-          precio.value = prize.price;
-          categoria.value = "";
-          puntos.value = prize.points;
-          descripcion.value = prize.description;
-          img.src = `/uploads/perfiles/prizes/${prize.image}`;
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-
-  }
-}

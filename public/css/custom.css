@@ -34,3 +34,6 @@
 .close-container:active{
     outline: none;
 }
+.close{
+    outline: none !important;
+}

@@ -60,7 +60,7 @@
                             <td>S/ 250</td>
                             <td>
                                 <button type="button" id="button-edit" class="btn btn-warning editar" data-toggle="modal" data-target="#modalEdit" data-id="{{_id}}"><i class="fas fa-edit editar"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="btn btn-danger eliminar" data-id="{{_id}}"><i class="fas fa-trash-alt eliminar"></i></button>
                             </td>
                         </tr>
                         {{/each}}
@@ -176,9 +176,7 @@
                               <div class="items-premios" id="contenier-items">
                                 <div class="item-premio">
                                   <label for="inputState" class="w-100">Premio</label>
-                                  <button type="button" class="close close-container" aria-label="Close" id="close-container">
-                                    <span aria-hidden="true" id="close-item" class="close-item">&times;</span>
-                                  </button>
+
                                   <div class="form-row">
                                     <div class="form-group col-md-3 container-premio">
                                       <img src="" alt="" class="img-fluid img-thumbnail" id="prize-edit-img">
@@ -217,7 +215,8 @@
                             </div>
                             <div class="card-footer text-right">
                                 <input type="hidden" name="dir" value="prizes">
-                                <button type="submit" class="btn btn-primary">Registrar</button>
+                                <input type="hidden" name="id" id="id-prize">
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
                             </div>
                             
                         </form>
@@ -232,10 +231,7 @@
             <!-- /.content -->
 
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+
         </div>
       </div>
     </div>

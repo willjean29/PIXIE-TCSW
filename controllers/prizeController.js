@@ -22,6 +22,55 @@ const obtenerPremio = async(req,res) =>{
   });
 
 }
+
+const actualizarPremio = async(req,res) => {
+  console.log("actualizando")
+  const {id} = req.params;
+  const data = req.body;
+
+  const prize = await Prize.findByIdAndUpdate(id,data,{new: true, runValidators: true}).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!prize) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "Premio no registrado"
+    }
+  });
+
+  res.json({
+    ok: true,
+    prize
+  });
+}
+
+const eliminarPremio = async(req,res) => {
+  const {id} = req.params;
+  const prize = await Prize.findByIdAndDelete(id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!prize) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "Premio no registrado"
+    }
+  });
+
+  res.json({
+    ok: true,
+    prize
+  });
+}
 module.exports = {
-  obtenerPremio
+  obtenerPremio,
+  actualizarPremio,
+  eliminarPremio
 }
