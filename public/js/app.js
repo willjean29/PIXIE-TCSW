@@ -4,6 +4,7 @@ import business from './admin/business';
 import competition from './admin/competition';
 import catalog from './admin/catalog';
 import prize from './admin/prize';
+import validation from './admin/validation';
 import Swal from 'sweetalert2';
 import moment  from 'moment';
 import axios from 'axios';

@@ -81,7 +81,10 @@
                                 </span>
                             </div>
                           {{#if concurso.fechaInicio}}
-                            <input type="text" class="form-control fecha" placeholder="" name="fechaInicio" value="{{fechaInicio}}"/>
+                            <input type="text" class="form-control fecha" placeholder="" id="fecha-inicio" name="fechaInicio" value="{{fechaInicio}}"/>
+                            <div class="invalid-feedback" id="fecha-inicio-val">
+                              Ingrese una fecha valida.
+                            </div>
                           {{/if}}
                         </div>
                         <div class="input-group mb-3 col-md-6">
@@ -92,14 +95,17 @@
                                 </span>
                             </div>
                           {{#if concurso.fechaFin}}
-                            <input type="text" class="form-control fecha" placeholder="" name="fechaFin" value="{{fechaFin}}"/>
+                            <input type="text" class="form-control fecha" placeholder="" id="fecha-fin" name="fechaFin" value="{{fechaFin}}"/>
+                            <div class="invalid-feedback" id="fecha-fin-val">
+                              Ingrese una fecha valida.
+                            </div>
                           {{/if}}
                         </div>
                       </div>
                   </div>
                   <div class="card-footer text-right">
                       <input type="hidden" value="simple" name="tipo" id="tipo">
-                      <button type="submit" class="btn btn-primary">Actualizar</button>
+                      <button type="submit" class="btn btn-primary" id="submit-competition-modificar">Actualizar</button>
                   </div>
                   
               </form>

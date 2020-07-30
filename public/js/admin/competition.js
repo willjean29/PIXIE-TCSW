@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 const formCompetitionAgregar = document.getElementById('form-competition-agregar');
 const formCompetitionModificar = document.getElementById('form-competition-modificar');
 
+
 if(formCompetitionAgregar){
   formCompetitionAgregar.addEventListener('submit',agregarConcurso);
 }
