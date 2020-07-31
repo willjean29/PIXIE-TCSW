@@ -15,7 +15,7 @@
           {{#if admin.image}}
             <img src="/uploads/perfiles/admin/{{admin.image}}" class="img-circle elevation-2" alt="User Image" id="admin-img">
           {{else}}
-            <img src="/admin/admin-lte/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" id="admin-img">
+            <img src="/admin/admin-lte/img/avatar5.png" class="img-circle elevation-2" alt="User Image" id="admin-img">
           {{/if}}
         </div>
         <div class="info">
@@ -263,7 +263,7 @@
             </ul>
             {{/if}}
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview">  
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -271,25 +271,27 @@
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              {{#if existeCatalogoBusiness}}
-                {{!-- no se registra se agrega desde la lista --}}
-                <li class="nav-item">
-                  <a href="/catalog/list" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Ver Catalogo</p>
-                  </a>
-                </li>
-              {{else}}
-                <li class="nav-item">
-                  <a href="/catalog/registrer" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Crear Catálogo</p>
-                  </a>
-                </li>
-              {{/if}}
+            {{#if admin.estado}}
+              <ul class="nav nav-treeview">
+                {{#if existeCatalogoBusiness}}
+                  {{!-- no se registra se agrega desde la lista --}}
+                  <li class="nav-item">
+                    <a href="/catalog/list" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Ver Catalogo</p>
+                    </a>
+                  </li>
+                {{else}}
+                  <li class="nav-item">
+                    <a href="/catalog/registrer" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Crear Catálogo</p>
+                    </a>
+                  </li>
+                {{/if}}
 
-            </ul>
+              </ul>
+            {{/if}}
           </li>
           <li class="nav-header">Diversos</li>
           <li class="nav-item">

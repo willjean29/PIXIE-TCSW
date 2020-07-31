@@ -226,22 +226,7 @@ if(buttonCerrarSesion){
       cancelButtonText: 'No, cancelar'
     }).then((result) => {
       if (result.value) {
-       axios.get('/admin/cerrar-sesion')
-        .then((resp) => {
-          if(resp.data.ok){
-            console.log("cerrando sesion ....");
-            window.location.href = '/admin/login';
-          }
-        })
-        .catch((error) => {
-          Swal.fire({
-            title: 'Hubo un error',
-            text: "No se pudo cerrar sesión",
-            icon: 'error',
-            timer: 1500
-          })
-        })
-        console.log('cerrando sesion ...');
+       window.location.href = "/admin/cerrar-sesion";
       }
     })
   })

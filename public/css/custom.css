@@ -37,3 +37,8 @@
 .close{
     outline: none !important;
 }
+
+.invalid-feedback{
+    position: absolute;
+    bottom: -20px;
+}

@@ -67,7 +67,7 @@ function crearItemPremio(file,index){
           </div>
           <div class="form-group col-md-6">
             <label for="tipo">Precio</label>
-            <input required type="number" class="form-control" id="precio" name="precio" min="0">
+            <input required type="number" class="form-control" id="precio" name="precio" min="0" step="any">
           </div>
         </div>
         <div class="form-row">

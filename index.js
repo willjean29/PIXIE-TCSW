@@ -3,6 +3,7 @@ const express = require('express');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
+const createError = require('http-errors');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const conectarDB = require('./config/db');
@@ -97,6 +98,23 @@ app.use((req,res,next) => {
 // routes
 // app.use(routes);
 app.use(routes);
+
+// 404 página de error
+app.use((req,res,next) => {
+  next(createError(404, 'No encontrado'));
+})
+
+// administrar error
+app.use((error,req,res,next) => {
+  console.log(error.message)
+  res.locals.mensaje = error.message;
+  const status = error.status || 500;
+  res.locals.status = status;
+  res.status(status);
+  res.render('error',{
+    layout: 'auth'
+  });
+})
 
 // server running
 const PORT = process.env.PORT || 4000;

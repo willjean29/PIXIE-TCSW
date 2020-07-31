@@ -28,6 +28,7 @@ const mostrarWebMaster = (req,res) => {
 const adminsitradorAutenticado = (req,res,next) => {
 
   if(req.isAuthenticated()){
+    // res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, post-check=0, pre-check=0');
     return next();
   }
   return res.redirect('/admin/login');
@@ -71,14 +72,8 @@ const validarTokenAdmin = async(req,res) => {
 }
 
 const cerrarSesion = (req,res) => {
-  console.log("cerrando sesion");
-  req.session = null;
-  req.user = null; 
   req.logout();
-  res.json({
-    ok: true,
-    msg: "Cerrando Sesión"
-  })
+  res.redirect('/admin/login');
 }
 
 const autenticarAdministrador2 = async(req,res) => {
