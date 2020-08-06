@@ -34,6 +34,13 @@ const adminsitradorAutenticado = (req,res,next) => {
   return res.redirect('/admin/login');
 }
 
+const autenticarAdministrador = passport.authenticate('local',{
+  successRedirect: '/admin',
+  failureRedirect: '/admin/login',
+  failureFlash: true,
+  badRequestMessage: 'Ambos compos son obligatorios'
+})
+
 const validarTokenAdmin = async(req,res) => {
   let {token} = req.body; 
   console.log(token)
