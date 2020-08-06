@@ -19,12 +19,6 @@
     display: none;
 }
 
-.container-premio{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-}
-
 .close-container{
     right: 18px;
     position: absolute;
