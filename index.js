@@ -17,7 +17,7 @@ moment.locale('es');
 require('dotenv').config({path: "variables.env"});
 // inicializacion
 const app = express();
-
+//comentando para git
 // configuracion
 app.set('views',path.join(__dirname,'views'));
 let blocks = {};
