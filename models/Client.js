@@ -5,27 +5,27 @@ const clientSchema = mongoose.Schema({
     type: String,
     trim : true,
     required: true
-  },
+  },//nombre
   lastName: {
     type: String,
     trim : true,
     required: true
-  },
+  },//apellido
   dni: {
     type: String,
     trim : true,
     required: true
-  },
+  },identificacion
   email: {
     type: String,
     trim : true,
     required: true
-  },
+  },//correo
   password: {
     type: String,
     trim : true,
     required: trues
-  },
+  },//contraseña
   image: {
     type: String,
     trim : true
@@ -33,11 +33,11 @@ const clientSchema = mongoose.Schema({
   token: {
     type: String,
     trim : true,
-  },
+  },//imagen
   estado:{
     type: Boolean,
     default: false
-  },
+  },//status
   puntuacion:[{
     idBusiness:{
       type: mongoose.Schema.Types.ObjectId,
@@ -52,7 +52,7 @@ const clientSchema = mongoose.Schema({
     idBusiness:{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Business"
-    },
+    },//bd para premios
     idPremio:{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Prize'

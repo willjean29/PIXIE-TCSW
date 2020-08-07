@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Administrador | Login</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/admin/admin-lte/img/icon-prize.png" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/admin/admin-lte/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    {{!-- Toastr --}}
+    <link rel="stylesheet" href="/admin/plugins/toastr/toastr.min.css">
+    {{! Styles Block}}
+    {{{block 'styles'}}}
+</head>
+<body class="hold-transition login-page lockscreen">
+    {{#if mensajes}}
+      <div class="alertas">
+          {{#mostrarAlertas mensajes}}
+          {{/mostrarAlertas}}
+      </div>
+    {{/if}}
+    {{{body}}}
+
+     <!-- jQuery -->
+    <script src="/admin/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/admin/admin-lte/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/admin/admin-lte/js/demo.js"></script>
+    {{!-- Toastr --}}
+    <script src="/admin/plugins/toastr/toastr.min.js"></script>
+    <script src="/dist/bundle.js"></script>
+    {{! Scripts block}}
+    {{{block "scripts"}}}
+
+</body>
+</html>
