@@ -1,4 +1,4 @@
-const Business = require('../models/Business');
+﻿const Business = require('../models/Business');
 const Administrator = require('../models/Administrator');
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 const axios = require('axios');
@@ -14,7 +14,7 @@ const mostrarRegistroEmpresa = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   })
-}
+}//mostrara el registro de la empresa
 
 const mostrarInformacionEmpresa = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
