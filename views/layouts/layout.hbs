@@ -56,14 +56,16 @@
     {{!-- datapicker --}}
     <script src="/admin/plugins/datapicker/bootstrap-datepicker.min.js"></script>
     <script>
-  
+        
+        // configuarar datepicker
         $('.fecha').datepicker({
             format: 'dd/mm/yyyy',
             language: 'es',
             orientation: 'auto',
             autoclose: true,
         });
-
+        
+        // configurar tooltips
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         });
