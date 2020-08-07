@@ -97,6 +97,6 @@ administratorSchema.methods = {
   compararPassword: function(password) {
     return bcrypt.compareSync(password,this.password);
   }
-}
+}//Metodo para el administrador
 
 module.exports = mongoose.model("Administrator",administratorSchema);
