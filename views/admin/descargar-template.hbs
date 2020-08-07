@@ -27,39 +27,49 @@
           <div class="card col-12">
             <div class="card-header d-flex justify-content-between align-items-center custom">
                 <h3 class="card-title">Lista de ventas registradas</h3>
-                <a href="/uploads/documents/Template.csv" class="btn btn-primary"><i class="fas fa-download mx-1"></i>Descargar</a>
+                <div class="container-button">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-upload mx-1"></i>Subir Data
+                  </button>
+                  <a href="/uploads/documents/Template.csv" class="btn btn-primary"><i class="fas fa-download mx-1"></i>Descargar</a>
+                </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Nombres</th>
-                  <th>Apellidos</th>
-                  <th>Método Pago</th>
-                  <th>Total Venta</th>
-                  <th>Fecha Venta</th>
+                  <th>Icono</th>
+                  <th>Nombre</th>
+                  <th>Cargado</th>
+                  <th>Tipo</th>
+                  <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <td>0001</td>
-                    <td>Jean Williams</td>
-                    <td>Osco Pupe</td>
-                    <td>Online</td>
-                    <td>S/ 250</td>
-                    <td>17/07/2020</td>
-                    </tr>
+                    {{#if filesVentas}}
+                      {{#each filesVentas}}
+                        <tr>
+                          <td class="csv-icon"> <i class="fas fa-file-csv"></i></td>
+                          <td>{{name}}</td>
+                          <td>{{estado}}</td>
+                          <td>{{type}}</td>
+                          <td>
+                            <button class="btn btn-warning"><i class="fas fa-power-off"></i></button>
+                            <a href="/file/ventas/{{_id}}" class="btn btn-success" data-fileId="{{_id}}"><i class="fas fa-eye"></i></a>
+                          </td>
+                        </tr>
+                      {{/each}}
+                    {{/if}}
+
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>ID</th>
-                  <th>Nombres</th>
-                  <th>Apellidos</th>
-                  <th>Método Pago</th>
-                  <th>Total Venta</th>
-                  <th>Fecha Venta</th>
+                  <th>Icono</th>
+                  <th>Nombre</th>
+                  <th>Cargado</th>
+                  <th>Tipo</th>
+                  <th>Acciones</th>
                 </tr>
                 </tfoot>
               </table>
@@ -73,6 +83,39 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Registrar Clientes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="tab-pane" id="settings">
+              <form class="form-horizontal"  method="POST" id="form-file-csv" enctype="multipart/form-data">
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input required type="file" class="custom-file-input" id="file-csv" aria-describedby="btn-enviar-file" name="csv">
+                    <label class="custom-file-label" for="file-csv" id="label-csv">Ingresar Archivo</label>
+                  </div>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" id="btn-enviar-file">Enviar</button>
+                  </div>
+                </div>
+              </form>
+              <div class="card my-2 container-preview-img" id="container-preview-img">
+                <img src="" class="img-preview" alt="avatar" id="preview-img">
+                <i class="fas fa-file-csv img-not-icon" id="default-img"></i>
+              </div>
+              <progress max="100" value="0" class="progress-file" id="progress-bar-file"></progress>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 {{#extend 'scripts'}}
     <!-- DataTables -->
     <script src="/admin/plugins/datatables/jquery.dataTables.js"></script>

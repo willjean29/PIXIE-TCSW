@@ -228,11 +228,39 @@ const modificarCompetition = async(req,res) => {
   });
 }
 
+const activarCompetition = async (req,res) => {
+  console.log("hola")
+  const id = req.params.id;
+  console.log(id)
+  const competition = await Competition.findById(id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!competition) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "Concurso no se encuentra registrado"
+    }
+  })
+
+  competition.estado = true;
+  await competition.save();
+
+  res.json({
+    ok: true,
+    competition
+  })
+}
+
 module.exports = {
   mostrarCrearConmcursoSimple,
   registrarConcurso,
   mostrarConcursoSimple,
   mostrarModificarConcursoSimple,
   agregarAvatarCompetition,
-  modificarCompetition
+  modificarCompetition,
+  activarCompetition
 }

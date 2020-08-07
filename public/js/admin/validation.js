@@ -1,6 +1,6 @@
 import moment  from 'moment';
 moment.locale('es');
-console.log("hola desde validacion");
+
 
 let fechaInicio,fechFin;
 let hoy = moment().format('YYYY-MM-DD');

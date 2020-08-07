@@ -38,4 +38,8 @@ router.post('/simple/avatar',
   competitionController.agregarAvatarCompetition
 );
 
+router.put('/simple/modificar/:id',
+  // authController.adminsitradorAutenticado,
+  competitionController.activarCompetition
+);
 module.exports = router;

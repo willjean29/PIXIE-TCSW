@@ -1,17 +1,18 @@
 import clienteAxios from '../config/clienteAxios';
-import {obtenerToken} from '../config/config';
-import tokenAuth from '../config/token';
 import Swal from 'sweetalert2';
 const formCompetitionAgregar = document.getElementById('form-competition-agregar');
 const formCompetitionModificar = document.getElementById('form-competition-modificar');
-
-
+const buttonActivarConcurso = document.getElementById('btn-activar');
 if(formCompetitionAgregar){
   formCompetitionAgregar.addEventListener('submit',agregarConcurso);
 }
 
 if(formCompetitionModificar){
   formCompetitionModificar.addEventListener('submit',modificarConcurso);
+}
+
+if(buttonActivarConcurso){
+  buttonActivarConcurso.addEventListener('click',activarConcurso);
 }
 
 
@@ -99,6 +100,36 @@ function modificarConcurso(event){
       Swal.fire({
         title: 'Hubo un error',
         text: msg,
+        icon: 'error',
+        timer: 1500
+      })
+    })
+}
+
+function activarConcurso(event){
+  console.log("activar concurso");
+  const id = event.target.dataset.id;
+  const url = `/competition/simple/modificar/${id}`;
+  console.log(url);
+  clienteAxios.put(url,id)
+    .then((resp) => {
+      console.log(resp.data)
+      if(resp.data.ok){
+        Swal.fire({
+          title: 'Correcto',
+          text: "Se realizo con exito",
+          icon: 'success',
+          timer: 1500
+        })
+        setTimeout(() => {
+          location.reload();
+        }, 100);
+      }
+    })
+    .catch((error) => {
+      Swal.fire({
+        title: 'Hubo un error',
+        text: "No se pudo activar",
         icon: 'error',
         timer: 1500
       })

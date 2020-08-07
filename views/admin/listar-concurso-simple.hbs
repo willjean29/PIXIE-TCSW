@@ -68,8 +68,16 @@
                     
                   </li>
                 </ul>
-
-                <a href="#" class="btn btn-primary btn-block"><b>Activar</b></a>
+                {{#if existeCatalogoBusiness}}
+                  {{#if concurso.estado}}
+                    <button class="btn btn-primary btn-block" disabled id="btn-activar" data-id="{{concurso._id}}"><b>Activar</b></button>
+                  {{else}}
+                    <button class="btn btn-primary btn-block" id="btn-activar" data-id="{{concurso._id}}"><b>Activar</b></button>
+                  {{/if}}
+                {{else}}
+                  <button class="btn btn-primary btn-block" disabled id="btn-activar" data-id="{{concurso._id}}"><b>Activar</b></button>
+                {{/if}}
+                
               </div>
               <!-- /.card-body -->
             </div>
@@ -192,8 +200,19 @@
                         <h5 class="card-title font-weight-bold">Acciones de Concurso</h5>
                         <p class="card-text">Puede realizar estas acciones solo cuando el concurso no este activo o haya caducado</p>
                         <div class="row justify-content-between">
-                          <a href="/competition/simple/modificar" class="btn btn-warning"><i class="fas fa-edit mx-1"></i>Editar Concurso</a>
-                          <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt mx-1"></i>Eliminar Concurso</a>
+
+                          {{#if concurso.estado}}
+                            <button disabled class="btn btn-warning"><i class="fas fa-edit mx-1"></i>Editar Concurso</button>
+                          {{else}}
+                            <a href="/competition/simple/modificar" class="btn btn-warning"><i class="fas fa-edit mx-1"></i>Editar Concurso</a>
+                          {{/if}}
+                          
+                          {{#if concurso.estado}}
+                            <button disabled class="btn btn-danger"><i class="fas fa-trash-alt mx-1"></i>Eliminar Concurso</button>
+                          {{else}}
+                            <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt mx-1"></i>Eliminar Concurso</a>
+                          {{/if}}
+                    
                         </div>
                       </div>
                       <img src="https://blog.hotmart.com/blog/2018/02/BLOG_J%C3%B3venes-emprendedores-670x419.png" class="card-img-top" alt="...">

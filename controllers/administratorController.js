@@ -1,5 +1,7 @@
 const moment = require('moment');
 const Administrator = require('../models/Administrator');
+const Business = require('../models/Business');
+const File = require('../models/File');
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 
 const mostrarTemplateAdministrador = async(req,res) => {
@@ -7,12 +9,15 @@ const mostrarTemplateAdministrador = async(req,res) => {
   console.log(req.user._id)
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
+  const business = await Business.findOne({administrador: req.user._id});
+  const filesVentas = await File.find({business: business._id}).lean();
   console.log(existeConcursoSimple);
   res.render('admin/descargar-template',{
     title: 'Administrador',
     admin: administrator,
     existeConcursoSimple,
-    existeCatalogoBusiness
+    existeCatalogoBusiness,
+    filesVentas
   })
 }
 const mostrarAdminArea = async(req,res) => {
