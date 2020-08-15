@@ -1,0 +1,134 @@
+{{#extend 'styles'}}
+
+{{/extend}}
+   
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Información de Mi Empresa</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/admin">Inciio</a></li>
+              <li class="breadcrumb-item active">Perfil Empresa</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  {{#if empresa.imagen}}
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="/uploads/perfiles/business/{{empresa.imagen}}"
+                       alt="User profile picture">
+                  {{else}}
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="/admin/admin-lte/img/company-icon.png"
+                       alt="User profile picture">
+                  {{/if}}
+
+                </div>
+
+
+                <a href="#" class="btn btn-primary btn-block"><b>Activar</b></a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+          </div>
+          
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="active tab-pane" id="activity">
+                    <table class="table table-bordered">
+                      <thead>                  
+                        <tr>
+                          <th style=""><i class="fas fa-caret-square-down"></i></th>
+                          <th>Dato</th>
+                          <th>Caracteristicas</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><i class="fas fa-building"></i></td>
+                          <th>Nombre Comercial</th>
+                          {{#if empresa.nombreComercial}}
+                            <td>{{empresa.nombreComercial}}</td>
+                          {{/if}}
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-file-contract"></i></td>
+                          <th>Razon Social</th>
+
+                          {{#if empresa.razonSocial}}
+                            <td>{{empresa.razonSocial}}</td>
+                          {{/if}}
+
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-map-marker"></i></td>
+                          <th>Provincia</th>
+                          {{#if empresa.provincia}}
+                            <td>{{empresa.provincia}}</td>
+                          {{/if}}
+
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-map-marker"></i></td>
+                          <th>Departamento</th>
+                          {{#if empresa.departamento}}
+                            <td>{{empresa.departamento}}</td>
+                          {{/if}}
+
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-map-marker"></i></td>
+                          <th>Dsitrito</th>
+                          {{#if empresa.distrito}}
+                            <td>{{empresa.distrito}}</td>
+                          {{/if}}
+
+                        </tr>
+                        <tr>
+                          <td><i class="fas fa-map-marker-alt"></i></td>
+                          <th>Dirección</th>
+                          {{#if empresa.direccion}}
+                            <td>{{empresa.direccion}}</td>
+                          {{/if}}
+
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+
+{{#extend 'scripts'}}
+
+{{/extend}}
