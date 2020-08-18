@@ -3,10 +3,12 @@ const logger = new Logger('app');
 const microprofiler = require('microprofiler');
 const File = require('../models/File');
 const Business = require('../models/Business');
+const Administrator = require('../models/Administrator');
 const Competition = require('../models/Competition');
 const Client = require('../models/Client');
 const {leerCSV} = require('../utils/leerCSV');
 const {puntosSoles} = require('../utils/points');
+const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 
 const registrarArchivo = async(req,res) => {
   let start = microprofiler.start();
@@ -48,6 +50,9 @@ const registrarArchivo = async(req,res) => {
 
 const obtenerDatosArchivo = async(req,res) => {
   let start = microprofiler.start();
+  const administrator = await Administrator.findById(req.user._id).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   const id = req.params.id;
   const file = await File.findById(id).catch((err) => {
     return res.status(400).json({
@@ -66,6 +71,10 @@ const obtenerDatosArchivo = async(req,res) => {
   const datos = leerCSV(file.name);
 
   res.render('admin/listar-file-detalles',{
+    title: "Detalles Archivo",
+    admin: administrator,
+    existeConcursoSimple,
+    existeCatalogoBusiness,
     datos
   })
   let elapsedUs = microprofiler.measureFrom(start,'code');
@@ -158,18 +167,21 @@ const cargarDataCliente = async (req,res) => {
 
 const actualizarClientes = async(id) => {
   const business = await Business.findById(id);
+  let clientesActuales = [];
   const clients = await Client.find();
-  clients.forEach((client) => {
-    client.puntuacion.forEach((info) => {
-      if(JSON.stringify(info.idBusiness) === JSON.stringify(business.id)){
-        let clientes = {
-          idCliente: client.id
-        }
-        business.clientes.push(clientes);
-      }
-    })
-  })
 
+  for (let client of clients) {
+    let puntuacion = client.puntuacion 
+    for (info of puntuacion) {
+      if(JSON.stringify(info.idBusiness) === JSON.stringify(business._id)){
+        let clientes = {
+          idCliente: client._id
+        }
+        clientesActuales.push(clientes);
+      }
+    }
+  }
+  business.clientes = clientesActuales;
   await business.save();
 }
 module.exports = {
