@@ -1,17 +1,21 @@
 const moment = require('moment');
+const Logger = require('../config/loggerService');
+const logger = new Logger('app');
+const microprofiler = require('microprofiler');
 const Administrator = require('../models/Administrator');
 const Business = require('../models/Business');
 const File = require('../models/File');
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 
 const mostrarTemplateAdministrador = async(req,res) => {
+  let start = microprofiler.start();
   const administrator = await Administrator.findById(req.user._id).lean();
-  console.log(req.user._id)
+
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   const business = await Business.findOne({administrador: req.user._id});
   const filesVentas = await File.find({business: business._id}).lean();
-  console.log(existeConcursoSimple);
+
   res.render('admin/descargar-template',{
     title: 'Administrador',
     admin: administrator,
@@ -19,30 +23,34 @@ const mostrarTemplateAdministrador = async(req,res) => {
     existeCatalogoBusiness,
     filesVentas
   })
+  let elapsedUs = microprofiler.measureFrom(start,'code');
+  let stats = microprofiler.getStats('code');
+  logger.debug('Procesar request mostrarTemplateAdministrador',stats)
 }
 const mostrarAdminArea = async(req,res) => {
-  // console.log(req.session);
-  // console.log(req.user);
-  // console.log("cargar datos");
+  let start = microprofiler.start();
   const administrator = await Administrator.findById(req.user._id).lean();
-  console.log(req.user._id);
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
-  console.log(existeConcursoSimple);
+  // logger.debug('Procesar request');
   res.render('admin/admin-area',{
     title: 'Administrador',
     admin: administrator,
     existeConcursoSimple,
     existeCatalogoBusiness
-  })
+  });
+  let elapsedUs = microprofiler.measureFrom(start,'code');
+  let stats = microprofiler.getStats('code');
+  logger.debug('Procesar request mostrarAdminArea',stats)
 }
 
 const mostrarInformacionAdministrador = async(req,res) => {
+  let start = microprofiler.start();
   const administrator = await Administrator.findById(req.user._id).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   let fechaNacimiento = moment(administrator.fechaNacimiento).add(1, 'day').format('L'); 
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
-  console.log(fechaNacimiento)
+
   res.render('admin/listar-admin',{
     title: 'Administrador',
     admin: administrator,
@@ -50,10 +58,13 @@ const mostrarInformacionAdministrador = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   })
+  let elapsedUs = microprofiler.measureFrom(start,'code');
+  let stats = microprofiler.getStats('code');
+  logger.debug('Procesar request mostrarInformacionAdministrador',stats)
 }
 
 const agregarAdministrador = async(req,res) => {
-  console.log(req.body)
+
   const data = req.body;
   const {dni,email} = req.body;
   // validar que no exista alguien registrado con el mismo dni o correo
@@ -112,7 +123,7 @@ const obtenerAdministratorID = async(req,res) => {
 }
 
 const obtenerAdministradorActual = async(req,res) => {
-  // console.log(req.administrator);
+
   const administrator = await Administrator.findById(req.administrator._id).catch((err) => {
     return res.status(500).json({
       ok: false,
@@ -134,11 +145,9 @@ const obtenerAdministradorActual = async(req,res) => {
 }
 
 const modificarAdministrador = async(req,res) => {
-  // console.log(req.user);
-  console.log(req.body)
+
   const id = req.user._id;
   
-  console.log("modificar admin nodejs")
   const data = req.body;
   const administrator = await Administrator.findByIdAndUpdate(id,data,{new: true, runValidators: true})
     .catch((err) => {
@@ -162,8 +171,7 @@ const modificarAdministrador = async(req,res) => {
 
 const agregarAvatarAdministrador = async(req,res) => {
   const id = req.user._id;
-  console.log(id);
-  console.log(req.file)
+
   const administrator = await Administrator.findById(id).catch((err) => {
     return res.status(400).json({
       ok: false,

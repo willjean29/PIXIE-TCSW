@@ -6,6 +6,8 @@ const formFileCSV = document.getElementById('form-file-csv');
 const buttonEnviarFileCSV = document.getElementById('btn-enviar-file');
 const progressBarFile = document.getElementById('progress-bar-file');
 
+const tablaArchivos = document.getElementById('tabla-archivos');
+
 if(inputFileCSV){
   inputFileCSV.addEventListener('change',function() {
     const file = this.files[0];
@@ -33,6 +35,10 @@ if(inputFileCSV){
 
 if(formFileCSV){
   formFileCSV.addEventListener('submit', enviarArchivo);
+}
+
+if(tablaArchivos){
+  tablaArchivos.addEventListener('click',cargarDatosClientes)
 }
 
 function enviarArchivo(event) {
@@ -77,3 +83,17 @@ function enviarArchivo(event) {
  
 }
 
+function cargarDatosClientes(event){
+  if(event.target.classList.contains('btn-carga')){
+    const id = event.target.dataset.file;
+    console.log(id)
+    const url = `/file/clientes/${id}`;
+    clienteAxios.get(url)
+      .then((resp) => {
+        console.log(resp)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+}

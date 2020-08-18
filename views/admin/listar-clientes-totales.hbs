@@ -1,0 +1,120 @@
+{{#extend 'styles'}}
+    <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+{{/extend}}   
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Lista de Clientes</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/admin">Inicio</a></li>
+              <li class="breadcrumb-item active">Clientes</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+
+          <div class="card col-12">
+            <div class="card-header d-flex justify-content-between align-items-center custom">
+                <h3 class="card-title">Lista de Clientes</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="tabla-clientes" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>DNI</th>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Puntos</th>
+                  <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {{#if clientes}}
+                    {{#each clientes}}
+                      <tr>
+                        <td>{{dni}}</td>
+                        <td>{{name}}</td>
+                        <td>{{lastName}}</td>
+                        <td>{{puntuacion}} <i class="fas fa-circle"></i></td>
+                        {{#if estado}}
+                          <td class="text-center">
+                            <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="La cuenta del cleinte aun no esta activa">
+                              <i class="fas fa-smile-beam text-succes">
+                            </button>
+                          </td>
+                        {{else}}
+                          <td class="text-center">
+                            <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="La cuenta del cleinte aun no esta activa">
+                              <i class="fas fa-frown text-danger"></i>
+                            </button>
+                          </td>
+                        {{/if}}
+
+                      </tr>
+                    {{/each}}
+                  {{/if}}
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>DNI</th>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Puntos</th>
+                  <th>Estado</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+{{#extend 'scripts'}}
+    <!-- DataTables -->
+    <script src="/admin/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script>
+    $(function () {
+        $('#tabla-clientes').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+            'language' : {
+                paginate: {
+                  next: 'Siguiente',
+                  previous: 'Anterior',
+                  last: 'Último',
+                  first: 'Primero' 
+                },
+                info: "Mostrando _START_ a _END_ de _TOTAL_ resultados",
+                emptyTable: 'No hay registro',
+                infoempty: '0 Registro',
+                search: 'Buscar: ',
+            }
+        });
+    });
+    </script>
+{{/extend}}

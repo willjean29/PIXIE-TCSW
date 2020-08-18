@@ -1,0 +1,92 @@
+15:15:41 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:15:42 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:16:31 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:16:32 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:17:41 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:17:42 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:17:46 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request | data:{"key":"code","requests":1,"timeUs":889385.2,"meanTimeUs":"889385.200","rps":1} | 
+15:18:50 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request | data:{"key":"code","requests":2,"timeUs":1028315.6,"meanTimeUs":"514157.800","rps":2} | 
+15:20:07 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:20:08 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:20:09 GMT-0500 (GMT-05:00)2020-8-15 | ERROR | app.log | Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+15:20:14 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request | data:{"key":"code","requests":1,"timeUs":911490.501,"meanTimeUs":"911490.501","rps":1} | 
+15:20:16 GMT-0500 (GMT-05:00)2020-8-15 | ERROR | app.log | Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+15:20:33 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request | data:{"key":"code","requests":2,"timeUs":1039263.201,"meanTimeUs":"519631.601","rps":2} | 
+15:21:07 GMT-0500 (GMT-05:00)2020-8-15 | ERROR | app.log | Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+15:23:31 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:23:32 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:24:31 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:24:32 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:25:02 GMT-0500 (GMT-05:00)2020-8-15 | ERROR | app.log | Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+15:25:05 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request | data:{"key":"code","requests":1,"timeUs":905082.7,"meanTimeUs":"905082.700","rps":1} | 
+15:26:07 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:26:08 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:26:16 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:26:17 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:26:44 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:26:49 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:26:54 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:26:55 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:27:06 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:27:07 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:28:03 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:28:04 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:28:34 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:28:40 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:28:57 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:28:58 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:29:30 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:29:31 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:30:17 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:30:18 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:31:26 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:31:32 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:32:12 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarAdminArea | data:{"key":"code","requests":1,"timeUs":928307.001,"meanTimeUs":"928307.001","rps":1} | 
+15:32:24 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":2,"timeUs":2058840.401,"meanTimeUs":"1029420.201","rps":1} | 
+15:33:04 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request registrarArchivo | data:{"key":"code","requests":3,"timeUs":2324590.5,"meanTimeUs":"774863.500","rps":1} | 
+15:33:06 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":4,"timeUs":3474445.799,"meanTimeUs":"868611.450","rps":1} | 
+15:33:39 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request cargarDataCliente | data:{"key":"code","requests":5,"timeUs":5580962.299000001,"meanTimeUs":"1116192.460","rps":1} | 
+15:33:59 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarInformacionAdministrador | data:{"key":"code","requests":6,"timeUs":6463127.799000001,"meanTimeUs":"1077187.967","rps":1} | 
+15:34:47 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:34:48 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:35:08 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:35:09 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:35:31 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:35:32 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:35:54 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:35:55 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:36:02 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarAdminArea | data:{"key":"code","requests":1,"timeUs":5491195.001,"meanTimeUs":"5491195.001","rps":0} | 
+15:36:03 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarAdminArea | data:{"key":"code","requests":2,"timeUs":10715674.701000001,"meanTimeUs":"5357837.351","rps":0} | 
+15:36:25 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Coriendo en el puuerto 4000 | data:{"success":true} | 
+15:36:26 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:36:43 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarClientesTotales | data:{"key":"code","requests":1,"timeUs":5059285.7,"meanTimeUs":"5059285.700","rps":0} | 
+15:37:02 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+15:37:03 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:37:18 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+15:37:19 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:48:19 GMT-0500 (GMT-05:00)2020-8-15 | ERROR | app.log | Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+15:49:42 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+15:49:43 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+15:49:44 GMT-0500 (GMT-05:00)2020-8-15 | ERROR | app.log | Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+15:50:35 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarAdminArea | data:{"key":"code","requests":1,"timeUs":876090.599,"meanTimeUs":"876090.599","rps":1} | 
+15:51:25 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarClientesTotales | data:{"key":"code","requests":2,"timeUs":5791974.799000001,"meanTimeUs":"2895987.400","rps":0} | 
+15:54:04 GMT-0500 (GMT-05:00)2020-8-15 | ERROR | app.log | Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:34:38 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+16:34:39 GMT-0500 (GMT-05:00)2020-8-15 | INFO | app.log | Database Conextada | data:{"success":true} | 
+16:36:58 GMT-0500 (GMT-05:00)2020-8-15 | ERROR | app.log | Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:37:45 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarAdminArea | data:{"key":"code","requests":1,"timeUs":871214.8,"meanTimeUs":"871214.800","rps":1} | 
+16:38:42 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":2,"timeUs":2008450,"meanTimeUs":"1004225.000","rps":1} | 
+16:39:30 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request registrarArchivo | data:{"key":"code","requests":3,"timeUs":2276721.101,"meanTimeUs":"758907.034","rps":1} | 
+16:39:33 GMT-0500 (GMT-05:00)2020-8-15 | DEBUG | app.log | Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":4,"timeUs":3431966.5999999996,"meanTimeUs":"857991.650","rps":1} | 
+16:44:17 GMT-0500 (GMT-05:00)2020-8-15 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+16:44:24 GMT-0500 (GMT-05:00)2020-8-15 | INFO| Database Conextada | data:{"success":true} | 
+17:29:02 GMT-0500 (GMT-05:00)2020-8-15 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+17:29:03 GMT-0500 (GMT-05:00)2020-8-15 | INFO| Database Conextada | data:{"success":true} | 
+23:31:22 GMT-0500 (GMT-05:00)2020-8-17 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+23:31:25 GMT-0500 (GMT-05:00)2020-8-17 | INFO| Database Conextada | data:{"success":true} | 
+23:31:42 GMT-0500 (GMT-05:00)2020-8-17 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+23:31:43 GMT-0500 (GMT-05:00)2020-8-17 | INFO| Database Conextada | data:{"success":true} | 
+23:32:02 GMT-0500 (GMT-05:00)2020-8-17 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+23:32:03 GMT-0500 (GMT-05:00)2020-8-17 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+23:32:33 GMT-0500 (GMT-05:00)2020-8-17 | DEBUG| Procesar request mostrarAdminArea | data:{"key":"code","requests":1,"timeUs":898431.999,"meanTimeUs":"898431.999","rps":1} | 
+23:32:53 GMT-0500 (GMT-05:00)2020-8-17 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":2,"timeUs":2036764.599,"meanTimeUs":"1018382.299","rps":1} | 
