@@ -1,3 +1,4 @@
+//estableciendo variables
 const mongoose = require('mongoose');
 const express = require('express');
 const routes = require('./routes');
@@ -14,10 +15,10 @@ const path = require('path');
 const moment = require('moment');
 moment.locale('es');  
 require('dotenv').config({path: "variables.env"});
-// initializations
+// inicializacion
 const app = express();
-
-// settings
+//comentando para git
+// configuracion
 app.set('views',path.join(__dirname,'views'));
 let blocks = {};
 app.engine('hbs',exphbs({
@@ -61,7 +62,7 @@ app.engine('hbs',exphbs({
           html += `<div class="${categoria} alerta" id="alerta-error" style="display: none;">
             ${error}
           </div>`
-        })
+        })//seleccionando genero
       }
       
       return opciones.fn().html = html;

@@ -320,12 +320,21 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/admin/template" class="nav-link">
-              <i class="nav-icon fas fa-file-download"></i>
-              <p>
-                Descargas
-              </p>
-            </a>
+            {{#if admin.estado}}
+              <a href="/admin/template" class="nav-link" data-toggle="tooltip" data-placement="top" title="Cargue sus archivos de venta para que el sistema actualize el status de los clientes">
+                <i class="nav-icon fas fa-file-download"></i>
+                <p>
+                  Archivos
+                </p>
+              </a>
+            {{else}}
+              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top" title="Registre una empresa para habilitar esta opcion">
+                <i class="nav-icon fas fa-file-download"></i>
+                <p>
+                  Archivos
+                </p>
+              </a>
+            {{/if}}
           </li>
         </ul>
       </nav>

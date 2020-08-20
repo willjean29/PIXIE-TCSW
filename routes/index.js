@@ -26,5 +26,8 @@ app.use('/prize',require('./prize'));
 // endpoints for categories
 app.use('/category',require('./category'));
 
+// endpoints for files
+app.use('/file',require('./file'));
+
 
 module.exports = app;
