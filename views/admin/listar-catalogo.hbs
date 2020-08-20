@@ -169,7 +169,64 @@
                           <h3 class="card-title">Llenar Formulario</h3>
                         </div>
                         <!-- /.card-header -->
-                        
+                        <!-- form start -->
+                        <form role="form" id="form-catalogo-edit" method="POST" action="/catalog/registrer" enctype="multipart"> 
+                            <div class="card-body">
+                              <div class="items-premios" id="contenier-items">
+                                <div class="item-premio">
+                                  <label for="inputState" class="w-100">Premio</label>
+
+                                  <div class="form-row">
+                                    <div class="form-group col-md-3 container-premio">
+                                      <img src="" alt="" class="img-fluid img-thumbnail" id="prize-edit-img">
+                                    </div>
+                                    <div class="form-group col-md-9">
+                                      <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                          <label for="estado">Nombre</label>
+                                          <input required type="text" class="form-control" id="nombre" name="nombre">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                          <label for="tipo">Precio</label>
+                                          <input required type="number" class="form-control" id="precio" name="precio" min="0">
+                                        </div>
+                                      </div>
+                                      <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                          <label for="estado">Categoria</label>
+                                          {{#if categories}}
+                                          <select required name="categoria" id="categoria-premios" class="form-control">
+                                            <option value="" disabled selected>-- Seleccionar --</option>
+                                            {{#each categories}}
+                                            <option value="{{name}}">{{name}}</option>
+                                            {{/each}}
+                                          </select>
+                                          {{/if}}
+
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                          <label for="tipo">Puntos</label>
+                                          <input required type="number" class="form-control" id="puntos" name="puntos" min="0">
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="direccion">Descripción</label>
+                                        <textarea name="descripcion" required  class="form-control" id="descripcion" cols="30"></textarea>
+                                      </div>
+                                    </div> 
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            </div>
+                            <div class="card-footer text-right">
+                                <input type="hidden" name="dir" value="prizes">
+                                <input type="hidden" name="id" id="id-prize">
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
+                            </div>
+                            
+                        </form>
                         
                       </div>
                       <!-- /.card -->
