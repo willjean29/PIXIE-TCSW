@@ -1,3 +1,5 @@
+/*Functionality : Conection to database */
+
 const mongoose = require('mongoose');
 require('dotenv').config({path : "variables.env" });
 const conectarDB = async() =>{
