@@ -75,6 +75,11 @@
                               <button data-file="{{_id}}" class="btn btn-warning btn-carga" data-toggle="tooltip" data-placement="top" title="Procesar los datos del archivo" id="btn-cargar"><i data-file="{{_id}}" class="fas fa-power-off btn-carga"></i></button>
                             {{/if}}
                             <a href="/file/ventas/{{_id}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Ver detalles del archivo"><i class="fas fa-eye"></i></a>
+                            {{#if estado}}
+                            {{!-- no se puede eliminar --}}
+                            {{else}}
+                              <button data-file="{{_id}}" class="btn btn-danger eliminar-file" data-toggle="tooltip" data-placement="top" title="Eliminar Registro"><i data-file="{{_id}}" class="fas fa-trash-alt eliminar-file"></i></button>
+                            {{/if}}
                           </td>
                         </tr>
                       {{/each}}

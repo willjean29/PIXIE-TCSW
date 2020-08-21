@@ -193,8 +193,31 @@ const actualizarClientes = async(id) => {
   business.clientes = clientesActuales;
   await business.save();
 }
+
+const eliminarArchivo = async (req,res) => {
+  const {id} = req.params;
+  const file = await File.findByIdAndDelete(id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!file) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "Archivo no registrado"
+    }
+  });
+
+  res.json({
+    ok: true,
+    file
+  });
+}
 module.exports = {
   registrarArchivo,
   obtenerDatosArchivo,
-  cargarDataCliente
+  cargarDataCliente,
+  eliminarArchivo
 }

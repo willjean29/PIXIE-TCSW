@@ -38,7 +38,8 @@ if(formFileCSV){
 }
 
 if(tablaArchivos){
-  tablaArchivos.addEventListener('click',cargarDatosClientes)
+  tablaArchivos.addEventListener('click',cargarDatosClientes);
+  tablaArchivos.addEventListener('click',eliminarRegistroID);
 }
 
 function enviarArchivo(event) {
@@ -115,5 +116,52 @@ function cargarDatosClientes(event){
           timer: 1500
         })
       })
+  }
+}
+
+function eliminarRegistroID(event) {
+  if((event.target.classList.contains('eliminar-file'))){
+    console.log("eliminar registro");
+    let id = event.target.dataset.file;
+    if(!id){
+      id = event.target.parentElement.dataset.file; 
+    }
+
+    console.log(id)
+    const url = `/file/${id}`;
+    Swal.fire({
+      title: 'Eliminar Registro',
+      text: "Un registro eliminado no se puede recuperar",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, continuar',
+      cancelButtonText: 'No, cancelar'
+    }).then((result) => {
+      if (result.value) {
+       clienteAxios.delete(url)
+        .then((resp) => {
+          console.log(resp.data)
+          if(resp.data.ok){
+            Swal.fire({
+              title: 'Correcto',
+              text: "Se elimino el registro",
+              icon: 'success',
+              timer: 1500
+            })
+            location.reload();
+          }
+        })
+        .catch((error) => {
+          Swal.fire({
+            title: 'Hubo un error',
+            text: "No se pudo eliminar el registro",
+            icon: 'error',
+            timer: 1500
+          })
+        })
+      }
+    })
   }
 }
