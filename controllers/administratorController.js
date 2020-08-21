@@ -35,7 +35,7 @@ const mostrarAdminArea = async(req,res) => {
 const mostrarInformacionAdministrador = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
-  let fechaNacimiento = moment(administrator.fechaNacimiento).add(1, 'day').format('L'); 
+  let fechaNacimiento = moment(administrator.fechaNacimiento).add(1, 'day').format('L');
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   console.log(fechaNacimiento)
   res.render('admin/listar-admin',{
@@ -46,6 +46,30 @@ const mostrarInformacionAdministrador = async(req,res) => {
     existeCatalogoBusiness
   })
 }
+
+subirfoto(){
+
+  if(!this.fotoSeleccionada){
+    swal.fire('Error Upload: ', 'debe seleccionar una foto','error');
+  }else{
+  this.clienteService.subirFoto(this.fotoSeleccionada, this.cliente.id)
+  .subscribe( event =>{
+    if(event.type === HttpEventType.UploadProgress){
+      this.progreso = Math.round((event.loaded/event.total)*100);
+    }else if(event.type === HttpEventType.Response){
+      let response: any = event.body;
+      this.cliente = response.cliente as Cliente;
+
+      this.modalService.notificarUpload.emit(this.cliente);
+      swal.fire('la foto se ha subido completamente!', response.mensaje, 'success');
+    }
+
+    //this.cliente = cliente;
+  //  swal.fire('La foto no se ha subido!', `por favor inicie session: ${this.cliente.foto}`, 'success');
+  })
+  }
+}
+
 
 const agregarAdministrador = async(req,res) => {
   console.log(req.body)
@@ -132,7 +156,7 @@ const modificarAdministrador = async(req,res) => {
   // console.log(req.user);
   console.log(req.body)
   const id = req.user._id;
-  
+
   console.log("modificar admin nodejs")
   const data = req.body;
   const administrator = await Administrator.findByIdAndUpdate(id,data,{new: true, runValidators: true})
@@ -185,7 +209,7 @@ const agregarAvatarAdministrador = async(req,res) => {
       err: {
         msg: "No se pudo guardar la imagen"
       }
-    }); 
+    });
   }
 
   res.json({
