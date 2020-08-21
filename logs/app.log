@@ -1169,3 +1169,15 @@ ReferenceError: obtenerMetricas is not defined
     at require (internal/modules/cjs/helpers.js:74:18)
     at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:6:19)
     at Module._compile (internal/modules/cjs/loader.js:955:30) | 
+00:11:59 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+00:12:00 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+00:12:35 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarAdminArea | data:{"key":"code","requests":1,"timeUs":900131.101,"meanTimeUs":"900131.101","rps":1} | 
+00:12:50 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarAdminArea | data:{"key":"code","requests":2,"timeUs":3283677.601,"meanTimeUs":"1641838.800","rps":1} | 
+00:13:40 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":3,"timeUs":6751311.601,"meanTimeUs":"2250437.200","rps":0} | 
+00:13:59 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarInformacionAdministrador | data:{"key":"code","requests":4,"timeUs":7636646.801,"meanTimeUs":"1909161.700","rps":1} | 
+00:15:33 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":5,"timeUs":8612093.601,"meanTimeUs":"1722418.720","rps":1} | 
+00:16:06 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":6,"timeUs":9611255.401999999,"meanTimeUs":"1601875.900","rps":1} | 
+00:16:45 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":7,"timeUs":13194353.702999998,"meanTimeUs":"1884907.672","rps":1} | 
+00:17:04 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":8,"timeUs":16760200.301999997,"meanTimeUs":"2095025.038","rps":0} | 
+00:17:51 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":9,"timeUs":20306313.001999997,"meanTimeUs":"2256257.000","rps":0} | 
+00:18:40 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":10,"timeUs":23920179.001999997,"meanTimeUs":"2392017.900","rps":0} | 
