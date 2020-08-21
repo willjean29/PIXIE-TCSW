@@ -42,6 +42,7 @@ subirfoto(){
   }
 }
 
+
 const mostrarListaCatalogo = async(req,res) => {
   console.log("hola desde ctalgo")
   const administrator = await Administrator.findById(req.user._id).lean();
