@@ -16,6 +16,11 @@ const clientSchema = mongoose.Schema({
     trim : true,
     required: true
   },
+  // SEXO
+  sexo: {
+    type: String,
+    trim : true,
+  },
   // identificacion
   email: {
     type: String,

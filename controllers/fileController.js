@@ -105,6 +105,14 @@ const cargarDataCliente = async (req,res) => {
   const business = await Business.findById(file.business);
 
   const competition = await Competition.findOne({business: business._id});
+  if(!competition){
+    return res.status(404).json({
+      ok: false,
+      err: {
+        msg: "No hay concursos activos"
+      }
+    })
+  }
   const {parametro, puntos} = competition.reglas;
 
   datos.forEach(async(data,index) => {
@@ -119,7 +127,8 @@ const cargarDataCliente = async (req,res) => {
       client = new Client({
         dni: data.DNI,
         name: data.Nombres,
-        lastName: data.Apellidos
+        lastName: data.Apellidos,
+        sexo: data.Sexo
       })
       let puntuacion = {
         idBusiness: business._id,

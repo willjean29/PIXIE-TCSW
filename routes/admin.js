@@ -11,6 +11,11 @@ router.get('/',
   administratorController.mostrarAdminArea
 );
 
+// metricas para el administrador
+router.get('/status/genero',administratorController.statusGenero);
+router.get('/status/estado',administratorController.statusCuenta);
+router.get('/status/puntos',administratorController.statusPuntos);
+
 // validar el dni del adminsitradorAutenticado
 router.post('/verificar-dni',authController.verificarDNI);
 

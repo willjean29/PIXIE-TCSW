@@ -90,10 +90,30 @@ function cargarDatosClientes(event){
     const url = `/file/clientes/${id}`;
     clienteAxios.get(url)
       .then((resp) => {
-        console.log(resp)
+        if(resp.data.ok){
+          Swal.fire({
+            title: 'Correcto',
+            text: "Se registro con exito",
+            icon: 'success',
+            timer: 1500
+          })
+        }else{
+          Swal.fire({
+            title: 'Hubo un error',
+            text: "No se pudo registrar",
+            icon: 'error',
+            timer: 1500
+          })
+        }
+        location.reload();
       })
       .catch((error) => {
-        console.log(error)
+        Swal.fire({
+          title: 'Hubo un error',
+          text: "No se pudo registrar",
+          icon: 'error',
+          timer: 1500
+        })
       })
   }
 }

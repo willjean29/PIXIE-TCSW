@@ -20,7 +20,7 @@ const mostrarCrearCatalogo = async(req,res) => {
 }
 
 const mostrarListaCatalogo = async(req,res) => {
-  console.log("hola desde ctalgo")
+  
   const administrator = await Administrator.findById(req.user._id).lean();
   const business = await Business.findOne({administrador: administrator._id}).lean(); 
   const catalog = await Catalog.findOne({business: business._id}).lean();
@@ -28,7 +28,7 @@ const mostrarListaCatalogo = async(req,res) => {
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   const categories = await Category.find().sort('name').lean();
-  console.log(prizes);
+
   // console.log(categories);
   // console.log(existeCatalogoBusiness);
   // console.log(prizes)

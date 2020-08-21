@@ -27,7 +27,7 @@ const logger = new Logger('app');
 morgan.token('host', function(req, res) {
   return req.hostname;
 });
-app.use(morgan('dev',{stream: logger.stream()}));
+// app.use(morgan('dev',{stream: logger.stream()}));
 app.set('views',path.join(__dirname,'views'));
 let blocks = {};
 app.engine('hbs',exphbs({

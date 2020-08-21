@@ -4,40 +4,65 @@ const logger = new Logger('app');
 const microprofiler = require('microprofiler');
 const Administrator = require('../models/Administrator');
 const Business = require('../models/Business');
+const Competition = require('../models/Competition');
 const File = require('../models/File');
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
+const {premiosTotales, registrosTotales, clientesTotales, 
+  concursosActivvos, clientesTop, clientesEstado, productosTop, clientesGeneros
+} = require('../utils/statistics');
 
 const mostrarTemplateAdministrador = async(req,res) => {
   let start = microprofiler.start();
+
   const administrator = await Administrator.findById(req.user._id).lean();
+  const business = await Business.findOne({administrador: administrator._id});
 
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
-  const business = await Business.findOne({administrador: req.user._id});
   const filesVentas = await File.find({business: business._id}).lean();
-
+  
   res.render('admin/descargar-template',{
     title: 'Administrador',
     admin: administrator,
     existeConcursoSimple,
     existeCatalogoBusiness,
-    filesVentas
+    filesVentas,
+
   })
   let elapsedUs = microprofiler.measureFrom(start,'code');
   let stats = microprofiler.getStats('code');
   logger.debug('Procesar request mostrarTemplateAdministrador',stats)
 }
 const mostrarAdminArea = async(req,res) => {
+  let totalPremios,totalRegistros,totalConcursos,totalClientes,premios;
   let start = microprofiler.start();
+
   const administrator = await Administrator.findById(req.user._id).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
-  // logger.debug('Procesar request');
+  if(existeConcursoSimple && existeCatalogoBusiness){
+    totalPremios = await premiosTotales(req.user._id);
+    totalRegistros = await registrosTotales(req.user._id);
+    totalConcursos = await concursosActivvos(req.user._id);
+    premios = await productosTop(req.user._id);
+    totalClientes = await clientesTotales(req.user._id);
+    // let {puntos, info} = await clientesTop(req.user._id);
+    // let estadoClientes = await clientesEstado(req.user._id);
+  }
+
   res.render('admin/admin-area',{
     title: 'Administrador',
     admin: administrator,
     existeConcursoSimple,
-    existeCatalogoBusiness
+    existeCatalogoBusiness,
+    totalPremios,
+    totalRegistros,
+    totalClientes,
+    totalConcursos,
+    // puntos,
+    // info,
+    // estadoClientes,
+    premios
   });
   let elapsedUs = microprofiler.measureFrom(start,'code');
   let stats = microprofiler.getStats('code');
@@ -214,6 +239,28 @@ const obtenerAdministradores = (req,res) => {
   })
 }
 
+const statusGenero = async(req,res) => {
+  let generoClientes = await clientesGeneros(req.user._id);
+  res.json({
+    generoClientes
+  })
+}
+
+const statusCuenta = async(req,res) => {
+  let estadoClientes = await clientesEstado(req.user._id);
+  res.json({
+    estadoClientes
+  })
+}
+
+const statusPuntos = async(req,res) => {
+  let [infoClientes,puntosClientes] = await clientesTop(req.user._id);
+  res.json({
+    infoClientes,
+    puntosClientes,
+  })
+}
+
 
 module.exports = {
   mostrarTemplateAdministrador,
@@ -224,5 +271,8 @@ module.exports = {
   obtenerAdministradorActual,
   mostrarInformacionAdministrador,
   modificarAdministrador,
-  agregarAvatarAdministrador
+  agregarAvatarAdministrador,
+  statusGenero,
+  statusCuenta,
+  statusPuntos
 }
