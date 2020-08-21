@@ -14,7 +14,7 @@ const mostrarCrearConmcursoSimple = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   });
-}
+}// creando concurso simple
 
 const mostrarConcursoSimple = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
@@ -37,7 +37,7 @@ const mostrarConcursoSimple = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   });
-}
+}// mostrando concurso simple
 
 const mostrarModificarConcursoSimple = async(req,res) => {
   console.log("hola modifcar");
@@ -59,7 +59,7 @@ const mostrarModificarConcursoSimple = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   });
-}
+}// modificando concutso simple
 
 const registrarConcurso = async(req,res) => {
   console.log(req.body);
