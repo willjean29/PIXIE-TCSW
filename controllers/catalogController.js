@@ -17,7 +17,7 @@ const mostrarCrearCatalogo = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   });
-}
+}//creando catalogo
 
 const mostrarListaCatalogo = async(req,res) => {
   console.log("hola desde ctalgo")
@@ -40,7 +40,7 @@ const mostrarListaCatalogo = async(req,res) => {
     existeCatalogoBusiness,
     categories
   })
-}
+}//lista de catologo
 
 const registrarCatalogoPremios = async(req,res) => {
   console.log(req.body)
@@ -71,7 +71,7 @@ const registrarCatalogoPremios = async(req,res) => {
       business: business._id
     });
     await catalog.save();
-  }
+  }//verificacion de catalogo
 
 
   
@@ -122,4 +122,4 @@ module.exports = {
   mostrarCrearCatalogo,
   mostrarListaCatalogo,
   registrarCatalogoPremios
-}
+}//registro de premio
