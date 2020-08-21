@@ -19,6 +19,7 @@ const mostrarCrearCatalogo = async(req,res) => {
   });
 }
 
+
 subirfoto(){
 
   if(!this.fotoSeleccionada){
