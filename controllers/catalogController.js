@@ -8,7 +8,7 @@ const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares
 
 const mostrarCrearCatalogo = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
-  const business = await Business.findOne({administrador: administrator._id}).lean(); 
+  const business = await Business.findOne({administrador: administrator._id}).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   res.render('admin/crear-catalogo',{
@@ -19,10 +19,33 @@ const mostrarCrearCatalogo = async(req,res) => {
   });
 }
 
+subirfoto(){
+
+  if(!this.fotoSeleccionada){
+    swal.fire('Error Upload: ', 'debe seleccionar una foto','error');
+  }else{
+  this.clienteService.subirFoto(this.fotoSeleccionada, this.cliente.id)
+  .subscribe( event =>{
+    if(event.type === HttpEventType.UploadProgress){
+      this.progreso = Math.round((event.loaded/event.total)*100);
+    }else if(event.type === HttpEventType.Response){
+      let response: any = event.body;
+      this.cliente = response.cliente as Cliente;
+
+      this.modalService.notificarUpload.emit(this.cliente);
+      swal.fire('la foto se ha subido completamente!', response.mensaje, 'success');
+    }
+
+    //this.cliente = cliente;
+  //  swal.fire('La foto no se ha subido!', `por favor inicie session: ${this.cliente.foto}`, 'success');
+  })
+  }
+}
+
 const mostrarListaCatalogo = async(req,res) => {
   console.log("hola desde ctalgo")
   const administrator = await Administrator.findById(req.user._id).lean();
-  const business = await Business.findOne({administrador: administrator._id}).lean(); 
+  const business = await Business.findOne({administrador: administrator._id}).lean();
   const catalog = await Catalog.findOne({business: business._id}).lean();
   const prizes = await Prize.find({catalog: catalog._id}).populate('category','name').lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
@@ -74,7 +97,7 @@ const registrarCatalogoPremios = async(req,res) => {
   }
 
 
-  
+
   if(req.files){
     if(req.files.length > 1){
       req.files.forEach((file,index) => {
