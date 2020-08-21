@@ -30,7 +30,7 @@ const mostrarInformacionEmpresa = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   })
-}
+}//mostrara informacion de la empresa
 
 const mostrarModificarEmpresa = async(req,res) => {
   const administrator = await Administrator.findById(req.user._id).lean();
@@ -46,7 +46,7 @@ const mostrarModificarEmpresa = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   })
-}
+}// mostrara modificacion de la empresa
 
 const validarRUC = async(req,res) => {
   const {ruc} = req.body;
@@ -69,7 +69,7 @@ const validarRUC = async(req,res) => {
       }
     });
   }
-}
+}//validando ruc
 
 const registrarEmpresa = async(req,res) => {
 
@@ -87,7 +87,7 @@ const registrarEmpresa = async(req,res) => {
     err: {
       msg: "El administrator no existe o no tiene permisos"
     }
-  });
+  });//registro de empresa
 
   // validamos que sea unica
   let business = await Business.findOne({ruc: rucBusiness}).catch((err) => {
