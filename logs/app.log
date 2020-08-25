@@ -87,3 +87,6 @@
 16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
 16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
 16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:17:44 GMT-0500 (GMT-05:00)2020-8-25 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:17:49 GMT-0500 (GMT-05:00)2020-8-25 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:17:54 GMT-0500 (GMT-05:00)2020-8-25 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
