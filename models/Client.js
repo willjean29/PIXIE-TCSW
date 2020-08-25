@@ -4,27 +4,33 @@ const clientSchema = mongoose.Schema({
   name: {
     type: String,
     trim : true,
-    required: true
+    // required: true
   },//nombre
   lastName: {
     type: String,
     trim : true,
-    required: true
+    // required: true
   },//apellido
   dni: {
     type: String,
     trim : true,
     required: true
-  },identificacion
+  },
+  // SEXO
+  sexo: {
+    type: String,
+    trim : true,
+  },
+  // identificacion
   email: {
     type: String,
     trim : true,
-    required: true
+    // required: true
   },//correo
   password: {
     type: String,
     trim : true,
-    required: trues
+    // required: true
   },//contraseña
   image: {
     type: String,

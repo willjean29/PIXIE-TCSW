@@ -1,48 +1,81 @@
 const moment = require('moment');
+const Logger = require('../config/loggerService');
+const logger = new Logger('app');
+const microprofiler = require('microprofiler');
 const Administrator = require('../models/Administrator');
 const Business = require('../models/Business');
+const Competition = require('../models/Competition');
 const File = require('../models/File');
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
+const {premiosTotales, registrosTotales, clientesTotales, 
+  concursosActivvos, clientesTop, clientesEstado, productosTop, clientesGeneros
+} = require('../utils/statistics');
 
 const mostrarTemplateAdministrador = async(req,res) => {
+  let start = microprofiler.start();
+
   const administrator = await Administrator.findById(req.user._id).lean();
-  console.log(req.user._id)
+  const business = await Business.findOne({administrador: administrator._id});
+
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
-  const business = await Business.findOne({administrador: req.user._id});
   const filesVentas = await File.find({business: business._id}).lean();
-  console.log(existeConcursoSimple);
+  
   res.render('admin/descargar-template',{
     title: 'Administrador',
     admin: administrator,
     existeConcursoSimple,
     existeCatalogoBusiness,
-    filesVentas
+    filesVentas,
+
   })
+  let elapsedUs = microprofiler.measureFrom(start,'code');
+  let stats = microprofiler.getStats('code');
+  logger.debug('Procesar request mostrarTemplateAdministrador',stats)
 }
 const mostrarAdminArea = async(req,res) => {
-  // console.log(req.session);
-  // console.log(req.user);
-  // console.log("cargar datos");
+  let totalPremios,totalRegistros,totalConcursos,totalClientes,premios;
+  let start = microprofiler.start();
+
   const administrator = await Administrator.findById(req.user._id).lean();
-  console.log(req.user._id);
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
-  console.log(existeConcursoSimple);
+  if(existeConcursoSimple && existeCatalogoBusiness){
+    totalPremios = await premiosTotales(req.user._id);
+    totalRegistros = await registrosTotales(req.user._id);
+    totalConcursos = await concursosActivvos(req.user._id);
+    premios = await productosTop(req.user._id);
+    totalClientes = await clientesTotales(req.user._id);
+    // let {puntos, info} = await clientesTop(req.user._id);
+    // let estadoClientes = await clientesEstado(req.user._id);
+  }
+
   res.render('admin/admin-area',{
     title: 'Administrador',
     admin: administrator,
     existeConcursoSimple,
-    existeCatalogoBusiness
-  })
+    existeCatalogoBusiness,
+    totalPremios,
+    totalRegistros,
+    totalClientes,
+    totalConcursos,
+    // puntos,
+    // info,
+    // estadoClientes,
+    premios
+  });
+  let elapsedUs = microprofiler.measureFrom(start,'code');
+  let stats = microprofiler.getStats('code');
+  logger.debug('Procesar request mostrarAdminArea',stats)
 }
 
 const mostrarInformacionAdministrador = async(req,res) => {
+  let start = microprofiler.start();
   const administrator = await Administrator.findById(req.user._id).lean();
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   let fechaNacimiento = moment(administrator.fechaNacimiento).add(1, 'day').format('L'); 
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
-  console.log(fechaNacimiento)
+
   res.render('admin/listar-admin',{
     title: 'Administrador',
     admin: administrator,
@@ -50,10 +83,27 @@ const mostrarInformacionAdministrador = async(req,res) => {
     existeConcursoSimple,
     existeCatalogoBusiness
   })
+  let elapsedUs = microprofiler.measureFrom(start,'code');
+  let stats = microprofiler.getStats('code');
+  logger.debug('Procesar request mostrarInformacionAdministrador',stats)
+}
+
+const mostrarVistaPrevia = async(req,res) => {
+  const administrator = await Administrator.findById(req.user._id).lean();
+  const business = await Business.findOne({administrador: administrator._id}).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
+  res.render('admin/listar-info-empresa',{
+    title: 'Administrador',
+    admin: administrator,
+    empresa: business,
+    existeConcursoSimple,
+    existeCatalogoBusiness,
+  });
 }
 
 const agregarAdministrador = async(req,res) => {
-  console.log(req.body)
+
   const data = req.body;
   const {dni,email} = req.body;
   // validar que no exista alguien registrado con el mismo dni o correo
@@ -112,7 +162,7 @@ const obtenerAdministratorID = async(req,res) => {
 }
 
 const obtenerAdministradorActual = async(req,res) => {
-  // console.log(req.administrator);
+
   const administrator = await Administrator.findById(req.administrator._id).catch((err) => {
     return res.status(500).json({
       ok: false,
@@ -134,11 +184,9 @@ const obtenerAdministradorActual = async(req,res) => {
 }
 
 const modificarAdministrador = async(req,res) => {
-  // console.log(req.user);
-  console.log(req.body)
+
   const id = req.user._id;
   
-  console.log("modificar admin nodejs")
   const data = req.body;
   const administrator = await Administrator.findByIdAndUpdate(id,data,{new: true, runValidators: true})
     .catch((err) => {
@@ -162,8 +210,7 @@ const modificarAdministrador = async(req,res) => {
 
 const agregarAvatarAdministrador = async(req,res) => {
   const id = req.user._id;
-  console.log(id);
-  console.log(req.file)
+
   const administrator = await Administrator.findById(id).catch((err) => {
     return res.status(400).json({
       ok: false,
@@ -206,6 +253,28 @@ const obtenerAdministradores = (req,res) => {
   })
 }
 
+const statusGenero = async(req,res) => {
+  let generoClientes = await clientesGeneros(req.user._id);
+  res.json({
+    generoClientes
+  })
+}
+
+const statusCuenta = async(req,res) => {
+  let estadoClientes = await clientesEstado(req.user._id);
+  res.json({
+    estadoClientes
+  })
+}
+
+const statusPuntos = async(req,res) => {
+  let [infoClientes,puntosClientes] = await clientesTop(req.user._id);
+  res.json({
+    infoClientes,
+    puntosClientes,
+  })
+}
+
 
 module.exports = {
   mostrarTemplateAdministrador,
@@ -216,5 +285,9 @@ module.exports = {
   obtenerAdministradorActual,
   mostrarInformacionAdministrador,
   modificarAdministrador,
-  agregarAvatarAdministrador
+  agregarAvatarAdministrador,
+  statusGenero,
+  statusCuenta,
+  statusPuntos,
+  mostrarVistaPrevia
 }

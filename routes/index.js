@@ -6,8 +6,7 @@ const app = express();
 app.use('/admin', require('./admin'));
 
 // endpoints for client
-// app.use('/client', require('./client'));
-
+app.use('/client', require('./client'));
 // endpoints for webmaster
 app.use('/webMaster',require('./webMaster'));
 

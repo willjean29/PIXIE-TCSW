@@ -10,5 +10,7 @@ router.post('/upload',
 );
 
 router.get('/ventas/:id',fileController.obtenerDatosArchivo);
+router.get('/clientes/:id',fileController.cargarDataCliente);
+router.delete('/:id',fileController.eliminarArchivo);
 
 module.exports = router;

@@ -140,137 +140,172 @@
             </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                Clientes
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Clientes Activos</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Clientes No Activos</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Clientes Totales</p>
-                </a>
-              </li>
-            </ul>
+            {{#if admin.estado}}
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-tree"></i>
+                <p>
+                  Clientes
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+            {{else}}
+              <a href="#" class="nav-link"  data-toggle="tooltip" data-placement="top" title="Registre una empresa para habilitar esta opcion">
+                <i class="nav-icon fas fa-tree"></i>
+                <p>
+                  Clientes
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+            {{/if}}
+            {{#if admin.estado}}
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/client/activos" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Clientes Activos</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/client/inactivos" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Clientes Inactivos</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/client/list" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Clientes Totales</p>
+                  </a>
+                </li>
+              </ul>
+            {{/if}}
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Concursos
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
+
             {{#if admin.estado}}
-            <ul class="nav nav-treeview">
-              
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-circle"></i>
-                  <p>
-                    Concurso Simple
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  {{#if existeConcursoSimple}}
-                  {{!-- solo un concurso por empresa --}}
-                  {{else}}
-                  <li class="nav-item">
-                    <a href="/competition/simple/registrar" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Crear Concurso</p>
-                    </a>
-                  </li>
-                  {{/if}}
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Concursos
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+            {{else}}
+              <a href="#" class="nav-link"  data-toggle="tooltip" data-placement="top" title="Registre una empresa para habilitar esta opcion">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Concursos
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+            {{/if}}
 
-                  {{#if existeConcursoSimple}}
-                  <li class="nav-item">
-                    <a href="/competition/simple/profile" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Ver Concurso</p>
-                    </a>
-                  </li>
-                  {{else}}
-                  {{!-- no se puede visualizar por q no existe --}}
-                  {{/if}}
-                  {{!-- <li class="nav-item">
-                    <a href="/competition/simple/modificar" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Modificar Concurso</p>
-                    </a>
-                  </li> --}}
-                  {{!-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Eliminar Concurso</p>
-                    </a>
-                  </li> --}}
-                </ul>
-              </li>
+            {{#if admin.estado}}
+              <ul class="nav nav-treeview">
+                <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-circle"></i>
+                    <p>
+                      Concurso Simple
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    {{#if existeConcursoSimple}}
+                    {{!-- solo un concurso por empresa --}}
+                    {{else}}
+                    <li class="nav-item">
+                      <a href="/competition/simple/registrar" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Crear Concurso</p>
+                      </a>
+                    </li>
+                    {{/if}}
 
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-circle"></i>
-                  <p>
-                    Concurso Acumulativo
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Crear Concurso</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Ver Concurso</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Modificar Concurso</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Eliminar Concurso</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
+                    {{#if existeConcursoSimple}}
+                    <li class="nav-item">
+                      <a href="/competition/simple/profile" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Ver Concurso</p>
+                      </a>
+                    </li>
+                    {{else}}
+                    {{!-- no se puede visualizar por q no existe --}}
+                    {{/if}}
+                    {{!-- <li class="nav-item">
+                      <a href="/competition/simple/modificar" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Modificar Concurso</p>
+                      </a>
+                    </li> --}}
+                    {{!-- <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Eliminar Concurso</p>
+                      </a>
+                    </li> --}}
+                  </ul>
+                </li>
 
-            </ul>
+                {{!-- <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-circle"></i>
+                    <p>
+                      Concurso Acumulativo
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Crear Concurso</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Ver Concurso</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Modificar Concurso</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Eliminar Concurso</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li> --}}
+
+              </ul>
             {{/if}}
           </li>
           <li class="nav-item has-treeview">  
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Premios
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
+
+            {{#if admin.estado}}
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Premios
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+            {{else}}
+              <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top" title="Registre una empresa para habilitar esta opcion">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Premios
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+            {{/if}}
+
             {{#if admin.estado}}
               <ul class="nav nav-treeview">
                 {{#if existeCatalogoBusiness}}

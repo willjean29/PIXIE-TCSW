@@ -1,0 +1,89 @@
+00:50:53 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+00:50:54 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+00:51:04 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+00:51:05 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:00:02 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:00:08 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:00:14 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:00:19 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:04:00 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":1,"timeUs":3513499.001,"meanTimeUs":"3513499.001","rps":0} | 
+01:04:12 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":2,"timeUs":6976394.001,"meanTimeUs":"3488197.001","rps":0} | 
+01:04:29 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":3,"timeUs":7940579.901000001,"meanTimeUs":"2646859.967","rps":0} | 
+01:38:27 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:38:28 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:39:31 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:39:32 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:40:56 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:40:57 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:41:12 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":1,"timeUs":8579847,"meanTimeUs":"8579847.000","rps":0} | 
+01:41:36 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:41:37 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:41:47 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":1,"timeUs":8629509.499,"meanTimeUs":"8629509.499","rps":0} | 
+01:43:46 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:43:47 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:48:21 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:48:22 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:49:03 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:49:04 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:50:23 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:50:24 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:50:30 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:50:31 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:50:36 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":1,"timeUs":3506262.3,"meanTimeUs":"3506262.300","rps":0} | 
+01:50:58 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":2,"timeUs":4497870.5,"meanTimeUs":"2248935.250","rps":0} | 
+01:52:37 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:52:38 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:52:47 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:52:48 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:53:17 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:53:18 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:53:28 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+01:53:29 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+01:54:39 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":1,"timeUs":3404015.401,"meanTimeUs":"3404015.401","rps":0} | 
+01:55:45 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":2,"timeUs":4493268.801,"meanTimeUs":"2246634.400","rps":0} | 
+01:56:07 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request registrarArchivo | data:{"key":"code","requests":3,"timeUs":4749973.801,"meanTimeUs":"1583324.600","rps":1} | 
+01:56:09 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":4,"timeUs":5832199.702,"meanTimeUs":"1458049.925","rps":1} | 
+01:58:05 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request obtenerDatosArchivo | data:{"key":"code","requests":5,"timeUs":6836057.102,"meanTimeUs":"1367211.420","rps":1} | 
+01:58:46 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarClientesTotales | data:{"key":"code","requests":6,"timeUs":7837036.102,"meanTimeUs":"1306172.684","rps":1} | 
+02:06:24 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":7,"timeUs":8905552.102,"meanTimeUs":"1272221.729","rps":1} | 
+02:07:22 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":8,"timeUs":10022445.602,"meanTimeUs":"1252805.700","rps":1} | 
+02:08:11 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":9,"timeUs":11106154.300999999,"meanTimeUs":"1234017.145","rps":1} | 
+02:09:16 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":10,"timeUs":12194553.1,"meanTimeUs":"1219455.310","rps":1} | 
+02:10:35 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":11,"timeUs":13281527.1,"meanTimeUs":"1207411.555","rps":1} | 
+02:12:24 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":12,"timeUs":14378391.5,"meanTimeUs":"1198199.292","rps":1} | 
+02:20:21 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+02:20:22 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+02:21:43 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+02:21:44 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+02:21:58 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+02:21:59 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+02:22:15 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":1,"timeUs":1085141.4,"meanTimeUs":"1085141.400","rps":1} | 
+02:23:06 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+02:23:07 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+02:23:10 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":1,"timeUs":1129156.3,"meanTimeUs":"1129156.300","rps":1} | 
+02:39:50 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+02:39:51 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+02:40:48 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+02:40:49 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+02:40:54 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+02:40:55 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+02:41:52 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Servidor Corriendo en el puuerto 4000 | data:{"success":true} | 
+02:41:53 GMT-0500 (GMT-05:00)2020-8-21 | INFO| Database Conextada | data:{"success":true} | 
+02:41:55 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":1,"timeUs":1130828,"meanTimeUs":"1130828.000","rps":1} | 
+02:42:05 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":2,"timeUs":2210197.801,"meanTimeUs":"1105098.900","rps":1} | 
+02:45:45 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":3,"timeUs":3319493.8,"meanTimeUs":"1106497.933","rps":1} | 
+16:19:20 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:19:21 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:19:21 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:19:21 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:19:21 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:05 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:06 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:06 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:06 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:06 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
