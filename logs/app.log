@@ -72,3 +72,18 @@
 02:41:55 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":1,"timeUs":1130828,"meanTimeUs":"1130828.000","rps":1} | 
 02:42:05 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":2,"timeUs":2210197.801,"meanTimeUs":"1105098.900","rps":1} | 
 02:45:45 GMT-0500 (GMT-05:00)2020-8-21 | DEBUG| Procesar request mostrarTemplateAdministrador | data:{"key":"code","requests":3,"timeUs":3319493.8,"meanTimeUs":"1106497.933","rps":1} | 
+16:19:20 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:19:21 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:19:21 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:19:21 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:19:21 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:05 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:06 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:06 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:06 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:06 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:23:38 GMT-0500 (GMT-05:00)2020-8-21 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 

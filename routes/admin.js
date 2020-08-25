@@ -11,6 +11,9 @@ router.get('/',
   administratorController.mostrarAdminArea
 );
 
+// vista previa de la empresa de la empresa
+router.get('/preview',administratorController.mostrarVistaPrevia);
+
 // metricas para el administrador
 router.get('/status/genero',administratorController.statusGenero);
 router.get('/status/estado',administratorController.statusCuenta);

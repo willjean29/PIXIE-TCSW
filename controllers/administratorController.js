@@ -88,6 +88,20 @@ const mostrarInformacionAdministrador = async(req,res) => {
   logger.debug('Procesar request mostrarInformacionAdministrador',stats)
 }
 
+const mostrarVistaPrevia = async(req,res) => {
+  const administrator = await Administrator.findById(req.user._id).lean();
+  const business = await Business.findOne({administrador: administrator._id}).lean();
+  const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
+  const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
+  res.render('admin/listar-info-empresa',{
+    title: 'Administrador',
+    admin: administrator,
+    empresa: business,
+    existeConcursoSimple,
+    existeCatalogoBusiness,
+  });
+}
+
 const agregarAdministrador = async(req,res) => {
 
   const data = req.body;
@@ -274,5 +288,6 @@ module.exports = {
   agregarAvatarAdministrador,
   statusGenero,
   statusCuenta,
-  statusPuntos
+  statusPuntos,
+  mostrarVistaPrevia
 }
