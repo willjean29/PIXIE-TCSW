@@ -18,23 +18,3 @@ const registrarCategoria = async(req,res) => {
   });
 }
 
-const obtenerCategorias = async(req,res) =>{
-  const categories = await Category.find()
-    .sort('name');
-
-  if(!categories) return res.status(400).json({
-    ok: false,
-    err: {
-      msg: "No hay categorias registradas"
-    }
-  });
-
-  res.json({
-    ok: true,
-    categories
-  });
-}
-module.exports = {
-  registrarCategoria,
-  obtenerCategorias
-}
