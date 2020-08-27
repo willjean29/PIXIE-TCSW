@@ -52,7 +52,7 @@ const businessSchema = mongoose.Schema({
   descripcion: {
     type: String,
     trim: true,
-    required: true
+    // required: true
   },
   administrador: {
     type: mongoose.Schema.Types.ObjectId,

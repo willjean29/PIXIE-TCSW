@@ -96,6 +96,7 @@ const registrarEmpresa = async(req,res) => {
       err
     });
   });
+
   console.log("hay empresa");
   if(business) return res.status(400).json({
     ok: false,
@@ -124,6 +125,7 @@ const registrarEmpresa = async(req,res) => {
     redes
   });
 
+  console.log(business)
   await business.save().catch((err) => {
     return res.status(400).json({
       ok: false,
