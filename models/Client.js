@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcrypt');
 const clientSchema = mongoose.Schema({
   name: {
     type: String,
@@ -70,5 +70,23 @@ const clientSchema = mongoose.Schema({
   },
   expire: Date
 })
+
+// hashear el password
+clientSchema.pre('save',function(next) {
+  // si el password ya esta hasheado
+  if(!this.isModified('password')){
+    return next();
+  }
+  // si no esta hasheado
+  const password = bcrypt.hashSync(this.password,bcrypt.genSaltSync(10));
+  this.password = password;
+  next();
+});
+
+clientSchema.methods = {
+  compararPassword: function(password) {
+    return bcrypt.compareSync(password,this.password);
+  }
+}
 
 module.exports = mongoose.model('Client',clientSchema);

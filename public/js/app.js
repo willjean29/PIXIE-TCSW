@@ -11,7 +11,10 @@ import Swal from 'sweetalert2';
 import moment  from 'moment';
 import axios from 'axios';
 import clienteAxios from './config/clienteAxios';
-console.log("hola mundo123");
+
+// // importar js del cliente
+// import appClient from './appClient';
+
 
 const token = localStorage.getItem('TOKEN');
 if(!token) {

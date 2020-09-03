@@ -12,6 +12,7 @@ const exphbs = require('express-handlebars');
 const ConexionDB = require('./config/db');
 const cookieParser = require('cookie-parser');
 const passport = require('./config/passport');
+const passportCliente = require('./config/passportClient');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const moment = require('moment');
@@ -87,6 +88,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(flash());
 
 app.use(cookieParser(process.env.SEED_SECRET));
+
 // session and cookies
 app.use(session({
   secret: process.env.SEED_SECRET,
@@ -94,9 +96,14 @@ app.use(session({
   saveUninitialized: false, // don't create session until something stored
   store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
+
 // passport
 app.use(passport.initialize());
 app.use(passport.session());
+// passport cliente
+app.use(passportCliente.initialize());
+app.use(passportCliente.session());
+
 // connect databse
 ConexionDB.getInstance();
 // globals
@@ -111,6 +118,7 @@ app.use(routes);
 
 // 404 página de error
 app.use((req,res,next) => {
+  console.log("entro error")
   next(createError(404,'Not found'));
 })
 

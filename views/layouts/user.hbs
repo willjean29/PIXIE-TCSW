@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="/users/img/favicon.png" type="image/png">
+	<title>PIXIE</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="/users/css/bootstrap.css">
+	<link rel="stylesheet" href="/users/vendors/linericon/style.css">
+	<link rel="stylesheet" href="/users/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/users/vendors/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="/users/vendors/lightbox/simpleLightbox.css">
+	<link rel="stylesheet" href="/users/vendors/nice-select/css/nice-select.css">
+	<link rel="stylesheet" href="/users/vendors/animate-css/animate.css">
+	<link rel="stylesheet" href="/users/vendors/jquery-ui/jquery-ui.css">
+	    {{!-- Toastr --}}
+    <link rel="stylesheet" href="/admin/plugins/toastr/toastr.min.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="/users/css/style.css">
+	<link rel="stylesheet" href="/users/css/responsive.css">
+
+	{{! Styles Block}}
+    {{{block 'styles'}}}
+</head>
+<body>
+     {{> extras/header }}
+		{{#if mensajes}}
+		<div class="alertas">
+			{{#mostrarAlertas mensajes}}
+			{{/mostrarAlertas}}
+		</div>
+		{{/if}}
+     {{{body}}}
+     {{> extras/footer }}
+    <script src="/users/js/jquery-3.2.1.min.js"></script>
+	<script src="/users/js/popper.js"></script>
+	<script src="/users/js/bootstrap.min.js"></script>
+	<script src="/users/js/stellar.js"></script>
+	<script src="/users/vendors/lightbox/simpleLightbox.min.js"></script>
+	<script src="/users/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="/users/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="/users/vendors/isotope/isotope-min.js"></script>
+	<script src="/users/vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="/users/js/jquery.ajaxchimp.min.js"></script>
+	<script src="/users/js/mail-script.js"></script>
+	<script src="/users/vendors/jquery-ui/jquery-ui.js"></script>
+	<script src="/users/vendors/counter-up/jquery.waypoints.min.js"></script>
+	<script src="/users/vendors/counter-up/jquery.counterup.js"></script>
+	<script src="/users/js/theme.js"></script>
+    {{!-- Toastr --}}
+    <script src="/admin/plugins/toastr/toastr.min.js"></script>
+	{{!-- sscript cliente --}}
+	<script src="/dist/bundleClient.js"></script>
+	{{! Scripts block}}
+    {{{block "scripts"}}}
+</body>
+</html>
