@@ -15,9 +15,18 @@ router.get('/',
 router.get('/preview',administratorController.mostrarVistaPrevia);
 
 // metricas para el administrador
-router.get('/status/genero',administratorController.statusGenero);
-router.get('/status/estado',administratorController.statusCuenta);
-router.get('/status/puntos',administratorController.statusPuntos);
+router.get('/status/genero',
+  authController.adminsitradorAutenticado,
+  administratorController.statusGenero
+);
+router.get('/status/estado',
+  authController.adminsitradorAutenticado,
+  administratorController.statusCuenta
+);
+router.get('/status/puntos',
+  authController.adminsitradorAutenticado,
+  administratorController.statusPuntos
+);
 
 // validar el dni del adminsitradorAutenticado
 router.post('/verificar-dni',authController.verificarDNI);
@@ -30,6 +39,7 @@ router.post('/login2',authController.autenticarAdministrador2);
 
 // mostrar template a Descargar
 router.get('/template',
+  authController.adminsitradorAutenticado,
   administratorController.mostrarTemplateAdministrador
 );
 

@@ -39,7 +39,7 @@ router.post('/simple/avatar',
 );
 
 router.put('/simple/modificar/:id',
-  // authController.adminsitradorAutenticado,
+  authController.adminsitradorAutenticado,
   competitionController.activarCompetition
 );
 module.exports = router;
