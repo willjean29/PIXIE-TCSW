@@ -463,3 +463,148 @@
 01:49:46 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
 01:49:46 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
 01:49:46 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:44:40 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:44:40 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:44:40 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:44:57 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:44:57 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:44:57 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:45:19 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:45:19 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:45:19 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:48:29 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:48:29 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:48:29 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:48:40 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:48:40 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:48:40 GMT-0500 (GMT-05:00)2020-9-3 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+04:21:21 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:21 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:21 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:21 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:21 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:54 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:54 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:54 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:54 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 
+04:21:54 GMT-0500 (GMT-05:00)2020-9-4 | ERROR| uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1306:16)
+    at listenInCluster (net.js:1354:12)
+    at Server.listen (net.js:1442:7)
+    at Function.listen (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\index.js:141:5)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
+    at internal/main/run_main_module.js:17:11 | 

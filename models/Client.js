@@ -64,6 +64,11 @@ const clientSchema = mongoose.Schema({
       ref: 'Prize'
     }
   }],
+  role:{
+    type: String,
+    trim : true,
+    default: "CLIENT"
+  },
   registro:{
     type: Date,
     default: Date.now()

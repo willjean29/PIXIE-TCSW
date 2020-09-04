@@ -18,9 +18,15 @@
 							</a>
 						</li>
 						<li>
-							<a href="contact.html">
-								Contactanos
+							{{#if uriAdmin}}
+							<a href="{{uriAdmin}}">
+								Empresas
 							</a>
+							{{else}}
+							<a href="#">
+								Empresas
+							</a>
+							{{/if}}
 						</li>
 					</ul>
 				</div>

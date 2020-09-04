@@ -1,4 +1,5 @@
 const Client = require('../models/Client');
+const Business = require('../models/Business');
 const passport = require('passport');
 // verificar si el cliente esta esta autenticado
 const clienteAutenticado = (req,res,next) => {
@@ -8,15 +9,29 @@ const clienteAutenticado = (req,res,next) => {
   }
   return res.redirect('/login');
 }
-const autenticarClliente = passport.authenticate('local',{
+const autenticarClliente = passport.authenticate('localCliente',{
   successRedirect: '/business',
   failureRedirect: '/login',
   failureFlash: true,
   badRequestMessage: 'Ambos compos son obligatorios'
 })
-const mostrarListadoEmpresas = (req,res) => {
+const mostrarListadoEmpresas = async(req,res) => {
+  console.log(req.user)
+  console.log(req.session)
+  //  cargar las empresas asosciadas
+  let empresas = []
+  for (let puntuacion of req.user.puntuacion) {
+    const empresa = await Business.findById(puntuacion.idBusiness);
+    const data = {
+      nombre : empresa.razonSocial,
+      puntos : puntuacion.puntos
+    }
+    empresas.push(data);
+  }
+  console.log(empresas)
   res.render('user/listar-empresas.hbs',{
-    layout: 'user.hbs'
+    layout: 'user.hbs',
+    empresas
   })
 }
 

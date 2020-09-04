@@ -21,7 +21,7 @@
 	<section class="hot_deals_area section_gap">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-6">
+				{{!-- <div class="col-lg-6" style="padding: 15px;">
 					<div class="hot_deal_box">
 						<img class="img-fluid" src="/users/img/product/hot_deals/deal1.jpg" alt="">
 						<div class="content">
@@ -32,7 +32,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-6">
+				<div class="col-lg-6" style="padding: 15px;">
 					<div class="hot_deal_box">
 						<img class="img-fluid" src="/users/img/product/hot_deals/deal1.jpg" alt="">
 						<div class="content">
@@ -42,6 +42,44 @@
 						<a class="hot_deal_link" href="#"></a>
 					</div>
 				</div>
+
+				<div class="col-lg-6" style="padding: 15px;">
+					<div class="hot_deal_box">
+						<img class="img-fluid" src="/users/img/product/hot_deals/deal1.jpg" alt="">
+						<div class="content">
+							<h2>Hot Deals of this Month</h2>
+							<p>shop now</p>
+						</div>
+						<a class="hot_deal_link" href="#"></a>
+					</div>
+				</div>
+
+				<div class="col-lg-6" style="padding: 15px;">
+					<div class="hot_deal_box">
+						<img class="img-fluid" src="/users/img/product/hot_deals/deal1.jpg" alt="">
+						<div class="content">
+							<h2>Hot Deals of this Month</h2>
+							<p>shop now</p>
+						</div>
+						<a class="hot_deal_link" href="#"></a>
+					</div>
+				</div> --}}
+				{{#if empresas.length}}
+					{{#each empresas}}
+						<div class="col-lg-6" style="padding: 15px;">
+							<div class="hot_deal_box">
+								<img class="img-fluid" src="/users/img/product/hot_deals/deal1.jpg" alt="">
+								<div class="content">
+									<h2>{{nombre}}</h2>
+									<p>Ver Catalogo</p>
+								</div>
+								<a class="hot_deal_link" href="https://www.google.com" target="_blank"></a>
+							</div>
+						</div>
+					{{/each}}
+				{{else}}
+					<p>NO TIENE EMPRESAS ASOCIADAS</p>
+				{{/if}}
 			</div>
 		</div>
 	</section>
