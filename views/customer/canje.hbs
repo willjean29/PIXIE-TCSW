@@ -1,0 +1,47 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Modificar Concurso Simple</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/admin">Inicio</a></li>
+              <li class="breadcrumb-item active">General Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content"></section>
+        <form role="form"  method="POST" id="form-competition-modificar"> 
+            <div class="row">
+                <div class="input-group mb-3 col-md-6">
+                    <label for="" class="w-100">Nuevos Soles</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                    {{#if concurso.reglas.parametro}}
+                        <input type="number" class="form-control" placeholder="1.00" name="soles" value="{{concurso.reglas.parametro}}"/>
+                    {{/if}}
+                    
+                </div>
+                <div class="input-group mb-3 col-md-6">
+                    <label for="" class="w-100">Puntos</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                    {{#if concurso.reglas.puntos}}
+                        <input type="number" class="form-control" placeholder="1" name="puntos" min="1" value="{{concurso.reglas.puntos}}"/>
+                    {{/if}}
+
+                </div>
+                </div>
+        </form>
+    </section>
