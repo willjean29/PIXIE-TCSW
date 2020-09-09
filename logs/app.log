@@ -608,3 +608,288 @@ Error: listen EADDRINUSE: address already in use :::4000
     at Function.Module._load (internal/modules/cjs/loader.js:723:14)
     at Function.Module.runMain (internal/modules/cjs/loader.js:1043:10)
     at internal/main/run_main_module.js:17:11 | 
+13:44:14 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+13:44:14 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+13:44:14 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:24:05 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| uncaughtException: Duplicate parameter name not allowed in this context
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:39
+const mostrarCatalogoEmpresa = async (res,res) => {
+                                          ^^^
+
+SyntaxError: Duplicate parameter name not allowed in this context
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+16:24:05 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| uncaughtException: Duplicate parameter name not allowed in this context
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:39
+const mostrarCatalogoEmpresa = async (res,res) => {
+                                          ^^^
+
+SyntaxError: Duplicate parameter name not allowed in this context
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+16:24:05 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| uncaughtException: Duplicate parameter name not allowed in this context
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:39
+const mostrarCatalogoEmpresa = async (res,res) => {
+                                          ^^^
+
+SyntaxError: Duplicate parameter name not allowed in this context
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+16:24:49 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| uncaughtException: Duplicate parameter name not allowed in this context
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:39
+const mostrarCatalogoEmpresa = async (res,res) => {
+                                          ^^^
+
+SyntaxError: Duplicate parameter name not allowed in this context
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+16:24:49 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| uncaughtException: Duplicate parameter name not allowed in this context
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:39
+const mostrarCatalogoEmpresa = async (res,res) => {
+                                          ^^^
+
+SyntaxError: Duplicate parameter name not allowed in this context
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+16:24:49 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| uncaughtException: Duplicate parameter name not allowed in this context
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:39
+const mostrarCatalogoEmpresa = async (res,res) => {
+                                          ^^^
+
+SyntaxError: Duplicate parameter name not allowed in this context
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+16:29:23 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:29:23 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:29:24 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:30:12 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:30:12 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:30:12 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:30:59 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:30:59 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:30:59 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:31:36 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:31:36 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:31:36 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:33:16 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:33:16 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:33:17 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:34:07 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:34:07 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:34:07 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:34:30 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:34:30 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:34:30 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:36:38 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:36:38 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:36:38 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:36:48 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:36:48 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:36:48 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:37:03 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:37:03 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:37:03 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:37:12 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:37:12 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:37:12 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:38:18 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:38:18 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:38:18 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:17 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:18 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:18 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:28 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:29 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:29 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:55 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:55 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:39:55 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:40:51 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:40:51 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:40:51 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:41:10 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:41:10 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:41:10 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:41:24 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:41:24 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:41:24 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:52:33 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:52:33 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:52:34 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:35 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:35 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:36 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:53 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:54 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:54 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:00:04 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:00:04 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:00:04 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:59:15 GMT-0500 (GMT-05:00)2020-9-8 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:08:40 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:17:41 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:17:41 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:17:41 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:24:11 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:24:12 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:24:12 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:29:36 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":500,"error":{"message":"Missing helper: \"selectCategory\"","name":"Error"}} | 
+00:30:11 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":500,"error":{"message":"Missing helper: \"selectCategory\"","name":"Error"}} | 
+00:32:12 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":500,"error":{"message":"Missing helper: \"selectCategory\"","name":"Error"}} | 
+00:32:46 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":500,"error":{"message":"Missing helper: \"selectCategory\"","name":"Error"}} | 
+00:41:25 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:41:25 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:41:25 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:41:38 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:41:38 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:41:38 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:45:29 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:45:29 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:45:29 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:46:38 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:46:38 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:46:38 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:47:25 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:47:26 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:47:26 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:50:25 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:50:26 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:50:26 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:51:26 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:51:27 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:51:27 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:55:32 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:55:33 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:55:33 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:56:09 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:56:09 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:56:09 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:57:13 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:57:13 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+00:57:14 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:01:33 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:01:33 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:01:34 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:02:22 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:02:22 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:02:22 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:03:36 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:03:37 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:03:37 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:04:06 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:04:06 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:04:06 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:05:10 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:05:10 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:05:10 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:07:23 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:07:24 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:07:24 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:10:33 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:10:34 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:10:34 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:13:05 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:13:05 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:13:05 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:16:39 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:16:39 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:16:39 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:17:31 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:17:31 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:17:31 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:42 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:42 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:42 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:47 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:47 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:48 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:54 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:54 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:18:54 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:22:44 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:22:44 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:22:44 GMT-0500 (GMT-05:00)2020-9-9 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 

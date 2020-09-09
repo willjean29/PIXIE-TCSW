@@ -1,5 +1,8 @@
 const Client = require('../models/Client');
+const Category = require('../models/Category');
+const Catalog = require('../models/Catalog');
 const Business = require('../models/Business');
+const Prize = require('../models/Prize');
 const passport = require('passport');
 // verificar si el cliente esta esta autenticado
 const clienteAutenticado = (req,res,next) => {
@@ -15,6 +18,7 @@ const autenticarClliente = passport.authenticate('localCliente',{
   failureFlash: true,
   badRequestMessage: 'Ambos compos son obligatorios'
 })
+
 const mostrarListadoEmpresas = async(req,res) => {
   console.log(req.user)
   console.log(req.session)
@@ -23,6 +27,7 @@ const mostrarListadoEmpresas = async(req,res) => {
   for (let puntuacion of req.user.puntuacion) {
     const empresa = await Business.findById(puntuacion.idBusiness);
     const data = {
+      id: empresa._id,
       nombre : empresa.razonSocial,
       puntos : puntuacion.puntos
     }
@@ -32,6 +37,24 @@ const mostrarListadoEmpresas = async(req,res) => {
   res.render('user/listar-empresas.hbs',{
     layout: 'user.hbs',
     empresas
+  })
+}
+
+const mostrarCatalogoEmpresa = async (req,res) => {
+  const categorias = await obtenerCategorias(req.params.id);
+  res.render('user/listar-catalogo.hbs',{
+    layout: 'user.hbs',
+    categorias
+  })
+}
+
+const mostrarCategoriaCatalogo = async (req,res) => {
+  const categorias = await obtenerCategorias(req.params.id);
+  const categoria = req.params.category;
+  res.render('user/listar-catalogo-categoria.hbs',{
+    layout: 'user.hbs',
+    categorias,
+    categoria
   })
 }
 
@@ -84,9 +107,37 @@ const registrarCliente = async (req,res) => {
   })
 }
 
+const obtenerCategorias = async (idBusiness) => {
+  const catalogo = await Catalog.findOne({business: idBusiness});
+  const premios = await Prize.find({catalog: catalogo._id});
+
+  let categorias = []
+  let categories = new Set();
+
+  for (let premio of premios) {
+    const category = await Category.findById(premio.category);
+    categories.add(category.name)
+  }
+
+  categories = Array.from(categories).sort();
+  for (let category of categories) {
+    let data;
+     data = {
+      name: category,
+      empresa: idBusiness,
+      catalogo: catalogo._id
+    }
+    categorias.push(data);
+  }
+
+  return categorias;
+}
+
 module.exports = {
   autenticarClliente,
   clienteAutenticado,
   mostrarListadoEmpresas,
+  mostrarCatalogoEmpresa,
+  mostrarCategoriaCatalogo,
   registrarCliente
 }

@@ -22,4 +22,8 @@ app.post('/registrer',userController.registrarCliente);
 
 app.get('/business',userController.mostrarListadoEmpresas);
 
+app.get('/business/:id',userController.mostrarCatalogoEmpresa);
+
+app.get('/business/:id/:category',userController.mostrarCategoriaCatalogo);
+
 module.exports = app;
