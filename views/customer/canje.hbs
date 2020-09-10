@@ -1,4 +1,8 @@
-<!-- Content Header (Page header) -->
+{{#extend 'styles'}}
+
+{{/extend}}
+
+    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -15,33 +19,106 @@
       </div><!-- /.container-fluid -->
     </section>
 
-    <section class="content"></section>
-        <form role="form"  method="POST" id="form-competition-modificar"> 
-            <div class="row">
-                <div class="input-group mb-3 col-md-6">
-                    <label for="" class="w-100">Nuevos Soles</label>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fas fa-envelope"></i>
-                        </span>
-                    </div>
-                    {{#if concurso.reglas.parametro}}
-                        <input type="number" class="form-control" placeholder="1.00" name="soles" value="{{concurso.reglas.parametro}}"/>
-                    {{/if}}
-                    
-                </div>
-                <div class="input-group mb-3 col-md-6">
-                    <label for="" class="w-100">Puntos</label>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fas fa-envelope"></i>
-                        </span>
-                    </div>
-                    {{#if concurso.reglas.puntos}}
-                        <input type="number" class="form-control" placeholder="1" name="puntos" min="1" value="{{concurso.reglas.puntos}}"/>
-                    {{/if}}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-10 mx-auto">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Llenar Formulario</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form"  method="POST" id="form-competition-modificar"> 
+                  <div class="card-body">
+                      <div class="form-group">
+                          <label for="direccion">Nombre de Concurso</label>
+                          {{#if concurso.name}}
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="{{concurso.name}}">  
+                          {{/if}}
+                          
+                      </div>
+                      <label for="inputState" class="w-100">Reglas de Concurso</label>
+                      <hr>
+                      <div class="row">
+                        <div class="input-group mb-3 col-md-6">
+                            <label for="" class="w-100">Nuevos Soles</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                            {{#if concurso.reglas.parametro}}
+                               <input type="number" class="form-control" placeholder="1.00" name="soles" value="{{concurso.reglas.parametro}}"/>
+                            {{/if}}
+                           
+                        </div>
+                        <div class="input-group mb-3 col-md-6">
+                            <label for="" class="w-100">Puntos</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                            {{#if concurso.reglas.puntos}}
+                              <input type="number" class="form-control" placeholder="1" name="puntos" min="1" value="{{concurso.reglas.puntos}}"/>
+                            {{/if}}
 
-                </div>
-                </div>
-        </form>
+                        </div>
+                      </div>
+
+                      <label for="inputState" class="w-100">Fechas</label>
+                      <hr>
+                      <div class="row">
+                        <div class="input-group mb-3 col-md-6">
+                            <label for="" class="w-100">Fecha Inicio</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                          {{#if concurso.fechaInicio}}
+                            <input type="text" class="form-control fecha" placeholder="" id="fecha-inicio" name="fechaInicio" value="{{fechaInicio}}"/>
+                            <div class="invalid-feedback" id="fecha-inicio-val">
+                              Ingrese una fecha valida.
+                            </div>
+                          {{/if}}
+                        </div>
+                        <div class="input-group mb-3 col-md-6">
+                            <label for="" class="w-100">Fecha Final</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                          {{#if concurso.fechaFin}}
+                            <input type="text" class="form-control fecha" placeholder="" id="fecha-fin" name="fechaFin" value="{{fechaFin}}"/>
+                            <div class="invalid-feedback col-md-12" id="fecha-fin-val">
+                              Ingrese una fecha valida.
+                            </div>
+                          {{/if}}
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card-footer text-right">
+                      <input type="hidden" value="simple" name="tipo" id="tipo">
+                      <button type="submit" class="btn btn-primary" id="submit-competition">Actualizar</button>
+                  </div>
+                  
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (left) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </section>
+    <!-- /.content -->
+
+{{#extend 'scripts'}}
+
+{{/extend}}
