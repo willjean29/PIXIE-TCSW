@@ -42,6 +42,9 @@ const mostrarListadoEmpresas = async(req,res) => {
 
 const mostrarCatalogoEmpresa = async (req,res) => {
   const categorias = await obtenerCategorias(req.params.id);
+  const catalogo = await Catalog.findOne({business: req.params.id});
+  const premios = await Prize.find({catalog: catalogo._id});
+  console.log(premios);
   res.render('user/listar-catalogo.hbs',{
     layout: 'user.hbs',
     categorias
@@ -50,11 +53,9 @@ const mostrarCatalogoEmpresa = async (req,res) => {
 
 const mostrarCategoriaCatalogo = async (req,res) => {
   const categorias = await obtenerCategorias(req.params.id);
-  const categoria = req.params.category;
   res.render('user/listar-catalogo-categoria.hbs',{
     layout: 'user.hbs',
     categorias,
-    categoria
   })
 }
 
