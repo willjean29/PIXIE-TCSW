@@ -49,6 +49,11 @@ const businessSchema = mongoose.Schema({
     type: String,
     trim : true
   },
+  descripcion: {
+    type: String,
+    trim: true,
+    // required: true
+  },
   administrador: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Administrator',

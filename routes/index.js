@@ -6,8 +6,7 @@ const app = express();
 app.use('/admin', require('./admin'));
 
 // endpoints for client
-// app.use('/client', require('./client'));
-
+app.use('/client', require('./client'));
 // endpoints for webmaster
 app.use('/webMaster',require('./webMaster'));
 
@@ -29,5 +28,7 @@ app.use('/category',require('./category'));
 // endpoints for files
 app.use('/file',require('./file'));
 
+// endpoints for activities users
+app.use('/',require('./user'));
 
 module.exports = app;

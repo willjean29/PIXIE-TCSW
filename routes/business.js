@@ -14,7 +14,7 @@ router.get('/registrar',
 
 // VALIDAR RUC
 router.post('/verificar-ruc',
-  authController.adminsitradorAutenticado,
+  // authController.adminsitradorAutenticado,
   businessController.validarRUC
 );
 

@@ -36,12 +36,12 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="tabla-archivos" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>Icono</th>
                   <th>Nombre</th>
-                  <th>Cargado</th>
+                  <th>Estado</th>
                   <th>Tipo</th>
                   <th>Acciones</th>
                 </tr>
@@ -50,13 +50,36 @@
                     {{#if filesVentas}}
                       {{#each filesVentas}}
                         <tr>
-                          <td class="csv-icon"> <i class="fas fa-file-csv"></i></td>
+                          <td class="csv-icon"> 
+                            <i class="fas fa-file-csv"></i>
+                          </td>
                           <td>{{name}}</td>
-                          <td>{{estado}}</td>
-                          <td>{{type}}</td>
+                          {{#if estado}}
+                            <td class="text-center">
+                              <a href="#" data-toggle="tooltip" data-placement="top" title="Archivo Cargado">
+                                <i class="fas fa-user-check text-success"></i>
+                              </a>
+                            </td>
+                          {{else}}
+                            <td class="text-center">
+                              <a href="#" data-toggle="tooltip" data-placement="top" title="Archivo no Cargado">
+                                <i class="fas fa-user-times text-danger"></i>
+                              </a>
+                            </td>
+                          {{/if}}
+                          <td>Registro de Ventas</td>
                           <td>
-                            <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Procesar los datos del archivo"><i class="fas fa-power-off"></i></button>
-                            <a href="/file/ventas/{{_id}}" class="btn btn-success" data-fileId="{{_id}}" data-toggle="tooltip" data-placement="top" title="Ver detalles del archivo"><i class="fas fa-eye"></i></a>
+                            {{#if estado}}
+                              <button data-file="{{_id}}" class="btn btn-warning btn-carga" data-toggle="tooltip" data-placement="top" title="Procesar los datos del archivo" id="btn-cargar" disabled><i data-file="{{_id}}" class="fas fa-power-off btn-carga"></i></button>
+                            {{else}}
+                              <button data-file="{{_id}}" class="btn btn-warning btn-carga" data-toggle="tooltip" data-placement="top" title="Procesar los datos del archivo" id="btn-cargar"><i data-file="{{_id}}" class="fas fa-power-off btn-carga"></i></button>
+                            {{/if}}
+                            <a href="/file/ventas/{{_id}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Ver detalles del archivo"><i class="fas fa-eye"></i></a>
+                            {{#if estado}}
+                            {{!-- no se puede eliminar --}}
+                            {{else}}
+                              <button data-file="{{_id}}" class="btn btn-danger eliminar-file" data-toggle="tooltip" data-placement="top" title="Eliminar Registro"><i data-file="{{_id}}" class="fas fa-trash-alt eliminar-file"></i></button>
+                            {{/if}}
                           </td>
                         </tr>
                       {{/each}}
@@ -67,7 +90,7 @@
                 <tr>
                   <th>Icono</th>
                   <th>Nombre</th>
-                  <th>Cargado</th>
+                  <th>Estado</th>
                   <th>Tipo</th>
                   <th>Acciones</th>
                 </tr>
@@ -124,7 +147,7 @@
     <script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
     <script>
     $(function () {
-        $('#example1').DataTable({
+        $('#tabla-archivos').DataTable({
             "paging": true,
             "lengthChange": false,
             "searching": false,

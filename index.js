@@ -1,5 +1,7 @@
 //estableciendo variables
 const mongoose = require('mongoose');
+const morgan = require('morgan');
+const Logger = require('./config/loggerService');
 const express = require('express');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
@@ -7,18 +9,25 @@ const flash = require('connect-flash');
 const createError = require('http-errors');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const conectarDB = require('./config/db');
+const ConexionDB = require('./config/db');
 const cookieParser = require('cookie-parser');
 const passport = require('./config/passport');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const moment = require('moment');
+
 moment.locale('es');  
 require('dotenv').config({path: "variables.env"});
 // inicializacion
 const app = express();
+const logger = new Logger('app');
 //comentando para git
 // configuracion
+// app.use(morgan('combined',{stream: logger.stream()}));
+morgan.token('host', function(req, res) {
+  return req.hostname;
+});
+// app.use(morgan('dev',{stream: logger.stream()}));
 app.set('views',path.join(__dirname,'views'));
 let blocks = {};
 app.engine('hbs',exphbs({
@@ -78,6 +87,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(flash());
 
 app.use(cookieParser(process.env.SEED_SECRET));
+
 // session and cookies
 app.use(session({
   secret: process.env.SEED_SECRET,
@@ -85,14 +95,18 @@ app.use(session({
   saveUninitialized: false, // don't create session until something stored
   store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
+
 // passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 // connect databse
-conectarDB();
+ConexionDB.getInstance();
 // globals
 app.use((req,res,next) => {
   res.locals.mensajes = req.flash();
+  res.locals.uriAdmin = process.env.URI_ADMIN || "http://localhost:5000/admin"
   next();
 })
 
@@ -102,16 +116,21 @@ app.use(routes);
 
 // 404 página de error
 app.use((req,res,next) => {
-  next(createError(404, 'No encontrado'));
+  console.log("entro error")
+  next(createError(404,'Not found'));
 })
 
 // administrar error
 app.use((error,req,res,next) => {
-  console.log(error.message)
+ 
   res.locals.mensaje = error.message;
   const status = error.status || 500;
   res.locals.status = status;
   res.status(status);
+  logger.error('Error al cargar un recurso',{
+    status: status,
+    error
+  })
   res.render('error',{
     layout: 'auth'
   });
@@ -120,5 +139,7 @@ app.use((error,req,res,next) => {
 // server running
 const PORT = process.env.PORT || 4000;
 app.listen(PORT,() => {
-  console.log("Servidor corriendo en el puerto "+PORT);
+  logger.info(`Servidor Corriendo en el puerto ${PORT}` , {
+    "success": true
+  })
 })

@@ -75,6 +75,11 @@ const administratorSchema = mongoose.Schema({
     type: String,
     trim : true
   },
+  role:{
+    type: String,
+    trim : true,
+    default: "ADMIN"
+  },
   fechaNacimiento: {
     type: Date
   },

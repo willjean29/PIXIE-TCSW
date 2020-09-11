@@ -1,47 +1,94 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Administrador | Login</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/admin/admin-lte/img/icon-prize.png" />
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="/admin/admin-lte/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    {{!-- Toastr --}}
-    <link rel="stylesheet" href="/admin/plugins/toastr/toastr.min.css">
-    {{! Styles Block}}
-    {{{block 'styles'}}}
-</head>
-<body class="hold-transition login-page lockscreen">
-    {{#if mensajes}}
-      <div class="alertas">
-          {{#mostrarAlertas mensajes}}
-          {{/mostrarAlertas}}
-      </div>
-    {{/if}}
-    {{{body}}}
+{{#extend 'styles'}}
 
-     <!-- jQuery -->
-    <script src="/admin/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="/admin/admin-lte/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="/admin/admin-lte/js/demo.js"></script>
-    {{!-- Toastr --}}
-    <script src="/admin/plugins/toastr/toastr.min.js"></script>
-    <script src="/dist/bundle.js"></script>
-    {{! Scripts block}}
-    {{{block "scripts"}}}
+{{/extend}}
+	<!--================Home Banner Area =================-->
+	{{!-- <section class="banner_area">
+		<div class="banner_inner d-flex align-items-center">
+			<div class="container">
+				<div class="banner_content text-center">
+					<h2>Login/Register</h2>
+					<div class="page_link">
+						<a href="index.html">Home</a>
+						<a href="login.html">Login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> --}}
+	<!--================End Home Banner Area =================-->
 
-</body>
-</html>
+	<!--================Login Box Area =================-->
+	<section class="login_box_area p_120">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<img class="img-fluid" src="/users/img/login.jpg" alt="">
+						<div class="hover">
+							<h4>¿Nuevo en nuestro sitio web?</h4>
+							<p>Se están logrando avances en la ciencia y la tecnología todos los días, y un buen ejemplo de esto es el</p>
+							<a class="main_btn" href="/registrer">Crear una Cuenta</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+						<h3>INICIAR SESIÓN PARA ENTRAR</h3>
+						<form class="row login_form" action="/login" method="POST" id="contactForm">
+							<div class="col-md-12 form-group">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Nombre de Usuario">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+							</div>
+							{{!-- <div class="col-md-12 form-group">
+								<div class="creat_account">
+									<input type="checkbox" id="f-option2" name="selector">
+									<label for="f-option2">Mantenme conectado</label>
+								</div>
+							</div> --}}
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="btn submit_btn">Iniciar Sesión</button>
+								<a href="#">¿Se te olvido tu contraseña?</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
+
+	<!--================ Subscription Area ================-->
+	<section class="subscription-area section_gap">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h2>Suscríbete a nuestro boletín</h2>
+						<span>No enviaremos ningún tipo de spam</span>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div id="mc_embed_signup">
+						<form target="_blank" novalidate action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01"
+						 method="get" class="subscription relative">
+							<input type="email" name="EMAIL" placeholder="Dirección de correo electrónico" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
+							 required="">
+							<!-- <div style="position: absolute; left: -5000px;">
+									<input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
+								</div> -->
+							<button type="submit" class="newsl-btn">Empezar</button>
+							<div class="info"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Subscription Area ================-->
+{{#extend 'scripts'}}
+
+{{/extend}}

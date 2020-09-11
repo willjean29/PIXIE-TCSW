@@ -6,11 +6,15 @@ import catalog from './admin/catalog';
 import prize from './admin/prize';
 import validation from './admin/validation';
 import documents from './admin/documents';
+import chart from './admin/chart';
 import Swal from 'sweetalert2';
 import moment  from 'moment';
 import axios from 'axios';
 import clienteAxios from './config/clienteAxios';
-console.log("hola mundo123");
+
+// // importar js del cliente
+// import appClient from './appClient';
+
 
 const token = localStorage.getItem('TOKEN');
 if(!token) {
@@ -58,7 +62,6 @@ if(inputFileIMG){
         previewIMG.style.display = 'block';
   
         reader.addEventListener('load',function(){
-          console.log(this.result)
           previewIMG.setAttribute("src",this.result);
         })
   
@@ -111,7 +114,7 @@ if(formAvatar){
         }
       })
       .catch((error) => {
-        console.log(error.response.data);
+        console.log(error.response);
         const msg = error.response.data.err.msg;
         Swal.fire({
           title: 'Hubo un error',

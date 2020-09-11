@@ -4,6 +4,9 @@ const Prize = require('../models/Prize');
 const Business = require('../models/Business');
 const Category = require('../models/Category');
 
+const cloudinary = require('../config/cloudinary');
+const fs = require('fs-extra');
+
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 
 const mostrarCrearCatalogo = async(req,res) => {
@@ -20,7 +23,7 @@ const mostrarCrearCatalogo = async(req,res) => {
 }
 
 const mostrarListaCatalogo = async(req,res) => {
-  console.log("hola desde ctalgo")
+  
   const administrator = await Administrator.findById(req.user._id).lean();
   const business = await Business.findOne({administrador: administrator._id}).lean(); 
   const catalog = await Catalog.findOne({business: business._id}).lean();
@@ -28,7 +31,7 @@ const mostrarListaCatalogo = async(req,res) => {
   const existeConcursoSimple = await existsCompetitionSimple(req.user._id);
   const existeCatalogoBusiness = await existsCatalogoBusiness(req.user._id);
   const categories = await Category.find().sort('name').lean();
-  console.log(prizes);
+
   // console.log(categories);
   // console.log(existeCatalogoBusiness);
   // console.log(prizes)
@@ -77,7 +80,9 @@ const registrarCatalogoPremios = async(req,res) => {
   
   if(req.files){
     if(req.files.length > 1){
-      req.files.forEach((file,index) => {
+      console.log(req.files)
+      req.files.forEach(async(file,index) => {   
+        const result = await cloudinary.v2.uploader.upload(file.path);
         const dataPremio = {
           name: req.body.nombre[index],
           image: file.filename,
@@ -85,11 +90,16 @@ const registrarCatalogoPremios = async(req,res) => {
           points: req.body.puntos[index],
           price: req.body.precio[index],
           category: req.body.categoria[index],
-          catalog: catalog._id
+          catalog: catalog._id,
+          url: result.secure_url
         }
         registrarPremio(dataPremio);
+        await fs.unlink(file.path);
       })
     }else{
+      console.log(req.files)
+      const result = await cloudinary.v2.uploader.upload(req.files[0].path);
+      console.log(result);
       const dataPremio = {
         name: req.body.nombre,
         image: req.files[0].filename,
@@ -97,9 +107,11 @@ const registrarCatalogoPremios = async(req,res) => {
         points: req.body.puntos,
         price: req.body.precio,
         category: req.body.categoria,
-        catalog: catalog._id
+        catalog: catalog._id,
+        url: result.secure_url
       }
       registrarPremio(dataPremio);
+      await fs.unlink(req.files[0].path);
     }
   }
   // console.log(req.files);
