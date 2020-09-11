@@ -46,7 +46,7 @@ function mostrarEditarditarPremio(event){
           precio.value = prize.price;
           puntos.value = prize.points;
           descripcion.value = prize.description;
-          img.src = `${prize.image}`;
+          img.src = `${prize.url}`;
           idPrize.value = id;
         }
       })
