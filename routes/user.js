@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();
 const userController = require('../controllers/userController');
 app.get('/',(req,res) => {
-  res.redirect('/login');
+  res.redirect('/admin');
 });
 app.get('/login',(req,res) => {
   res.render('user/auth.hbs',{
