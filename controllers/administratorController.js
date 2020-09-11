@@ -6,6 +6,8 @@ const Administrator = require('../models/Administrator');
 const Business = require('../models/Business');
 const Competition = require('../models/Competition');
 const File = require('../models/File');
+const cloudinary = require('../config/cloudinary');
+const fs = require('fs-extra');
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 const {premiosTotales, registrosTotales, clientesTotales, 
   concursosActivvos, clientesTop, clientesEstado, productosTop, clientesGeneros
@@ -226,7 +228,9 @@ const agregarAvatarAdministrador = async(req,res) => {
   });
 
   if(req.file){
-    administrator.image = req.file.filename;
+    const result = await cloudinary.v2.uploader.upload(req.file.path);
+    administrator.image = result.secure_url;
+    await fs.unlink(req.file.path);
   }
 
   try {

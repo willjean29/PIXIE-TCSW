@@ -62,7 +62,6 @@ if(inputFileIMG){
         previewIMG.style.display = 'block';
   
         reader.addEventListener('load',function(){
-          console.log(this.result)
           previewIMG.setAttribute("src",this.result);
         })
   
@@ -115,7 +114,7 @@ if(formAvatar){
         }
       })
       .catch((error) => {
-        console.log(error.response.data);
+        console.log(error.response);
         const msg = error.response.data.err.msg;
         Swal.fire({
           title: 'Hubo un error',

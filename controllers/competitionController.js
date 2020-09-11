@@ -2,6 +2,8 @@ const Competition = require('../models/Competition');
 const Business = require('../models/Business');
 const Administrator = require('../models/Administrator');
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
+const cloudinary = require('../config/cloudinary');
+const fs = require('fs-extra');
 const moment = require('moment');
 
 const mostrarCrearConmcursoSimple = async(req,res) => {
@@ -152,7 +154,9 @@ const agregarAvatarCompetition = async (req,res) => {
   });
 
   if(req.file){
-    competition.image = req.file.filename;
+    const result = await cloudinary.v2.uploader.upload(req.file.path);
+    competition.image = result.secure_url;
+    await fs.unlink(req.file.path);
   }
 
   try {
