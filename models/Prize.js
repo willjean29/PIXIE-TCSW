@@ -11,6 +11,10 @@ const prizeSchema = mongoose.Schema({
     trim: true,
     // required: true
   },
+  url: {
+    type: String,
+    trim: true,
+  },
   description: {
     type: String,
     trim: true,

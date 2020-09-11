@@ -87,6 +87,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(flash());
 
 app.use(cookieParser(process.env.SEED_SECRET));
+
 // session and cookies
 app.use(session({
   secret: process.env.SEED_SECRET,
@@ -94,14 +95,18 @@ app.use(session({
   saveUninitialized: false, // don't create session until something stored
   store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
+
 // passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 // connect databse
 ConexionDB.getInstance();
 // globals
 app.use((req,res,next) => {
   res.locals.mensajes = req.flash();
+  res.locals.uriAdmin = process.env.URI_ADMIN || "http://localhost:5000/admin"
   next();
 })
 
@@ -111,6 +116,7 @@ app.use(routes);
 
 // 404 página de error
 app.use((req,res,next) => {
+  console.log("entro error")
   next(createError(404,'Not found'));
 })
 
@@ -133,7 +139,7 @@ app.use((error,req,res,next) => {
 // server running
 const PORT = process.env.PORT || 4000;
 app.listen(PORT,() => {
-  logger.info(`Servidor Corriendo en el puuerto ${PORT}` , {
+  logger.info(`Servidor Corriendo en el puerto ${PORT}` , {
     "success": true
   })
 })

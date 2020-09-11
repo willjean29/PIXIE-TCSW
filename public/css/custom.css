@@ -57,3 +57,14 @@
 .csv-icon i{
     font-size: 2rem;
 }
+
+@media (min-width: 992px){
+    .section-padding{
+        padding-top: 160px !important;
+    }
+}
+
+.select-category{
+    color: #1641ff !important;
+}
+

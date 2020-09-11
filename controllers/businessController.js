@@ -2,6 +2,8 @@
 const Administrator = require('../models/Administrator');
 const {existsCompetitionSimple,existsCatalogoBusiness} = require('../middlewares/exists');
 const axios = require('axios');
+const cloudinary = require('../config/cloudinary');
+const fs = require('fs-extra');
 require('dotenv').config({ path : "variables.env"});
 
 const mostrarRegistroEmpresa = async(req,res) => {
@@ -183,7 +185,11 @@ const agregarAvatarEmpresa = async(req,res) => {
   });
 
   if(req.file){
-    business.imagen = req.file.filename;
+    const result = await cloudinary.v2.uploader.upload(req.file.path);
+    console.log(result)
+    console.log(req.file)
+    business.imagen = result.secure_url;
+    await fs.unlink(req.file.path);
   }
 
   try {

@@ -172,6 +172,7 @@ function registrarCatalogo(event){
       }
     })
     .catch((error) => {
+      console.log(error.response)
       Swal.fire({
         title: 'Hubo un error',
         text: "No se pudo registrar",
