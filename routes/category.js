@@ -4,7 +4,7 @@ const categoryController = require('../controllers/categoryController');
 const authController = require('../controllers/authController');
 
 router.post('/registrer',
-  authController.adminsitradorAutenticado,
+  // authController.adminsitradorAutenticado,
   categoryController.registrarCategoria
 );
 router.get('/list',
