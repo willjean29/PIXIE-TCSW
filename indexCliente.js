@@ -16,6 +16,8 @@ const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const moment = require('moment');
 
+const paginate = require('handlebars-paginate');
+
 moment.locale('es');  
 require('dotenv').config({path: "variables.env"});
 // inicializacion
@@ -75,7 +77,8 @@ app.engine('hbs',exphbs({
       }
       
       return opciones.fn().html = html;
-    }
+    },
+    paginate: paginate
   },
   extname: '.hbs'
 }));

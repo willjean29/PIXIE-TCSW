@@ -58,13 +58,18 @@
     font-size: 2rem;
 }
 
-@media (min-width: 992px){
-    .section-padding{
-        padding-top: 160px !important;
-    }
+
+.section-padding{
+    padding-top: 160px !important;
 }
 
 .select-category{
     color: #1641ff !important;
+}
+
+.title-business{
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 

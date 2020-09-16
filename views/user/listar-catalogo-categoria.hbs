@@ -5,240 +5,36 @@
 				<div class="col-lg-9">
 					<div class="product_top_bar">
 						<div class="left_dorp">
-							<select class="sorting">
-								<option value="1">Default sorting</option>
-								<option value="2">Default sorting 01</option>
-								<option value="4">Default sorting 02</option>
-							</select>
-							<select class="show">
-								<option value="1">Show 12</option>
-								<option value="2">Show 14</option>
-								<option value="4">Show 16</option>
-							</select>
+							<h4>{{empresa.nombre}}</h4>
 						</div>
 						<div class="right_page ml-auto">
-							<nav class="cat_page" aria-label="Page navigation example">
-								<ul class="pagination">
-									<li class="page-item">
-										<a class="page-link" href="#">
-											<i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li class="page-item active">
-										<a class="page-link" href="#">1</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">2</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">3</a>
-									</li>
-									<li class="page-item blank">
-										<a class="page-link" href="#">...</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">6</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">
-											<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-							</nav>
+							<h2>{{empresa.puntos}} <i class="fa fa-circle"></i></h2>
 						</div>
 					</div>
-					<div class="latest_product_inner row">
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-1.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
+					<div class="latest_product_inner row" id="listado-premios">
+						{{#if premios}}
+							{{#each premios}}
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<div class="f_p_item">
+									<div class="f_p_img">
+										<img class="img-fluid" src="{{url}}" alt="">
+										<div class="p_icon">
+											<a href="#">
+												<i class="lnr lnr-heart"></i>
+											</a>
+											<a href="#" class="comprar" data-toggle="modal" data-target="#exampleModal" data-id="{{_id}}">
+												<i class="lnr lnr-cart comprar"></i>
+											</a>
+										</div>
 									</div>
+									<a href="#">
+										<h4>{{name}}</h4>
+									</a>
+									<h5>{{points}}</h5>
 								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
 							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-2.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-3.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-4.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-5.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-4.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-3.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-4.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
-                        <div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-4.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
-                        <div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-4.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
+							{{/each}}
+						{{/if}}
 					</div>
 				</div>
 				<div class="col-lg-3">
@@ -318,37 +114,57 @@
 				</div>
 			</div>
 
-			<div class="row py-5">
-				<nav class="cat_page mx-auto" aria-label="Page navigation example">
-					<ul class="pagination">
-						<li class="page-item">
-							<a class="page-link" href="#">
-								<i class="fa fa-chevron-left" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li class="page-item active">
-							<a class="page-link" href="#">01</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">02</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">03</a>
-						</li>
-						<li class="page-item blank">
-							<a class="page-link" href="#">...</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">09</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">
-								<i class="fa fa-chevron-right" aria-hidden="true"></i>
-							</a>
-						</li>
-					</ul>
-				</nav>
+			<div class="row py-5 justify-content-center">
+				<div class="pagination pagination-centered">
+					<nav class="cat_page mx-auto" aria-label="Page navigation example">
+						<ul class="pagination">
+							{{#paginate pagination type="first"}}
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+							{{/paginate}}
+							{{#paginate pagination type="previous"}}
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+							{{/paginate}}
+							{{#paginate pagination type="middle" limit="10"}}
+							<li {{#if active}}class="active"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}">{{n}}</a></li>
+							{{/paginate}}
+							{{#paginate pagination type="next"}}
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+							{{/paginate}}
+							{{#paginate pagination type="last"}}
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+							{{/paginate}}
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</section>
 	<!--================End Category Product Area =================-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detalle Premio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<div class="card">
+		<img src="" class="card-img-top" alt="" id="imagen-premio"></canvas>
+		<div class="card-body">
+			
+			<h5 class="card-title"><strong>Titulo : </strong> <span id="titulo-premio">Titulo Premio</span></h5>
+			<p class="card-text"><strong>Descripcion : </strong><span class="card-text" id="descripcion-premio"></span></p>
+			<p class="card-text"><strong>Puntos : </strong><span class="card-text" id="puntos-premio"></span></p>
+		</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Canjear Premio</button>
+      </div>
+    </div>
+  </div>
+</div>

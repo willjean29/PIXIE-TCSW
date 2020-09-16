@@ -31,6 +31,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.6.0",
     "fs-extra": "^9.0.1",
+    "handlebars-paginate": "^0.1.0",
     "http-errors": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "microprofiler": "^1.0.4",

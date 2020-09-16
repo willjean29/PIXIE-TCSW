@@ -1,4 +1,5 @@
 import authClient from './auth/authClient';
+import prizes from './user/prizes';
 // console.log("hola cliente");
 // console.log("gaaaaaaa");
 let categorias = document.querySelectorAll('.categoria');

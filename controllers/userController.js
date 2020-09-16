@@ -4,6 +4,7 @@ const Catalog = require('../models/Catalog');
 const Business = require('../models/Business');
 const Prize = require('../models/Prize');
 const passport = require('passport');
+const paginate = require('handlebars-paginate');
 // verificar si el cliente esta esta autenticado
 const clienteAutenticado = (req,res,next) => {
 
@@ -20,8 +21,8 @@ const autenticarClliente = passport.authenticate('localCliente',{
 })
 
 const mostrarListadoEmpresas = async(req,res) => {
-  console.log(req.user)
-  console.log(req.session)
+  // console.log(req.user)
+  // console.log(req.session)
   //  cargar las empresas asosciadas
   let empresas = []
   for (let puntuacion of req.user.puntuacion) {
@@ -33,7 +34,7 @@ const mostrarListadoEmpresas = async(req,res) => {
     }
     empresas.push(data);
   }
-  console.log(empresas)
+  req.session.afiliadas = empresas;
   res.render('user/listar-empresas.hbs',{
     layout: 'user.hbs',
     empresas
@@ -43,19 +44,72 @@ const mostrarListadoEmpresas = async(req,res) => {
 const mostrarCatalogoEmpresa = async (req,res) => {
   const categorias = await obtenerCategorias(req.params.id);
   const catalogo = await Catalog.findOne({business: req.params.id});
-  const premios = await Prize.find({catalog: catalogo._id});
-  console.log(premios);
+  // premios por pagina
+  let premio = 6;
+  let paginaActual = req.query.p || 1;
+
+  const premios = await Prize.find({catalog: catalogo._id})
+    .skip((premio * paginaActual) - premio)
+    .limit(premio).lean();
+
+  const premiosTotales = await Prize.count({catalog: catalogo._id});
+
+  const paginasTotales = Math.ceil(premiosTotales / premio);
+
+  // obtener datos de la empresa actual
+  let empresaActual;
+  for (let empresa of req.session.afiliadas) {
+    if(req.params.id === empresa.id){
+      empresaActual = empresa;
+    }
+  }
+
   res.render('user/listar-catalogo.hbs',{
     layout: 'user.hbs',
-    categorias
+    categorias,
+    premios,
+    pagination: {
+      page: paginaActual,       // The current page the user is on
+      pageCount: paginasTotales  // The total number of available pages
+    },
+    empresa: empresaActual
   })
 }
 
 const mostrarCategoriaCatalogo = async (req,res) => {
   const categorias = await obtenerCategorias(req.params.id);
+  const catalogo = await Catalog.findOne({business: req.params.id});
+  const category = await Category.findOne({name: req.params.category});
+
+  // premios por pagina
+  let premio = 6;
+  let paginaActual = req.query.p || 1;
+
+  const premios = await Prize.find({catalog: catalogo._id, category: category._id})
+    .skip((premio * paginaActual) - premio)
+    .limit(premio).lean();
+  console.log(premios)
+  const premiosTotales = await Prize.count({catalog: catalogo._id,category: category._id});
+
+  const paginasTotales = Math.ceil(premiosTotales / premio);
+
+  // obtener datos de la empresa actual
+  let empresaActual;
+  for (let empresa of req.session.afiliadas) {
+    if(req.params.id === empresa.id){
+      empresaActual = empresa;
+    }
+  }
+
   res.render('user/listar-catalogo-categoria.hbs',{
     layout: 'user.hbs',
     categorias,
+    premios,
+    pagination: {
+      page: paginaActual,       // The current page the user is on
+      pageCount: paginasTotales  // The total number of available pages
+    },
+    empresa: empresaActual
   })
 }
 
@@ -134,11 +188,26 @@ const obtenerCategorias = async (idBusiness) => {
   return categorias;
 }
 
+const premiosPaginas = async (req,res) => {
+  let premio = 6;
+  let paginaActual = req.params.page || 1;
+  console.log(req.url)
+  const premios = await Prize.find({})
+    .skip((premio * paginaActual) - premio)
+    .limit(premio);
+  console.log(premios);
+  res.json({
+    ok: true,
+    premios
+  })
+}
+
 module.exports = {
   autenticarClliente,
   clienteAutenticado,
   mostrarListadoEmpresas,
   mostrarCatalogoEmpresa,
   mostrarCategoriaCatalogo,
-  registrarCliente
+  registrarCliente,
+  premiosPaginas
 }

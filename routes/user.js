@@ -26,4 +26,6 @@ app.get('/business/:id',userController.mostrarCatalogoEmpresa);
 
 app.get('/business/:id/:category',userController.mostrarCategoriaCatalogo);
 
+app.get('/products/:page',userController.premiosPaginas);
+
 module.exports = app;
