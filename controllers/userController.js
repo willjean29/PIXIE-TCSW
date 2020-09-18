@@ -5,6 +5,42 @@ const Business = require('../models/Business');
 const Prize = require('../models/Prize');
 const passport = require('passport');
 const paginate = require('handlebars-paginate');
+
+const cloudinary = require('../config/cloudinary');
+const fs = require('fs-extra');
+
+const mostrarLogin = (req,res) => {
+  res.render('user/auth.hbs',{
+    layout: 'user.hbs',
+    Session: false
+  })
+}
+
+const mostrarRegistrarCliente = (req,res) => {
+  res.render('user/registro.hbs',{
+    layout: 'user.hbs',
+    Session: false
+  })
+}
+
+const mostrarCuentaUsuario = (req,res) => {
+  console.log(req.user)
+  const isMale = req.user.sexo == 'M' ? true : false;
+  res.render('user/listar-usuario.hbs',{
+    layout: 'user.hbs',
+    user : {
+      name : req.user.name,
+      lastname : req.user.lastName,
+      sexo: req.user.sexo,
+      email: req.user.email,
+      dni: req.user.dni,
+      empresas: req.user.puntuacion.length,
+      image: req.user.image,
+      isMale
+    },
+    Session: true
+  })
+}
 // verificar si el cliente esta esta autenticado
 const clienteAutenticado = (req,res,next) => {
 
@@ -21,23 +57,14 @@ const autenticarClliente = passport.authenticate('localCliente',{
 })
 
 const mostrarListadoEmpresas = async(req,res) => {
-  // console.log(req.user)
-  // console.log(req.session)
+
   //  cargar las empresas asosciadas
-  let empresas = []
-  for (let puntuacion of req.user.puntuacion) {
-    const empresa = await Business.findById(puntuacion.idBusiness);
-    const data = {
-      id: empresa._id,
-      nombre : empresa.razonSocial,
-      puntos : puntuacion.puntos
-    }
-    empresas.push(data);
-  }
-  req.session.afiliadas = empresas;
+  req.session.afiliadas = await actualizarEmpresasAfiliadas(req);
+  console.log(req.session.afiliadas)
   res.render('user/listar-empresas.hbs',{
     layout: 'user.hbs',
-    empresas
+    empresas: req.session.afiliadas,
+    Session: true
   })
 }
 
@@ -57,9 +84,11 @@ const mostrarCatalogoEmpresa = async (req,res) => {
   const paginasTotales = Math.ceil(premiosTotales / premio);
 
   // obtener datos de la empresa actual
+  //  cargar las empresas asosciadas
+  req.session.afiliadas = await actualizarEmpresasAfiliadas(req);
   let empresaActual;
   for (let empresa of req.session.afiliadas) {
-    if(req.params.id === empresa.id){
+    if(req.params.id == empresa.id){
       empresaActual = empresa;
     }
   }
@@ -72,7 +101,8 @@ const mostrarCatalogoEmpresa = async (req,res) => {
       page: paginaActual,       // The current page the user is on
       pageCount: paginasTotales  // The total number of available pages
     },
-    empresa: empresaActual
+    empresa: empresaActual,
+    Session: true
   })
 }
 
@@ -94,9 +124,11 @@ const mostrarCategoriaCatalogo = async (req,res) => {
   const paginasTotales = Math.ceil(premiosTotales / premio);
 
   // obtener datos de la empresa actual
+  //  cargar las empresas asosciadas
+  req.session.afiliadas = await actualizarEmpresasAfiliadas(req);
   let empresaActual;
   for (let empresa of req.session.afiliadas) {
-    if(req.params.id === empresa.id){
+    if(req.params.id == empresa.id){
       empresaActual = empresa;
     }
   }
@@ -109,7 +141,8 @@ const mostrarCategoriaCatalogo = async (req,res) => {
       page: paginaActual,       // The current page the user is on
       pageCount: paginasTotales  // The total number of available pages
     },
-    empresa: empresaActual
+    empresa: empresaActual,
+    Session: true
   })
 }
 
@@ -188,6 +221,34 @@ const obtenerCategorias = async (idBusiness) => {
   return categorias;
 }
 
+const canjearPremio = async (req,res) => {
+  const id = req.params.id;
+  const idEmpresa = req.body.empresa;
+  const prize = await Prize.findById(id);
+  const client = await Client.findById(req.user._id);
+
+  let msg,state;
+  for (let index = 0; index < client.puntuacion.length; index++) {
+    const puntos = client.puntuacion[index];
+    if(JSON.stringify(puntos.idBusiness) == JSON.stringify(idEmpresa)){
+      if(puntos.puntos >= prize.points){
+        msg = "Se canjeo el premio con exito";
+        state = true;
+        client.puntuacion[index].puntos -= prize.points; 
+      }else{
+        msg = "No cuenta con puntos necesarios";
+        state = false;
+      }
+    }
+  }
+  console.log(client);
+  // await client.save();
+  res.json({
+    ok: state,
+    msg
+  })
+
+}
 const premiosPaginas = async (req,res) => {
   let premio = 6;
   let paginaActual = req.params.page || 1;
@@ -202,12 +263,79 @@ const premiosPaginas = async (req,res) => {
   })
 }
 
+const registrarAvatar = async (req,res) => {
+  const id = req.user._id;
+
+  const client = await Client.findById(id).catch((err) => {
+    return res.status(400).json({
+      ok: false,
+      err
+    });
+  })
+
+  if(!client) return res.status(400).json({
+    ok: false,
+    err: {
+      msg: "El cliente no existe o no tiene permisos"
+    }
+  });
+
+  if(req.file){
+    const result = await cloudinary.v2.uploader.upload(req.file.path);
+    client.image = result.secure_url;
+    await fs.unlink(req.file.path);
+    console.log(req.file)
+  }
+
+  try {
+    await client.save();
+  } catch (err) {
+    return res.status(400).json({
+      ok: false,
+      err: {
+        msg: "No se pudo guardar la imagen"
+      }
+    }); 
+  }
+
+  res.json({
+    ok: true,
+    client
+  });
+}
+const actualizarEmpresasAfiliadas = async(req) => {
+  let empresas = []
+  for (let puntuacion of req.user.puntuacion) {
+    const empresa = await Business.findById(puntuacion.idBusiness);
+    const data = {
+      id: empresa._id,
+      nombre : empresa.razonSocial,
+      puntos : puntuacion.puntos
+    }
+    empresas.push(data);
+  }
+
+  return empresas;
+}
+
+const cerrarSesion = (req,res) => {
+  req.logout();
+  res.redirect('/login');
+}
+
 module.exports = {
+  mostrarLogin,
+  mostrarRegistrarCliente,
+  mostrarCuentaUsuario,
   autenticarClliente,
   clienteAutenticado,
   mostrarListadoEmpresas,
   mostrarCatalogoEmpresa,
   mostrarCategoriaCatalogo,
   registrarCliente,
-  premiosPaginas
+  canjearPremio,
+  registrarAvatar,
+  premiosPaginas,
+  cerrarSesion
 }
+

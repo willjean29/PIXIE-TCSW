@@ -201,3 +201,452 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
 01:42:13 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
 01:42:13 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
 01:42:13 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+14:05:05 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+14:05:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+14:05:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:03:04 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:03:04 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:03:04 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:07:22 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:07:22 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:07:22 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:08:04 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:08:04 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:08:04 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:09:08 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:09:08 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:09:08 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:09:27 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:09:27 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:09:27 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:10:26 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:10:27 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:10:28 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:11:37 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:11:37 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:11:38 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:12:41 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:12:41 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:12:41 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:14 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:14 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:14 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:25 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:25 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:14:25 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:16:49 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:16:49 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:16:50 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:18:21 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:18:22 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:18:22 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:20:47 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:20:48 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:20:48 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:24:11 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:24:11 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:24:11 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:47:38 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:47:38 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:47:38 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:48:43 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:48:44 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:48:44 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:54:52 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:54:53 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:54:54 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:56:01 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:56:01 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:56:01 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:57:01 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:57:01 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:57:01 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:23 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:24 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+16:59:24 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:00:02 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:00:03 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:00:03 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:01:26 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:01:27 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:01:27 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:02:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:02:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:02:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:03:48 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:03:48 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:03:48 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:04:00 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:04:00 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:04:01 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:04:50 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:04:50 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:04:50 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:05:24 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:05:24 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:05:24 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:09:02 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| uncaughtException: Unexpected token '}'
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:193
+    }
+    ^
+
+SyntaxError: Unexpected token '}'
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+17:09:02 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| uncaughtException: Unexpected token '}'
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:193
+    }
+    ^
+
+SyntaxError: Unexpected token '}'
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+17:09:02 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| uncaughtException: Unexpected token '}'
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:193
+    }
+    ^
+
+SyntaxError: Unexpected token '}'
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+17:14:10 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| uncaughtException: Unexpected end of input
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:256
+
+
+
+SyntaxError: Unexpected end of input
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+17:14:10 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| uncaughtException: Unexpected end of input
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:256
+
+
+
+SyntaxError: Unexpected end of input
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+17:14:10 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| uncaughtException: Unexpected end of input
+C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\controllers\userController.js:256
+
+
+
+SyntaxError: Unexpected end of input
+    at Module._compile (internal/modules/cjs/loader.js:891:18)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\user.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10)
+    at Module.load (internal/modules/cjs/loader.js:811:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:723:14)
+    at Module.require (internal/modules/cjs/loader.js:848:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\willj\Desktop\Proyectos Node\pixie-TCSW\routes\index.js:32:13)
+    at Module._compile (internal/modules/cjs/loader.js:955:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:991:10) | 
+17:16:08 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:16:09 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:16:09 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:18:58 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:18:59 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:18:59 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:19:34 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:19:34 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:19:35 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:33:20 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:33:21 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:33:21 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:35:00 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:35:00 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:35:00 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:35:18 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:35:19 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:35:19 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:36:01 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:36:02 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:36:03 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:05 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:06 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:35 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:35 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:35 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:46 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:46 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:46 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:58 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:58 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:37:58 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:38:11 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:38:11 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:38:11 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:39:09 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:39:10 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:39:10 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:41:19 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:41:19 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:41:19 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:04 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:05 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:05 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:12 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:12 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:12 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:18 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:18 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:18 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:33 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:33 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:33 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:42 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:42 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+17:42:42 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:32:56 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:32:56 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:32:56 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:34:21 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:34:21 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:34:21 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:34:34 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:34:34 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:34:34 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:35:33 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:35:33 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:35:33 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:35:45 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:35:45 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+18:35:45 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:00 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:00 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:00 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:18 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:18 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:18 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:28 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:28 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:22:28 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:24:08 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:24:08 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:24:08 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:25:09 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:25:10 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:25:10 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:25:19 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:25:19 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:25:19 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:40:13 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:40:13 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:40:13 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:51:41 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:51:41 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:51:41 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+19:56:27 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:13 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:13 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:14 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:39 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:40 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:40 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:43 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:43 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+20:02:43 GMT-0500 (GMT-05:00)2020-9-16 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:31:44 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:31:44 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:31:44 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:42:30 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:42:30 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:42:31 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:43:17 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:43:17 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:43:17 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:44:26 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:44:27 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:44:27 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:44:44 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:44:45 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:44:45 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:45:33 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:45:34 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:45:34 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:45:54 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:45:55 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:45:55 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:49:47 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:49:47 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:49:47 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:51:13 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:51:13 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:51:13 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:53:57 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:53:57 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:53:57 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:22 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:22 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:22 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:28 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:28 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:28 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:55 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:55 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:54:55 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:30 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:30 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:30 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:38 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:38 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:38 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:47 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:48 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:55:48 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:56:07 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:56:07 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+01:56:07 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:02:05 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:02:05 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:02:05 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:04:08 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:04:08 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:04:08 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:05:26 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:05:26 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:05:26 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:07:19 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:07:19 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:07:19 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:07:40 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:07:41 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:07:41 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:13:27 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:13:27 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:13:27 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:21:33 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:21:33 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:21:33 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:25:09 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:25:09 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:25:09 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:26:55 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:26:56 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:26:56 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:33:46 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:33:46 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:33:46 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:48:58 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:48:58 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:48:58 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+02:50:09 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:03:57 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:03:57 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:03:58 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:18:14 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:18:15 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:18:15 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:19:03 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:19:03 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:19:03 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:19:19 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:19:19 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:19:19 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:22:29 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:22:29 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:22:29 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:22:45 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:22:45 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:22:45 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:13 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:13 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:14 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:37 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:37 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:37 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:44 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:44 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:28:44 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:31:46 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:31:46 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:31:46 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:33:05 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:33:05 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:33:05 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:34:04 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:34:05 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:34:05 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:34:21 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:34:21 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 
+03:34:21 GMT-0500 (GMT-05:00)2020-9-18 | ERROR| Error al cargar un recurso | data:{"status":404,"error":{"message":"Not found"}} | 

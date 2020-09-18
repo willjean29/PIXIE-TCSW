@@ -72,4 +72,14 @@
     align-items: center;
     margin: 0;
 }
+.input-file{
+    opacity: 1;
+}
+.input-file:active,
+.input-file:focus{
+    outline: none !important;
+}
 
+.p_60{
+    padding: 60px 0;
+}

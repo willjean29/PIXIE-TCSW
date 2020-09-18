@@ -1,0 +1,119 @@
+    	<!--================Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="overlay"></div>
+		<div class="banner_inner d-flex align-items-center">
+			<div class="container">
+				<div class="banner_content row">
+					<div class="offset-lg-2 col-lg-8">
+						<h3>Fashion for
+							<br />Upcoming Winter</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+							aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+						<a class="white_bg_btn" href="#">View Collection</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Home Banner Area =================-->
+    
+    <!--================Contact Area =================-->
+    <section class="contact_area p_60">
+        <div class="container">
+            <h2 class="py-2">Detalles de Cliente</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact_info">
+                        <div class="info_item">
+                            <i class="fa fa-user"></i>
+                            <h6>{{user.name}}</h6>
+                            <p>Cliente Asociado</p>
+                        </div>
+                        <div class="info_item">
+                             <i class="fa fa-id-card"></i>
+                            <h6>
+                                <a href="#">{{user.dni}}</a>
+                            </h6>
+                            <p>DNI</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-envelope"></i>
+                            <h6>
+                                <a href="#">{{user.email}}</a>
+                            </h6>
+                            <p>Cuenta de Registro</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                     <div class="contact_info">
+                        <div class="info_item">
+                            <i class="fa fa-user"></i>
+                            <h6>{{user.lastname}}</h6>
+                            <p>Cliente Asociado</p>
+                        </div>
+                        <div class="info_item">
+                            {{#if user.isMale}}
+                            <i class="fas fa-male"></i>
+                            <h6>
+                                <a href="#">Masculino</a>
+                            </h6>
+                            {{else}}
+                            <i class="fas fa-female"></i>
+                            <h6>
+                                <a href="#">Femenino</a>
+                            </h6>
+                            {{/if}}
+                            <p>Género</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="fas fa-building"></i>
+                            <h6>
+                                <a href="#">{{user.empresas}}</a>
+                            </h6>
+                            <p>Empresas Asociadas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-4">
+                <div class="col-lg-3" style="display: flex;align-items: center;">
+                    <div class="contact_info">
+                        <div class="col col1">
+                            <div class="f_p_item">
+                                <div class="f_p_img">
+                                    {{#if user.image}}
+                                        <img class="img-fluid" src="{{user.image}}" alt="">
+                                    {{else}}
+                                        <img class="img-fluid" src="https://cdn.pixabay.com/photo/2018/08/28/13/29/avatar-3637561__340.png" alt="">
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <h2 class="py-2">Avatar del Cliente</h2>
+                    <form class="row contact_form" action="" method="" id="form-avatar" enctype="multipart/form-data">
+                        <div class="col-md-12">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input input-file" id="file-img"  name="image">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card my-2 container-preview-img" id="container-preview-img">
+                                <img src="" class="img-preview" alt="avatar" id="preview-img">
+                                <i class="far fa-image img-not-icon" id="default-img"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <input type="hidden" name="dir" value="user">
+                            <input type="hidden" name="url" value="/account-avatar">
+                            <button type="submit" value="submit" class="btn submit_btn">Actualizar avatar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Contact Area =================-->

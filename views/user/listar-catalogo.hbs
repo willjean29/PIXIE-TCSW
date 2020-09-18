@@ -3,6 +3,8 @@
 		<div class="container-fluid">
 			<div class="row flex-row-reverse">
 				<div class="col-lg-9">
+					{{!-- id de ek enpresa --}}
+					<input type="hidden" name="id-empresa" id="id-empresa" value="{{empresa.id}}">
 					<div class="product_top_bar">
 						<div class="left_dorp title-business">
 
@@ -337,7 +339,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Canjear Premio</button>
+		<input type="hidden" name="id" id="id-premio">
+        <button type="button" class="btn btn-primary canjear" id="btn-comprar">Canjear Premio</button>
       </div>
     </div>
   </div>
