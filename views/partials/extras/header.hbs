@@ -3,31 +3,39 @@
 		<div class="top_menu row m0">
 			<div class="container-fluid">
 				<div class="float-left">
-					<p>LLÁMANOS:: 012 44 5698 7456 896</p>
+					{{#if Session}}
+						<p>Usuario: {{name}}</p>
+					{{else}}
+						<p>LLÁMANOS: 926 594 773</p>
+					{{/if}}
 				</div>
 				<div class="float-right">
 					<ul class="right_side">
+
+						{{#if Session}}
+						<li>
+							<a href="/account">
+								MI cuenta
+							</a>
+						</li>
+						<li>
+							<a href="#" id="logout-cliente">
+								Cerrar Sesión
+							</a>
+						</li>
+						{{else}}
 						<li>
 							<a href="/registrer">
 								Registrate
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								MI cuenta
-							</a>
-						</li>
-						<li>
-							{{#if uriAdmin}}
-							<a href="{{uriAdmin}}">
+							<a href="https://puntospixie.herokuapp.com/">
 								Empresas
 							</a>
-							{{else}}
-							<a href="#">
-								Empresas
-							</a>
-							{{/if}}
 						</li>
+						{{/if}}
+
 					</ul>
 				</div>
 			</div>
@@ -36,8 +44,8 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html">
-						<img src="/users/img/logo.png" alt="">
+					<a class="navbar-brand logo_h" {{#if Session}}href="/business" {{/if}} href="/login">
+						<img src="/users/img/favicon.png" alt=""><span class="title-page">Pixie</span>
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					 aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +57,7 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<div class="row w-100">
 							<div class="col-lg-7 pr-0">
-								<ul class="nav navbar-nav center_nav pull-right">
+								{{!-- <ul class="nav navbar-nav center_nav pull-right">
 									<li class="nav-item active">
 										<a class="nav-link" href="index.html">Inicio</a>
 									</li>
@@ -96,31 +104,52 @@
 											<li class="nav-item">
 												<a class="nav-link" href="contact.html">Contact</a>
 											</li>
-								</ul>
+								</ul> --}}
 							</div>
 
 							<div class="col-lg-5">
 								<ul class="nav navbar-nav navbar-right right_nav pull-right">
-									<hr>
+									{{!-- <hr>
 									<li class="nav-item">
 										<a href="#" class="icons">
 											<i class="fa fa-search" aria-hidden="true"></i>
 										</a>
 									</li>
 
-									<hr>
+									<hr> --}}
+									{{#if Session}}
+										<hr>
+										
+										<li class="nav-item">
+											<a href="/account" class="icons">
+												<i class="fa fa-user" aria-hidden="true"></i>
+											</a>
+										</li>
 
-									<li class="nav-item">
+										<hr>
+
+										<li class="nav-item">
+											<a href="/business" class="icons">
+												<i class="fa fa-search" aria-hidden="true"></i>
+											</a>
+										</li>
+										<hr>
+									{{else}}
+										<hr>
+										
+										<li class="nav-item">
+											<a href="/registrer" class="icons">
+												<i class="fa fa-user" aria-hidden="true"></i>
+											</a>
+										</li>
+
+										<hr>
+									{{/if}}
+
+
+									{{!-- <li class="nav-item">
 										<a href="#" class="icons">
-											<i class="fa fa-user" aria-hidden="true"></i>
-										</a>
-									</li>
-
-									<hr>
-
-									<li class="nav-item">
-										<a href="#" class="icons">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
+											<i class="fas fa-heart"></i>
 										</a>
 									</li>
 
@@ -132,7 +161,7 @@
 										</a>
 									</li>
 
-									<hr>
+									<hr> --}}
 								</ul>
 							</div>
 						</div>

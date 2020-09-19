@@ -3,53 +3,19 @@
 		<div class="container-fluid">
 			<div class="row flex-row-reverse">
 				<div class="col-lg-9">
+					{{!-- id de ek enpresa --}}
+					<input type="hidden" name="id-empresa" id="id-empresa" value="{{empresa.id}}">
 					<div class="product_top_bar">
-						<div class="left_dorp">
-							<select class="sorting">
-								<option value="1">Default sorting</option>
-								<option value="2">Default sorting 01</option>
-								<option value="4">Default sorting 02</option>
-							</select>
-							<select class="show">
-								<option value="1">Show 12</option>
-								<option value="2">Show 14</option>
-								<option value="4">Show 16</option>
-							</select>
+						<div class="left_dorp title-business">
+
+							<h4>{{empresa.nombre}}</h4>
 						</div>
 						<div class="right_page ml-auto">
-							<nav class="cat_page" aria-label="Page navigation example">
-								<ul class="pagination">
-									<li class="page-item">
-										<a class="page-link" href="#">
-											<i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li class="page-item active">
-										<a class="page-link" href="#">1</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">2</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">3</a>
-									</li>
-									<li class="page-item blank">
-										<a class="page-link" href="#">...</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">6</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="#">
-											<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-							</nav>
+							<h2>{{empresa.puntos}} <i class="fa fa-circle"></i></h2>
 						</div>
 					</div>
-					<div class="latest_product_inner row">
-						<div class="col-lg-3 col-md-3 col-sm-6">
+					<div class="latest_product_inner row" id="listado-premios">
+						{{!-- <div class="col-lg-3 col-md-3 col-sm-6">
 							<div class="f_p_item">
 								<div class="f_p_img">
 									<img class="img-fluid" src="/users/img/product/feature-product/f-p-1.jpg" alt="">
@@ -86,8 +52,31 @@
 								</a>
 								<h5>$150.00</h5>
 							</div>
-						</div>
+						</div> --}}
+						{{#if premios}}
+						{{#each premios}}
 						<div class="col-lg-3 col-md-3 col-sm-6">
+							<div class="f_p_item">
+								<div class="f_p_img">
+									<img class="img-fluid" src="{{url}}" alt="">
+									<div class="p_icon">
+										<a href="#">
+											<i class="lnr lnr-heart"></i>
+										</a>
+										<a href="#" class="comprar" data-toggle="modal" data-target="#exampleModal" data-id="{{_id}}">
+											<i class="lnr lnr-cart comprar"></i>
+										</a>
+									</div>
+								</div>
+								<a href="#">
+									<h4>{{name}}</h4>
+								</a>
+								<h5>{{points}}</h5>
+							</div>
+						</div>
+						{{/each}}
+						{{/if}}
+						{{!-- <div class="col-lg-3 col-md-3 col-sm-6">
 							<div class="f_p_item">
 								<div class="f_p_img">
 									<img class="img-fluid" src="/users/img/product/feature-product/f-p-3.jpg" alt="">
@@ -219,26 +208,8 @@
 								</a>
 								<h5>$150.00</h5>
 							</div>
-						</div>
-                        <div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="f_p_item">
-								<div class="f_p_img">
-									<img class="img-fluid" src="/users/img/product/feature-product/f-p-4.jpg" alt="">
-									<div class="p_icon">
-										<a href="#">
-											<i class="lnr lnr-heart"></i>
-										</a>
-										<a href="#">
-											<i class="lnr lnr-cart"></i>
-										</a>
-									</div>
-								</div>
-								<a href="#">
-									<h4>Long Sleeve TShirt</h4>
-								</a>
-								<h5>$150.00</h5>
-							</div>
-						</div>
+						</div> --}}
+
 					</div>
 				</div>
 				<div class="col-lg-3">
@@ -246,7 +217,6 @@
 						<aside class="left_widgets cat_widgets">
 							<div class="l_w_title">
 								<h3>Categorías</h3>
-                                <p>{{empresa}}</p>
 							</div>
 							<div class="widgets_inner">
 								<ul class="list">
@@ -261,30 +231,35 @@
 							</div>
 						</aside>
 						<aside class="left_widgets p_filter_widgets">
-							{{!-- <div class="l_w_title">
-								<h3>Product Filters</h3>
+							<div class="l_w_title">
+								<h3>Filtro de Premios</h3>
 							</div>
 							<div class="widgets_inner">
-								<h4>Brand</h4>
+								<h4>Puntos</h4>
 								<ul class="list">
-									<li>
-										<a href="#">Apple</a>
+									{{#selectRangoPunto filtroPuntos}}
+									<li id="500">
+										<a href="?puntos=500">500</a>
+									</li>
+									<li id="1000">
+										<a href="?puntos=1000">1000</a>
+									</li>
+									<li id="2000">
+										<a href="?puntos=2000">2000</a>
+									</li>
+									<li id="5000">
+										<a href="?puntos=5000">5000</a>
+									</li>
+									<li id="10000">
+										<a href="?puntos=10000">10000</a>
 									</li>
 									<li>
-										<a href="#">Asus</a>
+										<a href="?">Todos</a>
 									</li>
-									<li class="active">
-										<a href="#">Gionee</a>
-									</li>
-									<li>
-										<a href="#">Micromax</a>
-									</li>
-									<li>
-										<a href="#">Samsung</a>
-									</li>
+									{{/selectRangoPunto}}
 								</ul>
 							</div>
-							<div class="widgets_inner">
+							{{!-- <div class="widgets_inner">
 								<h4>Color</h4>
 								<ul class="list">
 									<li>
@@ -304,52 +279,74 @@
 									</li>
 								</ul>
 							</div> --}}
-							<div class="widgets_inner">
-								<h4>Price</h4>
+							{{!-- <div class="widgets_inner">
+								<h4>Puntos</h4>
 								<div class="range_item">
 									<div id="slider-range"></div>
 									<div class="row m0">
-										<label for="amount">Price : </label>
+										<label for="amount">Puntos : </label>
 										<input type="text" id="amount" readonly>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 						</aside>
 					</div>
 				</div>
 			</div>
 
-			<div class="row py-5">
-				<nav class="cat_page mx-auto" aria-label="Page navigation example">
-					<ul class="pagination">
-						<li class="page-item">
-							<a class="page-link" href="#">
-								<i class="fa fa-chevron-left" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li class="page-item active">
-							<a class="page-link" href="#">01</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">02</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">03</a>
-						</li>
-						<li class="page-item blank">
-							<a class="page-link" href="#">...</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">09</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">
-								<i class="fa fa-chevron-right" aria-hidden="true"></i>
-							</a>
-						</li>
-					</ul>
-				</nav>
+			<div class="row pt-5 justify-content-center">
+				<div class="pagination pagination-centered">
+					<nav class="cat_page mx-auto" aria-label="Page navigation example">
+						<ul class="pagination">
+							{{#paginate pagination type="first"}}
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+							{{/paginate}}
+							{{#paginate pagination type="previous"}}
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+							{{/paginate}}
+							{{#paginate pagination type="middle" limit="7"}}
+							<li {{#if active}}class="active"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}>{{n}}</a></li>
+							{{/paginate}}
+							{{#paginate pagination type="next"}}
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}><i class="fa fa-chevron-right {{parmPuntos}}" aria-hidden="true"></i></a></li>
+							{{/paginate}}
+							{{#paginate pagination type="last"}}
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+							{{/paginate}}
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</section>
 	<!--================End Category Product Area =================-->
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detalle Premio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<div class="card">
+		<img src="" class="card-img-top" alt="" id="imagen-premio"></canvas>
+		<div class="card-body">
+			
+			<h5 class="card-title"><strong>Titulo : </strong> <span id="titulo-premio">Titulo Premio</span></h5>
+			<p class="card-text"><strong>Descripcion : </strong><span class="card-text" id="descripcion-premio"></span></p>
+			<p class="card-text"><strong>Puntos : </strong><span class="card-text" id="puntos-premio"></span></p>
+		</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+		<input type="hidden" name="id" id="id-premio">
+        <button type="button" class="btn btn-primary canjear" id="btn-comprar">Canjear Premio</button>
+      </div>
+    </div>
+  </div>
+</div>
