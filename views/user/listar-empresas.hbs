@@ -5,11 +5,10 @@
 			<div class="container">
 				<div class="banner_content row">
 					<div class="offset-lg-2 col-lg-8">
-						<h3>Fashion for
-							<br />Upcoming Winter</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-						<a class="white_bg_btn" href="#">View Collection</a>
+						<h3>Acumula Puntos
+							<br />con cualquier medio de pago</h3>
+						<p>Realiza tus compras en nuestras distintas tiendas asociadas y obten puntos por cada compra realizada, mientras mas puntos acumules, podras acceder a premios mas impresionastes. !Ganar nunca fue tan facil!</p>
+						<a class="white_bg_btn" href="#lista">Ver Tiendas</a>
 					</div>
 				</div>
 			</div>
@@ -18,7 +17,7 @@
 	<!--================End Home Banner Area =================-->
 
 	<!--================Hot Deals Area =================-->
-	<section class="hot_deals_area section_gap">
+	<section class="hot_deals_area section_gap" id="lista">
 		<div class="container-fluid">
 			<div class="row">
 				{{!-- <div class="col-lg-6" style="padding: 15px;">
@@ -70,7 +69,7 @@
 							<div class="hot_deal_box">
 								<img class="img-fluid" src="/users/img/product/hot_deals/deal1.jpg" alt="">
 								<div class="content">
-									<h2>{{nombre}}</h2>
+									<h2 class="limit-text">{{nombre}}</h2>
 									<p>Ver Catalogo</p>
 								</div>
 								<a class="hot_deal_link" href="/business/{{id}}"></a>
@@ -78,7 +77,14 @@
 						</div>
 					{{/each}}
 				{{else}}
-					<p>NO TIENE EMPRESAS ASOCIADAS</p>
+					<div class="col-lg-12" style="text-align: center;">
+						{{!-- <div class="hot_deal_box"> --}}
+							<img class="img-fluid" src="/users/img/empty.png" alt="" style="max-width: 30%">
+							<div class="content pt-3">
+								<h2>No tiene empresas asociadas</h2>
+							</div>
+						{{!-- </div> --}}
+					</div>
 				{{/if}}
 			</div>
 		</div>

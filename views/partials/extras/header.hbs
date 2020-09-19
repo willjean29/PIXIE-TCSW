@@ -3,7 +3,11 @@
 		<div class="top_menu row m0">
 			<div class="container-fluid">
 				<div class="float-left">
-					<p>LLÁMANOS:: 012 44 5698 7456 896</p>
+					{{#if Session}}
+						<p>Usuario: {{name}}</p>
+					{{else}}
+						<p>LLÁMANOS: 926 594 773</p>
+					{{/if}}
 				</div>
 				<div class="float-right">
 					<ul class="right_side">
@@ -40,8 +44,8 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html">
-						<img src="/users/img/logo.png" alt="">
+					<a class="navbar-brand logo_h" {{#if Session}}href="/business" {{/if}} href="/login">
+						<img src="/users/img/favicon.png" alt=""><span class="title-page">Pixie</span>
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					 aria-expanded="false" aria-label="Toggle navigation">
@@ -122,6 +126,13 @@
 											</a>
 										</li>
 
+										<hr>
+
+										<li class="nav-item">
+											<a href="/business" class="icons">
+												<i class="fa fa-search" aria-hidden="true"></i>
+											</a>
+										</li>
 										<hr>
 									{{else}}
 										<hr>

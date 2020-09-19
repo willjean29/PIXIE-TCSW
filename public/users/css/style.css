@@ -413,10 +413,10 @@ a {
 /* Home Banner Area css
 ============================================================================================ */
 .home_banner_area {
-  background: url(../img/banner/banner-bg.jpg) no-repeat center bottom;
+  background: url(../img/banner/banner-empresas.jpg) no-repeat center bottom;
   position: relative;
   z-index: 1;
-  min-height: 900px; }
+  min-height: 800px; }
   .home_banner_area .overlay {
     background: rgba(0, 0, 0, 0.33);
     position: absolute;

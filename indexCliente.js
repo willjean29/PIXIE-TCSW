@@ -65,6 +65,9 @@ app.engine('hbs',exphbs({
     selectGenero: function(seleccionado, opciones){
       return opciones.fn().replace(`value="${seleccionado}"`,`value="${seleccionado}" selected`);
     },
+    selectRangoPunto: function(seleccionado, opciones){
+      return opciones.fn().replace(`id="${seleccionado}"`,`id="${seleccionado}" class="active"`);
+    },
     mostrarAlertas: function (errores = {}, opciones){
       const categoria = Object.keys(errores);
       let html = '';

@@ -231,30 +231,35 @@
 							</div>
 						</aside>
 						<aside class="left_widgets p_filter_widgets">
-							{{!-- <div class="l_w_title">
-								<h3>Product Filters</h3>
+							<div class="l_w_title">
+								<h3>Filtro de Premios</h3>
 							</div>
 							<div class="widgets_inner">
-								<h4>Brand</h4>
+								<h4>Puntos</h4>
 								<ul class="list">
-									<li>
-										<a href="#">Apple</a>
+									{{#selectRangoPunto filtroPuntos}}
+									<li id="500">
+										<a href="?puntos=500">500</a>
+									</li>
+									<li id="1000">
+										<a href="?puntos=1000">1000</a>
+									</li>
+									<li id="2000">
+										<a href="?puntos=2000">2000</a>
+									</li>
+									<li id="5000">
+										<a href="?puntos=5000">5000</a>
+									</li>
+									<li id="10000">
+										<a href="?puntos=10000">10000</a>
 									</li>
 									<li>
-										<a href="#">Asus</a>
+										<a href="?">Todos</a>
 									</li>
-									<li class="active">
-										<a href="#">Gionee</a>
-									</li>
-									<li>
-										<a href="#">Micromax</a>
-									</li>
-									<li>
-										<a href="#">Samsung</a>
-									</li>
+									{{/selectRangoPunto}}
 								</ul>
 							</div>
-							<div class="widgets_inner">
+							{{!-- <div class="widgets_inner">
 								<h4>Color</h4>
 								<ul class="list">
 									<li>
@@ -274,7 +279,7 @@
 									</li>
 								</ul>
 							</div> --}}
-							<div class="widgets_inner">
+							{{!-- <div class="widgets_inner">
 								<h4>Puntos</h4>
 								<div class="range_item">
 									<div id="slider-range"></div>
@@ -283,30 +288,30 @@
 										<input type="text" id="amount" readonly>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 						</aside>
 					</div>
 				</div>
 			</div>
 
-			<div class="row py-5 justify-content-center">
+			<div class="row pt-5 justify-content-center">
 				<div class="pagination pagination-centered">
 					<nav class="cat_page mx-auto" aria-label="Page navigation example">
 						<ul class="pagination">
 							{{#paginate pagination type="first"}}
-							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
 							{{/paginate}}
 							{{#paginate pagination type="previous"}}
-							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
 							{{/paginate}}
 							{{#paginate pagination type="middle" limit="7"}}
-							<li {{#if active}}class="active"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}">{{n}}</a></li>
+							<li {{#if active}}class="active"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}>{{n}}</a></li>
 							{{/paginate}}
 							{{#paginate pagination type="next"}}
-							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}><i class="fa fa-chevron-right {{parmPuntos}}" aria-hidden="true"></i></a></li>
 							{{/paginate}}
 							{{#paginate pagination type="last"}}
-							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" href="?p={{n}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+							<li {{#if disabled}}class="page-item disabled"{{/if}} class="page-item"><a class="page-link" {{#if parmPuntos}}href="?puntos={{parmPuntos}}&p={{n}}"{{else}}href="?p={{n}}"{{/if}}><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
 							{{/paginate}}
 						</ul>
 					</nav>

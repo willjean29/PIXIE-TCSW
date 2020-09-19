@@ -38,7 +38,8 @@ const mostrarCuentaUsuario = (req,res) => {
       image: req.user.image,
       isMale
     },
-    Session: true
+    Session: true,
+    name: req.user.name
   })
 }
 // verificar si el cliente esta esta autenticado
@@ -64,6 +65,7 @@ const mostrarListadoEmpresas = async(req,res) => {
   res.render('user/listar-empresas.hbs',{
     layout: 'user.hbs',
     empresas: req.session.afiliadas,
+    name : req.user.name,
     Session: true
   })
 }
@@ -75,11 +77,24 @@ const mostrarCatalogoEmpresa = async (req,res) => {
   let premio = 6;
   let paginaActual = req.query.p || 1;
 
-  const premios = await Prize.find({catalog: catalogo._id})
-    .skip((premio * paginaActual) - premio)
-    .limit(premio).lean();
+  const filtroPuntos = req.query.puntos || false;
 
-  const premiosTotales = await Prize.count({catalog: catalogo._id});
+  // condicionar la busqueda de premiosTotales
+  let premios;
+  let premiosTotales;
+  if (filtroPuntos){
+     premios = await Prize.find({catalog: catalogo._id, points: {$gte: 0, $lte: filtroPuntos}})
+    .skip((premio * paginaActual) - premio)
+    .limit(premio).sort('points').lean();
+  
+    premiosTotales = await Prize.count({catalog: catalogo._id, points: {$gte: 0, $lte: filtroPuntos}});
+  }else{
+    premios = await Prize.find({catalog: catalogo._id})
+    .skip((premio * paginaActual) - premio)
+    .limit(premio).sort('points').lean();
+
+    premiosTotales = await Prize.count({catalog: catalogo._id});
+  }
 
   const paginasTotales = Math.ceil(premiosTotales / premio);
 
@@ -99,10 +114,13 @@ const mostrarCatalogoEmpresa = async (req,res) => {
     premios,
     pagination: {
       page: paginaActual,       // The current page the user is on
-      pageCount: paginasTotales  // The total number of available pages
+      pageCount: paginasTotales,  // The total number of available pages
+      parmPuntos: filtroPuntos
     },
     empresa: empresaActual,
-    Session: true
+    name : req.user.name,
+    Session: true,
+    filtroPuntos
   })
 }
 
@@ -115,11 +133,24 @@ const mostrarCategoriaCatalogo = async (req,res) => {
   let premio = 6;
   let paginaActual = req.query.p || 1;
 
-  const premios = await Prize.find({catalog: catalogo._id, category: category._id})
+  const filtroPuntos = req.query.puntos || false;
+  // condicionar la busqueda de premiosTotales
+  let premios;
+  let premiosTotales;
+  if(filtroPuntos){
+    premios = await Prize.find({catalog: catalogo._id, category: category._id, points: {$gte: 0, $lte: filtroPuntos}})
     .skip((premio * paginaActual) - premio)
-    .limit(premio).lean();
-  console.log(premios)
-  const premiosTotales = await Prize.count({catalog: catalogo._id,category: category._id});
+    .limit(premio).sort('points').lean();
+    console.log(premios)
+    premiosTotales = await Prize.count({catalog: catalogo._id,category: category._id, points: {$gte: 0, $lte: filtroPuntos}});
+  }else{
+    premios = await Prize.find({catalog: catalogo._id, category: category._id})
+    .skip((premio * paginaActual) - premio)
+    .limit(premio).sort('points').lean();
+    console.log(premios)
+    premiosTotales = await Prize.count({catalog: catalogo._id,category: category._id});
+  }
+
 
   const paginasTotales = Math.ceil(premiosTotales / premio);
 
@@ -139,10 +170,13 @@ const mostrarCategoriaCatalogo = async (req,res) => {
     premios,
     pagination: {
       page: paginaActual,       // The current page the user is on
-      pageCount: paginasTotales  // The total number of available pages
+      pageCount: paginasTotales,  // The total number of available pages
+      parmPuntos: filtroPuntos
     },
     empresa: empresaActual,
-    Session: true
+    name : req.user.name,
+    Session: true,
+    filtroPuntos
   })
 }
 
@@ -242,7 +276,7 @@ const canjearPremio = async (req,res) => {
     }
   }
   console.log(client);
-  // await client.save();
+  await client.save();
   res.json({
     ok: state,
     msg
