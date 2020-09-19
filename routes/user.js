@@ -3,7 +3,7 @@ const app = express.Router();
 const {uploadImage} = require('../middlewares/uploadImage');
 const userController = require('../controllers/userController');
 app.get('/',(req,res) => {
-  res.redirect('/login');
+  res.redirect('/admin');
 });
 app.get('/login',userController.mostrarLogin);
 
@@ -30,3 +30,4 @@ app.get('/products/:page',userController.premiosPaginas);
 app.post('/prizes/:id',userController.canjearPremio);
 
 module.exports = app;
+

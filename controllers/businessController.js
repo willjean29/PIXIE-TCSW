@@ -98,6 +98,7 @@ const registrarEmpresa = async(req,res) => {
       err
     });
   });
+
   console.log("hay empresa");
   if(business) return res.status(400).json({
     ok: false,
@@ -126,12 +127,15 @@ const registrarEmpresa = async(req,res) => {
     redes
   });
 
-  await business.save().catch((err) => {
+ 
+  try {
+    await business.save()
+  } catch (err) {
     return res.status(400).json({
       ok: false,
       err
     });
-  });
+  }
 
   // actualizar el estado del administrador
   administrator.estado = true;
